@@ -9,7 +9,10 @@ Watch: [First steam! Let's mess with some custom blocks](https://www.twitch.tv/v
 
 Branch: [stream/sept-17-2021](https://github.com/ryanwelcher/twitch/tree/]stream/sept-17-2021)
 
-Here are some of the topics/highlights:
+
+<details>
+<summary>Click for topics/highlights</summary>
+
 * We talked about creating blocks from scratch using [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
 * Demonstrated the differences between Dynamic and Static blocks
 * Showed how to save attributes in a block.
@@ -18,3 +21,4 @@ Here are some of the topics/highlights:
 * Audio issues 😞
 * Ryan not able to type while people watch ( recurring theme...)
 * Worked with `getEntityRecords`, `isResolving`, and `invalidateResolver` to display posts in the Block Editor. Inspired by [this blog post](https://ryanwelcher.com/2021/08/requesting-data-in-gutenberg-with-getentityrecords/).
+</details>
