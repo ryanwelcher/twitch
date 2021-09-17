@@ -1,0 +1,23 @@
+{
+	"name": "create-block-example",
+	"version": "0.1.0",
+	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"start": "wp-scripts start",
+		"packages-update": "wp-scripts packages-update"
+	},
+	"dependencies": {
+		"@wordpress/blocks": "^11.1.0",
+		"@wordpress/i18n": "^4.2.2"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^18.0.1"
+	}
+}

@@ -1,0 +1,16 @@
+{
+    "apiVersion":2,
+    "name": "ryanwelcher/my-great-plugin",
+    "title": "My Great Plugin",
+    "description": "My great plugin",
+    "version": "1.0.0",
+    "category": "text",
+    "attributes": {
+        "numberOfPosts": {
+            "type": "string",
+            "default": "5"
+        }
+    },
+    "supports":{},
+    "editorScript": "file:./build/index.js"
+}
