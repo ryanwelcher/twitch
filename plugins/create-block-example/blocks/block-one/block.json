@@ -1,0 +1,16 @@
+{
+	"apiVersion": 2,
+	"name": "create-block-example/create-block-example",
+	"version": "0.1.0",
+	"title": "Create Block Example",
+	"category": "design",
+	"icon": "smiley",
+	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "create-block-example",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
