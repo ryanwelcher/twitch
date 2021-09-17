@@ -1,11 +1,13 @@
 # Twitch Streams Code
-This repo stores all of the code I create during streaming. Hopefully it's useful :)
+This repo stores all of the code I create during streaming. For each stream, I'll create a branch and then merge it into `trunk` at the end and push both. That should keep things from getting too messy should. Hopefully it's useful 😎
 
 [https://www.twitch.tv/ryanwelchercodes](https://www.twitch.tv/ryanwelchercodes)
 
 
 ## Sept 17, 2021
-[First steam! Let's mess with some custom blocks](https://www.twitch.tv/videos/1151309353)
+Watch: [First steam! Let's mess with some custom blocks](https://www.twitch.tv/videos/1151309353)
+
+Branch: [stream/sept-17-2021](https://github.com/ryanwelcher/twitch/tree/]stream/sept-17-2021)
 
 Here are some of the topics/highlights:
 * We talked about creating blocks from scratch using [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
