@@ -31,6 +31,7 @@ Branch:[stream/sept-23-2021](https://github.com/ryanwelcher/twitch/tree/]stream/
 
 <details>
 <summary>Click for topics/highlights</summary>
+
 * No code in this repos, as we updated some of the blocks in the [Gutenberg Examples](https://github.com/WordPress/gutenberg-examples) repo.
 * Discussed that if a block isn't using [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/) for a build process, that we need to manually add the `index.asset.php` file.
 * Figured out how the useBlockProps hook worked when passing items. Thanks to everyone who helped on that one!
