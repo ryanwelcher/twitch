@@ -27,7 +27,7 @@ Branch: [stream/sept-17-2021](https://github.com/ryanwelcher/twitch/tree/]stream
 
 Watch: [Updating the block examples at https://github.com/WordPress/gutenberg-examples](https://www.twitch.tv/videos/1156915530)
 
-Branch:[stream/sept-23-2021](https://github.com/ryanwelcher/twitch/tree/]stream/sept-23-2021)
+Branch: [stream/sept-23-2021](https://github.com/ryanwelcher/twitch/tree/]stream/sept-23-2021)
 
 <details>
 <summary>Click for topics/highlights</summary>
