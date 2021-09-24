@@ -22,3 +22,16 @@ Branch: [stream/sept-17-2021](https://github.com/ryanwelcher/twitch/tree/]stream
 * Ryan not able to type while people watch ( recurring theme...)
 * Worked with `getEntityRecords`, `isResolving`, and `invalidateResolver` to display posts in the Block Editor. Inspired by [this blog post](https://ryanwelcher.com/2021/08/requesting-data-in-gutenberg-with-getentityrecords/).
 </details>
+
+## Sept 23, 2021
+
+Watch: [Updating the block examples at https://github.com/WordPress/gutenberg-examples](https://www.twitch.tv/videos/1156915530)
+
+Branch:[stream/sept-23-2021](https://github.com/ryanwelcher/twitch/tree/]stream/sept-23-2021)
+
+<details>
+<summary>Click for topics/highlights</summary>
+* No code in this repos, as we updated some of the blocks in the [Gutenberg Examples](https://github.com/WordPress/gutenberg-examples) repo.
+* Discussed that if a block isn't using [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/) for a build process, that we need to manually add the `index.asset.php` file.
+* Figured out how the useBlockProps hook worked when passing items. Thanks to everyone who helped on that one!
+</details>
