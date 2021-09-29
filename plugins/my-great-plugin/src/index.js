@@ -7,8 +7,8 @@ const { name, settings } = json;
 
 import edit from './edit';
 
-registerBlockType( name, {
+registerBlockType(name, {
 	edit,
 	save: () => null,
 	...settings,
-} );
+});

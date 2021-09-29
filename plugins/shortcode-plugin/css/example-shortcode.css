@@ -1,0 +1,23 @@
+section.twitch-example-shortcode h3 {
+	text-align: center;
+}
+
+section.twitch-example-shortcode .twitch-example-shortcode__days {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+section.twitch-example-shortcode .twitch-example-shortcode__days .twitch-example-shortcode__day {
+	border: dashed 1px black;
+	padding: 10px;
+	margin: 12px;
+	opacity: 0.5;
+	box-sizing: content-box;
+	width: 150px;
+	height: 150px;
+}
+
+section.twitch-example-shortcode .twitch-example-shortcode__days .twitch-example-shortcode__day:hover {
+	opacity: 1;
+	transition: opacity 0.5s ease-out;
+}
