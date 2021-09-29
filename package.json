@@ -1,0 +1,27 @@
+{
+  "name": "twitch-stream-code",
+  "version": "1.0.0",
+  "description": "Code created while streaming.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanwelcher/twitch.git"
+  },
+  "keywords": [
+    "Twitch",
+    "Gutenberg"
+  ],
+  "author": "Ryan Welcher",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/ryanwelcher/twitch/issues"
+  },
+  "homepage": "https://github.com/ryanwelcher/twitch#readme",
+  "devDependencies": {
+    "@wordpress/eslint-plugin": "^9.1.2",
+    "@wordpress/stylelint-config": "^19.1.0"
+  }
+}
