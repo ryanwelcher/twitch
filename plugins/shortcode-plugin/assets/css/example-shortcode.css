@@ -9,7 +9,8 @@ section.twitch-example-shortcode .twitch-example-shortcode-days {
 }
 
 section.twitch-example-shortcode .twitch-example-shortcode-days .twitch-example-shortcode-day {
-	border: dashed 1px #000;
+	border: solid 1px #000;
+	border-radius: 2px;
 	padding: 10px;
 	margin: 12px;
 	opacity: 0.5;
