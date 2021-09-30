@@ -36,3 +36,17 @@ Branch: [stream/sept-23-2021](https://github.com/ryanwelcher/twitch/tree/]stream
 * Discussed that if a block isn't using [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/) for a build process, that we need to manually add the `index.asset.php` file.
 * Figured out how the useBlockProps hook worked when passing items. Thanks to everyone who helped on that one!
 </details>
+
+## Sept 30, 2021
+
+Watch: [Converting a shortcode to a custom block.](https://www.twitch.tv/videos/1163471262)
+
+Branch: [stream/sept-30-2021](https://github.com/ryanwelcher/twitch/tree/]stream/sept-30-2021)
+<details>
+<summary>Click for topics/highlights</summary>
+
+* Talked about custom entry points when using `@wordpress/scripts`
+* Converted a shortcode to a custom block.
+* Learned that Transforms are very confusing and the docs aren't that helpful.
+* Ryan's first day with JS `for` loops and React 🤦‍♂️
+</details>
