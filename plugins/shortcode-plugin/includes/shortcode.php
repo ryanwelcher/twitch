@@ -27,16 +27,18 @@ function render_example_shortcode( $atts ) {
 	$attributes = shortcode_atts( array(
 		'photos'    => 6,
 		'title'     => 'Random Photos',
-		'fullwidth' => true,
+		'align'     => ''
 	), $atts );
+
+	// Grab the attributes
+    $photos  = $attributes['photos'];
+    $title   = isset( $attributes['title'] ) ? $attributes['title'] : false;
+    $classes = isset( $attributes['align'] ) ? "twitch-example-shortcode align{$attributes['align']}"  : 'twitch-example-shortcode';
+
 
     // Render the shortcode output.
     ob_start();
 
-    // Grab the attributes
-    $photos  = $attributes['photos'];
-    $title   = isset( $attributes['title'] ) ? $attributes['title'] : false;
-    $classes = $attributes['fullwidth'] ? 'twitch-example-shortcode alignfull' : 'twitch-example-shortcode';
     ?>
     <section class="<?php echo esc_attr( $classes ); ?>">
     <?php if ( $title ) : ?>
