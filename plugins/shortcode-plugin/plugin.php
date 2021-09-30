@@ -16,3 +16,4 @@ define( 'TWITCH_SHORTCODE_PLUGIN_INC', TWITCH_SHORTCODE_PLUGIN_PATH . 'includes/
 
 // Include the files that make up the plugin.
 require_once TWITCH_SHORTCODE_PLUGIN_INC . '/shortcode.php';
+require_once TWITCH_SHORTCODE_PLUGIN_INC . '/block-editor/blocks/random-photos/block.php';

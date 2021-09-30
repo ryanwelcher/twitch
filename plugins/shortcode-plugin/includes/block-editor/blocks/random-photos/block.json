@@ -1,0 +1,25 @@
+{
+	"apiVersion":2,
+    "name": "twitchstreams/random-photos",
+    "title": "Random Photos",
+    "description": "A block that uses a shortcode to render random photos",
+    "version": "1.0.0",
+    "category": "media",
+	"icon": "format-gallery",
+	"example":{},
+    "attributes": {
+		"photos":{
+			"type":"number",
+			"default": 6
+		},
+		"title" : {
+			"type": "string",
+			"default": "Random Photos"
+		}
+	},
+    "supports":{
+		"align": [ "full", "wide", "left", "right" ]
+	},
+    "editorScript": "file:../../../../build/index.js",
+    "style": "file:../../../../assets/css/example-shortcode.css"
+}

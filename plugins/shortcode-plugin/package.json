@@ -1,0 +1,14 @@
+{
+  "name": "shortcode-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start ./includes/block-editor/blocks/random-photos/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^18.0.1"
+  }
+}
