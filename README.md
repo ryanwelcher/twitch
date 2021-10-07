@@ -3,11 +3,13 @@ This repo stores all of the code I create during streaming. For each stream, I'l
 
 [https://www.twitch.tv/ryanwelchercodes](https://www.twitch.tv/ryanwelchercodes)
 
+All of the streams are also available on my [YouTube channel](https://www.youtube.com/channel/UC_kRIqFHtN8ccB_mTmHyGDg)
+
 
 ## Sept 17, 2021
 Watch: [First steam! Let's mess with some custom blocks](https://www.twitch.tv/videos/1151309353)
 
-Branch: [stream/sept-17-2021](https://github.com/ryanwelcher/twitch/tree/]stream/sept-17-2021)
+Branch: [stream/sept-17-2021](https://github.com/ryanwelcher/twitch/tree/stream/sept-17-2021)
 
 
 <details>
@@ -27,7 +29,7 @@ Branch: [stream/sept-17-2021](https://github.com/ryanwelcher/twitch/tree/]stream
 
 Watch: [Updating the block examples at https://github.com/WordPress/gutenberg-examples](https://www.twitch.tv/videos/1156915530)
 
-Branch: [stream/sept-23-2021](https://github.com/ryanwelcher/twitch/tree/]stream/sept-23-2021)
+Branch: [stream/sept-23-2021](https://github.com/ryanwelcher/twitch/tree/stream/sept-23-2021)
 
 <details>
 <summary>Click for topics/highlights</summary>
@@ -41,7 +43,7 @@ Branch: [stream/sept-23-2021](https://github.com/ryanwelcher/twitch/tree/]stream
 
 Watch: [Converting a shortcode to a custom block.](https://www.twitch.tv/videos/1163471262)
 
-Branch: [stream/sept-30-2021](https://github.com/ryanwelcher/twitch/tree/]stream/sept-30-2021)
+Branch: [stream/sept-30-2021](https://github.com/ryanwelcher/twitch/tree/stream/sept-30-2021)
 <details>
 <summary>Click for topics/highlights</summary>
 
@@ -49,4 +51,19 @@ Branch: [stream/sept-30-2021](https://github.com/ryanwelcher/twitch/tree/]stream
 * Converted a shortcode to a custom block.
 * Learned that Transforms are very confusing and the docs aren't that helpful.
 * Ryan's first day with JS `for` loops and React 🤦‍♂️
+</details>
+
+## Oct 7, 2021
+
+Watch: [Creating a plugin with @wordpress/create-blocks that has multiple blocks](https://www.twitch.tv/videos/1169960035)
+
+Branch: [stream/oct-7-2021](https://github.com/ryanwelcher/twitch/tree/stream/oct-7-2021)
+<details>
+<summary>Click for topics/highlights</summary>
+
+* Used the @wordpress/create-block package to scaffold a new plugin with a single block.
+* Restructured the plugin to allow for registering multiple blocks.
+* Added a custom `webpack.config.js` to set up one entry point per block.
+* Demo'd a custom template that uses the same structure: `npm @wordpress/create-block --template @ryanwelcher/multiple-blocks-template`.
+* https://www.npmjs.com/package/@ryanwelcher/multiple-blocks-template
 </details>
