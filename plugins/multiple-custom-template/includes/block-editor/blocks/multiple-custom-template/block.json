@@ -1,0 +1,16 @@
+{
+	"apiVersion": 2,
+	"name": "twitchstreams/multiple-custom-template",
+	"version": "0.1.0",
+	"title": "Test",
+	"category": "widgets",
+	"icon": "",
+	"description": "",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "twitchstreams",
+	"editorScript": "file:../../../../build/multiple-custom-template.js",
+	"editorStyle": "file:../../../../build/multiple-custom-template.css",
+	"style": "file:../../../../build/style-multiple-custom-template.css"
+}
