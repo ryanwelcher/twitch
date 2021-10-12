@@ -64,6 +64,6 @@ Branch: [stream/oct-7-2021](https://github.com/ryanwelcher/twitch/tree/stream/oc
 * Used the @wordpress/create-block package to scaffold a new plugin with a single block.
 * Restructured the plugin to allow for registering multiple blocks.
 * Added a custom `webpack.config.js` to set up one entry point per block.
-* Demo'd a custom template that uses the same structure: `npm @wordpress/create-block --template @ryanwelcher/multiple-blocks-template`.
+* Demo'd a custom template that uses the same structure: `npx @wordpress/create-block --template @ryanwelcher/multiple-blocks-template`.
 * https://www.npmjs.com/package/@ryanwelcher/multiple-blocks-template
 </details>
