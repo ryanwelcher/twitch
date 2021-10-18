@@ -1,0 +1,25 @@
+{
+	"apiVersion": 2,
+	"name": "oct-14-2021/accordion-item",
+	"version": "0.1.0",
+	"title": "Accordion Item",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "",
+	"parent": [ "oct-14-2021/accordion" ],
+	"supports": {
+		"html": false
+	},
+	"attributes":{
+		"title": {
+			"type": "string"
+		},
+		"content": {
+			"type": "string"
+		}
+	},
+	"textdomain": "oct-14-2021",
+	"editorScript": "file:../../../../build/accordion-item.js",
+	"editorStyle": "file:../../../../build/accordion-item.css",
+	"style": "file:../../../../build/style-accordion-item.css"
+}
