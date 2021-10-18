@@ -67,3 +67,14 @@ Branch: [stream/oct-7-2021](https://github.com/ryanwelcher/twitch/tree/stream/oc
 * Demo'd a custom template that uses the same structure: `npx @wordpress/create-block --template @ryanwelcher/multiple-blocks-template`.
 * https://www.npmjs.com/package/@ryanwelcher/multiple-blocks-template
 </details>
+
+## Oct 14, 2021
+
+Watch: [Creating an accordion block that uses the InnerBlock component](https://www.twitch.tv/videos/1176495340)
+
+Branch: [stream/oct-14-2021](https://github.com/ryanwelcher/twitch/tree/stream/oct-14-2021)
+<details>
+<summary>Click for topics/highlights</summary>
+
+* Used the @wordpress/create-block along with the my `@ryanwelcher/multiple-blocks-template` to setup the plugin.
+</details>
