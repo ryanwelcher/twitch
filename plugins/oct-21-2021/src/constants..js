@@ -1,0 +1,3 @@
+const REQUIRED_WORD_COUNT = 250;
+
+export { REQUIRED_WORD_COUNT };
