@@ -78,3 +78,19 @@ Branch: [stream/oct-14-2021](https://github.com/ryanwelcher/twitch/tree/stream/o
 
 * Used the @wordpress/create-block along with the my `@ryanwelcher/multiple-blocks-template` to setup the plugin.
 </details>
+
+## Oct 21, 2021
+
+Watch: [Building a pre-publish checklist plugin for Gutenberg](https://www.twitch.tv/videos/1182869425)
+
+Branch: [stream/oct-21-2021](https://github.com/ryanwelcher/twitch/tree/stream/oct-21-2021)
+<details>
+<summary>Click for topics/highlights</summary>
+
+* Inspired by [this WordPress Stack Exchange question](https://wordpress.stackexchange.com/questions/339138/add-pre-publish-conditions-to-the-block-editor/) and [this article by Rich Tabor](https://richtabor.com/gutenberg-publishing-checklist/)
+* Introduced [registerPlugin](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-plugins/) and some of the [slots available in Gutenberg](https://developer.wordpress.org/block-editor/reference-guides/slotfills/).
+* Learned how to disabled the Publish button
+* Added requirements for word count, having a featured image, and having at least one category selected that is not Uncategorized
+
+</details>
+
