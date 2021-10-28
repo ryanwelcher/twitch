@@ -94,3 +94,18 @@ Branch: [stream/oct-21-2021](https://github.com/ryanwelcher/twitch/tree/stream/o
 
 </details>
 
+## Oct 28, 2021
+
+Watch: [The @wordpress/create-blocks package now supports local templates - let's give it a spin!](https://www.twitch.tv/videos/1189315667)
+
+Branch: [stream/oct-28-2021](https://github.com/ryanwelcher/twitch/tree/stream/oct-28-2021)
+<details>
+<summary>Click for topics/highlights</summary>
+
+* Discussed new feature in `@wordpress/create-block` that allows using local directories for templates.
+* Created custom template to build out additional blocks.
+* Showed how the $scheme property in block.json is 🔥🔥🔥
+* Linked to great article by Marcus Kazmierczak on how to [create your own custom template](https://mkaz.blog/wordpress/make-your-own-create-block-templates/)
+
+</details>
+
