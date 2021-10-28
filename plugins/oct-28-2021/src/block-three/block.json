@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "create-block/block-three",
+	"version": "0.1.0",
+	"title": "Block Three",
+	"category": "widgets",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "block-three",
+	"editorScript": "file:../../build/{{slug}}.js",
+	"editorStyle": "file:../../build/{{slug}}.css",
+	"style": "file:file:../../build/style-{{slug}}.css",
+	"example": {}
+}

@@ -1,0 +1,16 @@
+{
+	"apiVersion": 2,
+	"name": "create-block/oct-28-2021",
+	"version": "0.1.0",
+	"title": "Oct 28 2021",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "oct-28-2021",
+	"editorScript": "file:../../build/block-one.js",
+	"editorStyle": "file:../../build/block-one.css",
+	"style": "file:../../build/style-block-one.css"
+}

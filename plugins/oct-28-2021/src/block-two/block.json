@@ -1,0 +1,11 @@
+{
+	"apiVersion": 2,
+	"name": "create-block/block-two",
+	"version": "0.1.0",
+	"title": "Block Two",
+	"category": "widgets",
+	"textdomain": "block-two",
+	"editorScript": "file:../../build/block-two.js",
+	"editorStyle": "file:../../build/block-two.css",
+	"style": "file:file:../../build/style-block-two.css"
+}
