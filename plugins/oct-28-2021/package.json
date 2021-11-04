@@ -11,13 +11,20 @@
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"start": "wp-scripts start",
-		"packages-update": "wp-scripts packages-update"
+		"packages-update": "wp-scripts packages-update",
+		"test:e2e": "wp-scripts test-e2e",
+		"env:start": "wp-env start",
+		"env:stop": "wp-env stop",
+		"postenv:start": "wp-env run tests-cli \"wp post create --post_type=page --post_title='Ready'\""
+
 	},
 	"dependencies": {
 		"@wordpress/blocks": "^11.1.2",
 		"@wordpress/i18n": "^4.2.3"
 	},
 	"devDependencies": {
+		"@wordpress/e2e-test-utils": "^5.4.5",
+		"@wordpress/env": "^4.1.2",
 		"@wordpress/scripts": "^19.0.0"
 	}
 }

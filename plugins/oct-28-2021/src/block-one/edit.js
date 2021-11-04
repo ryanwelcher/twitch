@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -29,10 +29,13 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit({ attributes: { message }, setAttributes }) {
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Oct 28 2021 – hello from the editor!', 'oct-28-2021' ) }
-		</p>
+		<RichText
+			tagName="p"
+			{...useBlockProps()}
+			value={ message }
+			onChange={ (newMessage) => setAttributes( { message: newMessage } ) }
+		/>
 	);
 }

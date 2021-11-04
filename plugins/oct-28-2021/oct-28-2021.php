@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Oct 28 2021
- * Description:       Example block written with ESNext standard and JSX support – build step required.
+ * Description:       The @wordpress/create-blocks package now supports local templates - let's give it a spin!
  * Requires at least: 5.8
  * Requires PHP:      7.0
  * Version:           0.1.0

@@ -109,3 +109,20 @@ Branch: [stream/oct-28-2021](https://github.com/ryanwelcher/twitch/tree/stream/o
 
 </details>
 
+
+## Nov 4, 2021
+
+Watch: [Adding e2e tests to blocks.](https://www.twitch.tv/videos/1195746137)
+
+Branch: [stream/nov-4-2021](https://github.com/ryanwelcher/twitch/tree/stream/nov-4-2021)
+<details>
+<summary>Click for topics/highlights</summary>
+
+* Discussed how the `@wordpress/scripts` package contains the e2e testing tools
+* Discussed how we also need `@wordpress/env` to run them.
+* Created a basic e2e test suite to test if the block was inserted and that the content was correct
+* Discussed using snapshots and the difference between `toMatchSnapshot` and `toMatchInlineSnapshot`
+* Discussed how to pre-populate the test database with content using npm [`pre` commands](https://docs.npmjs.com/cli/v7/using-npm/scripts) and the [`wp-env run` command](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/#wp-env-run-container-command)
+* Created a test to ensure that the block saved test input by the user as the `message` attribute.
+</details>
+

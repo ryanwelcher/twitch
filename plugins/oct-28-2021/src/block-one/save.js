@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -22,13 +22,8 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
+export default function save({ attributes: { message } }) {
 	return (
-		<p { ...useBlockProps.save() }>
-			{ __(
-				'Oct 28 2021 – hello from the saved content!',
-				'oct-28-2021'
-			) }
-		</p>
+		<RichText.Content { ...useBlockProps.save() } tagName="p" value={message} />
 	);
 }

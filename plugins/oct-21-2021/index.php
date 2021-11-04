@@ -1,6 +1,7 @@
 <?php
 /**
  * Plugin Name:       Oct 21, 2021
+ * Description:       Building a pre-publish checklist plugin for Gutenberg
  * Requires at least: 5.8
  * Requires PHP:      7.0
  * Version:           0.1.0
