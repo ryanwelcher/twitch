@@ -1,0 +1,28 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "twitchstreams/poll",
+	"version": "0.1.0",
+	"title": "Poll",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "A block that displays a Poll",
+	"supports": {
+		"html": false,
+		"customClassName": false,
+		"multiple": false
+	},
+	"attributes": {
+		"title" : {
+			"type":"string",
+			"default": "Default Title"
+		},
+		"options": {
+			"type":"array"
+		}
+	},
+	"textdomain": "poll",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
