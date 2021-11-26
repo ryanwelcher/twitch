@@ -1,0 +1,24 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "create-block/poll-item",
+	"version": "0.1.0",
+	"title": "Poll Item",
+	"category": "widgets",
+	"description": "A block to display a poll item",
+	"parent": ["create-block/poll"],
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"name": {
+			"type":"string"
+
+		}
+	},
+	"usesContext": ["mycustomcontext/poll"],
+	"textdomain": "create-block",
+	"editorScript": "file:../../../../build/poll-item.js",
+	"editorStyle": "file:../../../../build/poll-item.css",
+	"style": "file:../../../../build/style-poll-item.css"
+}

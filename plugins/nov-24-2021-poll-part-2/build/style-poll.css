@@ -1,0 +1,39 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./includes/block-editor/blocks/poll/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.poll-block ul {
+  padding: 0;
+}
+.poll-block li.poll-item {
+  margin-bottom: 1rem;
+  list-style: none;
+  display: flex;
+  position: relative;
+  border-radius: 0px 5px 5px 0px;
+}
+.poll-block li.poll-item textarea.poll-item__selected {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+.poll-block li.poll-item button {
+  border: none;
+  padding: 1rem;
+}
+.poll-block li.poll-item .option-name {
+  position: absolute;
+  left: 5rem;
+  top: 1rem;
+}
+.poll-block li.poll-item .vote-bar {
+  display: inline-flex;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style-poll.css.map*/

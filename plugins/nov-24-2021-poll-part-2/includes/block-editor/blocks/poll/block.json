@@ -1,0 +1,28 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "create-block/poll",
+	"version": "0.1.0",
+	"title": "Poll Block 2",
+	"category": "widgets",
+	"description": "A block to display a poll",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"title": {
+			"type":"string",
+			"default": "My Fancy Poll"
+		},
+		"color": {
+			"type":"string"
+		}
+	},
+	"providesContext": {
+		"mycustomcontext/poll": "color"
+	},
+	"textdomain": "create-block",
+	"editorScript": "file:../../../../build/poll.js",
+	"editorStyle": "file:../../../../build/poll.css",
+	"style": "file:../../../../build/style-poll.css"
+}

@@ -1,0 +1,43 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ .poll-block {
+
+	ul {
+		padding:0;
+	}
+
+	li.poll-item {
+		margin-bottom: 1rem;
+		list-style: none;
+		display: flex;
+		position: relative;
+		border-radius:0px 5px 5px 0px;
+
+		textarea.poll-item__selected {
+			background:none;
+			border:none;
+			box-shadow: none;
+		}
+
+		button {
+			border: none;
+			padding: 1rem;
+		}
+		.option-name {
+			position: absolute;
+			left: 5rem;
+			top: 1rem;
+		}
+		.vote-bar {
+			display: inline-flex;
+   			align-items: center;
+		}
+	}
+
+}
+
