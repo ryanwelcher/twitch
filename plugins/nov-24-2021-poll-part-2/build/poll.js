@@ -77,6 +77,7 @@ function Edit(_ref) {
       title: newTitleValue
     })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
+    className: "poll-block__content",
     allowedBlocks: ['create-block/poll-item'],
     template: [['create-block/poll-item', {
       name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Option 1', 'nov-24-2021-poll-part-2')
@@ -244,7 +245,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://json.schemastore.org/block.json","apiVersion":2,"name":"create-block/poll","version":"0.1.0","title":"Poll Block 2","category":"widgets","description":"A block to display a poll","supports":{"html":false},"attributes":{"title":{"type":"string","default":"My Fancy Poll"},"color":{"type":"string"}},"providesContext":{"mycustomcontext/poll":"color"},"textdomain":"create-block","editorScript":"file:../../../../build/poll.js","editorStyle":"file:../../../../build/poll.css","style":"file:../../../../build/style-poll.css"}');
+module.exports = JSON.parse('{"$schema":"https://json.schemastore.org/block.json","apiVersion":2,"name":"create-block/poll","version":"0.1.0","title":"Poll Block 2","category":"widgets","description":"A block to display a poll","supports":{"html":false},"attributes":{"title":{"type":"string","default":"My Fancy Poll"},"color":{"type":"string"}},"providesContext":{"mycustomcontext/poll":"color"},"textdomain":"create-block","editorScript":"file:../../../../build/poll.js","style":"file:../../../../build/style-poll.css"}');
 
 /***/ })
 

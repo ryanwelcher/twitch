@@ -69,20 +69,24 @@ function Edit(_ref) {
   const {
     name
   } = attributes;
-  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-    className: 'poll-item'
-  });
   const {
     'mycustomcontext/poll': bgColor
   } = context;
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
+    className: 'poll-item',
+    style: {
+      border: `solid 1px ${bgColor}`
+    }
+  });
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", null, "Vote"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "vote-bar",
     style: {
       backgroundColor: bgColor,
-      borderColor: bgColor
+      borderColor: bgColor,
+      width: '100%'
     }
   }, isSelected ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PlainText, {
     value: name,
-    className: "poll-item__selected",
     onChange: newNameValue => setAttributes({
       name: newNameValue
     })

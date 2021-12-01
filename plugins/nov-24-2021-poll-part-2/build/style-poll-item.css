@@ -7,10 +7,30 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-create-block-nov-24-2021-poll-part-2 {
-  background-color: #21759b;
-  color: #fff;
-  padding: 2px;
+li.poll-item {
+  margin-bottom: 1rem;
+  list-style: none;
+  display: flex;
+  position: relative;
+  border-radius: 0px 5px 5px 0px;
+}
+li.poll-item button {
+  border: none;
+  padding: 1rem;
+}
+li.poll-item button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+li.poll-item .option-name {
+  position: absolute;
+  left: 5rem;
+  top: 1rem;
+}
+li.poll-item .vote-bar {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0.5em;
 }
 
 /*# sourceMappingURL=style-poll-item.css.map*/

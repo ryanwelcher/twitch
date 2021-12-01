@@ -30,21 +30,6 @@ function create_block_nov_24_2021_poll_part_2_block_init() {
 
 
 }
-
-add_action('wp_enqueue_scripts', function(){
-	// Register the front end script
-	$front_end_assets_path = plugin_dir_path( __FILE__ ) . 'build/front-end.asset.php';
-	if ( file_exists( $front_end_assets_path ) ) {
-		$front_end_assets = require $front_end_assets_path;
-		wp_register_script(
-			'poll-front-end',
-			plugin_dir_url(__FILE__) . 'build/front-end.js',
-			$front_end_assets['dependencies'],
-			$front_end_assets['version'],
-			true
-		);
-	}
-});
 add_action( 'init', 'create_block_nov_24_2021_poll_part_2_block_init' );
 
 /**
