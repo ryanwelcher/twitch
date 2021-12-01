@@ -44,10 +44,10 @@ function poll_render_callback( $attributes, $content, $block ) {
 	?>
 	<div class="poll-block">
 		<h2 class="poll-block__title"><?php echo esc_html_e( $title ); ?></h2>
-		<span class="message"></span>
 		<ul class="poll-block__content">
 			<?php echo $content; ?>
 		</ul>
+		<span class="message"></span>
 	</div>
 	<?php
 	return ob_get_clean();
@@ -65,7 +65,7 @@ function poll_item_render_callback( $attributes, $content, $block ) {
 	<li class="poll-item" style="border:<?php echo $color;?> solid 1px">
 		<button class="vote-button" data-option-name="<?php echo esc_attr( $name );?>" aria-label="Vote for <?php echo $name;?>">Vote</button>
 		<span class="option-name"><?php echo esc_html_e( $name ); ?></span>
-		<span class="vote-bar" style="background-color:<?php echo $color;?>;width:<?php echo $width;?>%"></span>
+		<span class="vote-bar" data-count="<?php echo esc_attr( rand( 1, 10 ) );?>" style="background-color:<?php echo $color;?>"></span>
 	</li>
 	<?php
 	return ob_get_clean();
