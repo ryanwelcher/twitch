@@ -6,38 +6,12 @@
  */
 
  .poll-block {
+	.poll-block__title {
+		margin-bottom: 1rem;
+	}
 
-	ul {
+	ul.poll-block__content {
 		padding:0;
 	}
-
-	li.poll-item {
-		margin-bottom: 1rem;
-		list-style: none;
-		display: flex;
-		position: relative;
-		border-radius:0px 5px 5px 0px;
-
-		textarea.poll-item__selected {
-			background:none;
-			border:none;
-			box-shadow: none;
-		}
-
-		button {
-			border: none;
-			padding: 1rem;
-		}
-		.option-name {
-			position: absolute;
-			left: 5rem;
-			top: 1rem;
-		}
-		.vote-bar {
-			display: inline-flex;
-   			align-items: center;
-		}
-	}
-
 }
 

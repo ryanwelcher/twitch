@@ -23,6 +23,5 @@
 	},
 	"textdomain": "create-block",
 	"editorScript": "file:../../../../build/poll.js",
-	"editorStyle": "file:../../../../build/poll.css",
 	"style": "file:../../../../build/style-poll.css"
 }

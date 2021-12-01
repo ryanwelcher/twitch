@@ -4,6 +4,18 @@
  * Replace them with your own styles or remove the file completely.
  */
 
- .wp-block-create-block-nov-24-2021-poll-part-2 {
-	border: 1px dotted #f00;
+li.poll-item {
+	button {
+		background-color: var(--global--color-primary);
+		color: var(--global--color-background);
+	}
+
+	button:hover {
+		background-color: transparent;
+		color: var(--global--color-primary);
+	}
+
+	.vote-bar textarea {
+		box-shadow: none;
+	}
 }
