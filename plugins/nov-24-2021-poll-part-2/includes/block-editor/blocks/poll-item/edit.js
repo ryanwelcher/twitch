@@ -41,17 +41,26 @@ export default function Edit({
 	context,
 }) {
 	const { name } = attributes;
-	const blockProps = useBlockProps({ className: 'poll-item' });
 	const { 'mycustomcontext/poll': bgColor } = context;
+	const blockProps = useBlockProps({
+		className: 'poll-item',
+		style: { border: `solid 1px ${bgColor}` },
+	});
 
 	return (
 		<li {...blockProps}>
 			<button>Vote</button>
-			<span style={{ backgroundColor: bgColor, borderColor: bgColor }}>
+			<span
+				className="vote-bar"
+				style={{
+					backgroundColor: bgColor,
+					borderColor: bgColor,
+					width: '100%',
+				}}
+			>
 				{isSelected ? (
 					<PlainText
 						value={name}
-						className="poll-item__selected"
 						onChange={(newNameValue) =>
 							setAttributes({ name: newNameValue })
 						}

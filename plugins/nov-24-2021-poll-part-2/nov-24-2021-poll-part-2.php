@@ -27,19 +27,39 @@ function create_block_nov_24_2021_poll_part_2_block_init() {
 			array( 'render_callback' => "{$function_name}_render_callback" )
 		);
 	}
+
+
 }
+
+add_action('wp_enqueue_scripts', function(){
+	// Register the front end script
+	$front_end_assets_path = plugin_dir_path( __FILE__ ) . 'build/front-end.asset.php';
+	if ( file_exists( $front_end_assets_path ) ) {
+		$front_end_assets = require $front_end_assets_path;
+		wp_register_script(
+			'poll-front-end',
+			plugin_dir_url(__FILE__) . 'build/front-end.js',
+			$front_end_assets['dependencies'],
+			$front_end_assets['version'],
+			true
+		);
+	}
+});
 add_action( 'init', 'create_block_nov_24_2021_poll_part_2_block_init' );
 
 /**
  * Render the poll block on the frontend.
  */
 function poll_render_callback( $attributes, $content, $block ) {
+
+	wp_enqueue_script( 'poll-front-end' );
 	$title = isset( $attributes['title'] )  ? $attributes['title'] : '';
 	ob_start();
 
 	?>
 	<div class="poll-block">
 		<h2 class="poll-block__title"><?php echo esc_html_e( $title ); ?></h2>
+		<span class="message"></span>
 		<ul class="poll-block__content">
 			<?php echo $content; ?>
 		</ul>
@@ -58,8 +78,8 @@ function poll_item_render_callback( $attributes, $content, $block ) {
 	ob_start();
 	?>
 	<li class="poll-item" style="border:<?php echo $color;?> solid 1px">
-		<button>Vote</button>
-		<span class="option-name"><?php echo $name;?></span>
+		<button class="vote-button" data-option-name="<?php echo esc_attr( $name );?>" aria-label="Vote for <?php echo $name;?>">Vote</button>
+		<span class="option-name"><?php echo esc_html_e( $name ); ?></span>
 		<span class="vote-bar" style="background-color:<?php echo $color;?>;width:<?php echo $width;?>%"></span>
 	</li>
 	<?php

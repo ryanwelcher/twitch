@@ -62,6 +62,7 @@ export default function Edit({ attributes, setAttributes }) {
 					}
 				/>
 				<InnerBlocks
+					className="poll-block__content"
 					allowedBlocks={['create-block/poll-item']}
 					template={[
 						[
