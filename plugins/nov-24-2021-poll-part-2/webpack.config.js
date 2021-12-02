@@ -4,5 +4,6 @@ module.exports = {
 	entry: {
 		poll: './includes/block-editor/blocks/poll',
 		'poll-item': './includes/block-editor/blocks/poll-item',
+		'front-end': './assets/js/front-end.js',
 	},
 };

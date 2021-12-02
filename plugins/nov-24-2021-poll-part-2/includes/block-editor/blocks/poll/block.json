@@ -3,7 +3,7 @@
 	"apiVersion": 2,
 	"name": "create-block/poll",
 	"version": "0.1.0",
-	"title": "Poll Block 2",
+	"title": "Poll Block",
 	"category": "widgets",
 	"description": "A block to display a poll",
 	"supports": {
@@ -16,12 +16,17 @@
 		},
 		"color": {
 			"type":"string"
+		},
+		"textColor":{
+			"type":"string"
 		}
 	},
 	"providesContext": {
-		"mycustomcontext/poll": "color"
+		"twitch-block/poll/color": "color",
+		"twitch-block/poll/text": "textColor"
 	},
 	"textdomain": "create-block",
+	"viewScript": "file:../../../../build/front-end.js",
 	"editorScript": "file:../../../../build/poll.js",
 	"style": "file:../../../../build/style-poll.css"
 }

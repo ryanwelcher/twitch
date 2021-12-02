@@ -20,7 +20,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./includes/block-editor/blocks/poll-item/editor.scss");
 
 
 /**
@@ -44,7 +43,6 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
-
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -70,7 +68,8 @@ function Edit(_ref) {
     name
   } = attributes;
   const {
-    'mycustomcontext/poll': bgColor
+    'twitch-block/poll/color': bgColor,
+    'twitch-block/poll/text': textColor
   } = context;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: 'poll-item',
@@ -83,7 +82,8 @@ function Edit(_ref) {
     style: {
       backgroundColor: bgColor,
       borderColor: bgColor,
-      width: '100%'
+      width: '100%',
+      color: textColor
     }
   }, isSelected ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PlainText, {
     value: name,
@@ -105,8 +105,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./includes/block-editor/blocks/poll-item/style.scss");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block.json */ "./includes/block-editor/blocks/poll-item/block.json");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./includes/block-editor/blocks/poll-item/edit.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./includes/block-editor/blocks/poll-item/editor.scss");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./includes/block-editor/blocks/poll-item/block.json");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./includes/block-editor/blocks/poll-item/edit.js");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -122,6 +123,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
+
 /**
  * Internal dependencies
  */
@@ -130,7 +132,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const {
   name
-} = _block_json__WEBPACK_IMPORTED_MODULE_2__;
+} = _block_json__WEBPACK_IMPORTED_MODULE_3__;
 /**
  * Every block starts by registering a new block type definition.
  *
@@ -141,7 +143,7 @@ const {
   /**
    * @see ./edit.js
    */
-  edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
+  edit: _edit__WEBPACK_IMPORTED_MODULE_4__["default"],
   save: () => null
 });
 
@@ -227,7 +229,7 @@ module.exports = window["wp"]["i18n"];
   \***********************************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://json.schemastore.org/block.json","apiVersion":2,"name":"create-block/poll-item","version":"0.1.0","title":"Poll Item","category":"widgets","description":"A block to display a poll item","parent":["create-block/poll"],"supports":{"html":false},"attributes":{"name":{"type":"string"}},"usesContext":["mycustomcontext/poll"],"textdomain":"create-block","editorScript":"file:../../../../build/poll-item.js","editorStyle":"file:../../../../build/poll-item.css","style":"file:../../../../build/style-poll-item.css"}');
+module.exports = JSON.parse('{"$schema":"https://json.schemastore.org/block.json","apiVersion":2,"name":"create-block/poll-item","version":"0.1.0","title":"Poll Item","category":"widgets","description":"A block to display a poll item","parent":["create-block/poll"],"supports":{"html":false},"attributes":{"name":{"type":"string"}},"usesContext":["twitch-block/poll/color","twitch-block/poll/text"],"textdomain":"create-block","editorScript":"file:../../../../build/poll-item.js","editorStyle":"file:../../../../build/poll-item.css","style":"file:../../../../build/style-poll-item.css"}');
 
 /***/ })
 

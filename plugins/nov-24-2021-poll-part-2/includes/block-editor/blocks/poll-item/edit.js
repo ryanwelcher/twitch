@@ -20,7 +20,6 @@ import { TextControl } from '@wordpress/components';
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
-import './editor.scss';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -41,7 +40,10 @@ export default function Edit({
 	context,
 }) {
 	const { name } = attributes;
-	const { 'mycustomcontext/poll': bgColor } = context;
+	const {
+		'twitch-block/poll/color': bgColor,
+		'twitch-block/poll/text': textColor,
+	} = context;
 	const blockProps = useBlockProps({
 		className: 'poll-item',
 		style: { border: `solid 1px ${bgColor}` },
@@ -56,6 +58,7 @@ export default function Edit({
 					backgroundColor: bgColor,
 					borderColor: bgColor,
 					width: '100%',
+					color: textColor,
 				}}
 			>
 				{isSelected ? (

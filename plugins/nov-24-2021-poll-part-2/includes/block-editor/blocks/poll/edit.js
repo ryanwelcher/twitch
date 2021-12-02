@@ -16,14 +16,16 @@ import {
 	RichText,
 	InnerBlocks,
 	InspectorControls,
+	ContrastChecker,
 } from '@wordpress/block-editor';
 
 import {
 	PanelBody,
 	PanelRow,
-	ColorPicker,
 	ColorPalette,
+	BaseControl,
 } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -44,7 +46,12 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-	const { title, color } = attributes;
+	const { title, color, textColor } = attributes;
+
+	const { 'editor-color-palette': colorPalette } = useSelect((select) =>
+		select('core').getThemeSupports()
+	);
+
 	return (
 		<>
 			<div {...useBlockProps({ className: 'poll-block' })}>
@@ -74,18 +81,36 @@ export default function Edit({ attributes, setAttributes }) {
 				/>
 			</div>
 			<InspectorControls>
-				<PanelBody title={__('Poll Bar Color')} initialOpen={true}>
+				<PanelBody title={__('Poll Colors')} initialOpen={true}>
 					<PanelRow>
-						<ColorPalette
-							colors={[
-								{ name: 'red', color: '#f00' },
-								{ name: 'white', color: '#fff' },
-								{ name: 'blue', color: '#00f' },
-							]}
-							value={color}
-							onChange={(newColor) =>
-								setAttributes({ color: newColor })
-							}
+						<BaseControl
+							label={__('Background Color')}
+							id="background-color"
+						>
+							<ColorPalette
+								colors={colorPalette}
+								value={color}
+								onChange={(newColor) =>
+									setAttributes({ color: newColor })
+								}
+							/>
+						</BaseControl>
+					</PanelRow>
+					<PanelRow>
+						<BaseControl label={__('Text Color')} id="text-color">
+							<ColorPalette
+								colors={colorPalette}
+								value={textColor}
+								onChange={(newColor) =>
+									setAttributes({ textColor: newColor })
+								}
+							/>
+						</BaseControl>
+					</PanelRow>
+					<PanelRow>
+						<ContrastChecker
+							backgroundColor={color}
+							textColor={textColor}
 						/>
 					</PanelRow>
 				</PanelBody>

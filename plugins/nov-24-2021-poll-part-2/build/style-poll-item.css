@@ -26,6 +26,7 @@ li.poll-item .option-name {
   position: absolute;
   left: 5rem;
   top: 1rem;
+  mix-blend-mode: difference;
 }
 li.poll-item .vote-bar {
   display: inline-flex;

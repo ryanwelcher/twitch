@@ -26,10 +26,12 @@
 		position: absolute;
 		left: 5rem;
 		top: 1rem;
+		mix-blend-mode: difference;
 	}
 	.vote-bar {
 		display: inline-flex;
 		align-items: center;
 		padding-left: 0.5em;
+
 	}
 }
