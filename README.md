@@ -126,3 +126,41 @@ Branch: [stream/nov-4-2021](https://github.com/ryanwelcher/twitch/tree/stream/no
 * Created a test to ensure that the block saved test input by the user as the `message` attribute.
 </details>
 
+
+## Nov 18, 2021
+
+Watch: [Creating a Poll block for Gutenberg. Part 1](https://www.youtube.com/watch?v=G6sxo9tpRvA)
+
+Branch: [stream/nov-18-2021](https://github.com/ryanwelcher/twitch/tree/stream/nov-18-2021)
+<details>
+<summary>Click for topics/highlights</summary>
+
+* Started the Poll block using an external React library ( Google Charts) to display the content.
+</details>
+
+## Nov 25, 2021
+
+Watch: [Creating a Poll block for Gutenberg Part 2: The Poll-ening](https://www.youtube.com/watch?v=Tu3QPaJOS7I)
+
+Branch: [stream/nov-24-2021](https://github.com/ryanwelcher/twitch/tree/stream/nov-24-2021)
+<details>
+<summary>Click for topics/highlights</summary>
+
+* Decided that I hated the approach from the last stream and moved to using InnerBlocks.
+* Used block context to pass the color from the main Poll block to the child Poll Item block.
+* CSS hates me and I have removed it from my Christmas card list.
+</details>
+
+## Dec 2, 2021
+
+Watch: [Creating a Poll block for Gutenberg Part 3: The Final Chapter](https://www.youtube.com/watch?v=4bfxzdVVm1o)
+
+Branch: [stream/dec-1-2021](https://github.com/ryanwelcher/twitch/tree/stream/dec-1-2021)
+<details>
+<summary>Click for topics/highlights</summary>
+
+* Finished the Poll Block
+* Wrote the JavaScript to allow the voting and display to happen
+* Used `getThemeSupports()` to retrieve the color palette.
+* I learned about `mix-blend-mode` and LOVE IT. @props to floridaCoderMan 🔥🔥🔥🔥
+</details>
