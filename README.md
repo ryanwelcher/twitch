@@ -7,7 +7,7 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 
 ## Sept 17, 2021
-Watch: [First steam! Let's mess with some custom blocks](https://www.twitch.tv/videos/1151309353)
+Watch: [First steam! Let's mess with some custom blocks](https://www.youtube.com/watch?v=riqDs7nBMGg)
 
 Branch: [stream/sept-17-2021](https://github.com/ryanwelcher/twitch/tree/stream/sept-17-2021)
 
@@ -27,7 +27,7 @@ Branch: [stream/sept-17-2021](https://github.com/ryanwelcher/twitch/tree/stream/
 
 ## Sept 23, 2021
 
-Watch: [Updating the block examples at https://github.com/WordPress/gutenberg-examples](https://www.twitch.tv/videos/1156915530)
+Watch: [Updating the block examples at https://github.com/WordPress/gutenberg-examples](https://www.youtube.com/watch?v=-Twnr1oFnJQ)
 
 Branch: [stream/sept-23-2021](https://github.com/ryanwelcher/twitch/tree/stream/sept-23-2021)
 
@@ -41,7 +41,7 @@ Branch: [stream/sept-23-2021](https://github.com/ryanwelcher/twitch/tree/stream/
 
 ## Sept 30, 2021
 
-Watch: [Converting a shortcode to a custom block.](https://www.twitch.tv/videos/1163471262)
+Watch: [Converting a shortcode to a custom block.](https://www.youtube.com/watch?v=mVuGLI9kbcc)
 
 Branch: [stream/sept-30-2021](https://github.com/ryanwelcher/twitch/tree/stream/sept-30-2021)
 <details>
@@ -55,7 +55,7 @@ Branch: [stream/sept-30-2021](https://github.com/ryanwelcher/twitch/tree/stream/
 
 ## Oct 7, 2021
 
-Watch: [Creating a plugin with @wordpress/create-blocks that has multiple blocks](https://www.twitch.tv/videos/1169960035)
+Watch: [Creating a plugin with @wordpress/create-blocks that has multiple blocks](https://www.youtube.com/watch?v=lwXXckW3dT0)
 
 Branch: [stream/oct-7-2021](https://github.com/ryanwelcher/twitch/tree/stream/oct-7-2021)
 <details>
@@ -70,7 +70,7 @@ Branch: [stream/oct-7-2021](https://github.com/ryanwelcher/twitch/tree/stream/oc
 
 ## Oct 14, 2021
 
-Watch: [Creating an accordion block that uses the InnerBlock component](https://www.twitch.tv/videos/1176495340)
+Watch: [Creating an accordion block that uses the InnerBlock component](https://www.youtube.com/watch?v=ZjYgdf6RKPU)
 
 Branch: [stream/oct-14-2021](https://github.com/ryanwelcher/twitch/tree/stream/oct-14-2021)
 <details>
@@ -81,7 +81,7 @@ Branch: [stream/oct-14-2021](https://github.com/ryanwelcher/twitch/tree/stream/o
 
 ## Oct 21, 2021
 
-Watch: [Building a pre-publish checklist plugin for Gutenberg](https://www.twitch.tv/videos/1182869425)
+Watch: [Building a pre-publish checklist plugin for Gutenberg](https://www.youtube.com/watch?v=ZHmiI1p26Vc)
 
 Branch: [stream/oct-21-2021](https://github.com/ryanwelcher/twitch/tree/stream/oct-21-2021)
 <details>
@@ -96,7 +96,7 @@ Branch: [stream/oct-21-2021](https://github.com/ryanwelcher/twitch/tree/stream/o
 
 ## Oct 28, 2021
 
-Watch: [The @wordpress/create-blocks package now supports local templates - let's give it a spin!](https://www.twitch.tv/videos/1189315667)
+Watch: [The @wordpress/create-blocks package now supports local templates - let's give it a spin!](https://www.youtube.com/watch?v=aH2KK-6kKCM)
 
 Branch: [stream/oct-28-2021](https://github.com/ryanwelcher/twitch/tree/stream/oct-28-2021)
 <details>
@@ -112,7 +112,7 @@ Branch: [stream/oct-28-2021](https://github.com/ryanwelcher/twitch/tree/stream/o
 
 ## Nov 4, 2021
 
-Watch: [Adding e2e tests to blocks.](https://www.twitch.tv/videos/1195746137)
+Watch: [Adding e2e tests to blocks.](https://www.youtube.com/watch?v=pI1hGE3IFqc)
 
 Branch: [stream/nov-4-2021](https://github.com/ryanwelcher/twitch/tree/stream/nov-4-2021)
 <details>
