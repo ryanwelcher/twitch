@@ -164,3 +164,18 @@ Branch: [stream/dec-1-2021](https://github.com/ryanwelcher/twitch/tree/stream/de
 * Used `getThemeSupports()` to retrieve the color palette.
 * I learned about `mix-blend-mode` and LOVE IT. @props to floridaCoderMan 🔥🔥🔥🔥
 </details>
+
+
+## Dec 9, 2021
+
+Watch: [Creating a Meme Generator block](https://www.youtube.com/watch?v=9bE3J64brps)
+
+Branch: [stream/dec-9-2021](https://github.com/ryanwelcher/twitch/tree/stream/dec-9-2021)
+<details>
+<summary>Click for topics/highlights</summary>
+
+* Worked with the `@wordpress/create-block` package
+* Used the useEffect hook to retrieve meme data from an external API and stored it using useState
+* Leveraged the `supports` object in block.json to introduce color and font controls.
+* Leverage the `BlockControls` component to add a custom button to the block toolbar.
+</details>
