@@ -9,24 +9,21 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 # 2021 #
 <details>
-<summary>First steam! Let's mess with some custom blocks</summary>
+<summary>Sept 17, 2021: First steam! Let's mess with some custom blocks</summary>
 
 * [Watch on YouTube](https://www.youtube.com/watch?v=riqDs7nBMGg)
 
 * [Branch](https://github.com/ryanwelcher/twitch/tree/stream/sept-17-2021)
 
-<details>
-<summary>Click for topics/highlights</summary>
-
-* We talked about creating blocks from scratch using [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
-* Demonstrated the differences between Dynamic and Static blocks
-* Showed how to save attributes in a block.
-* Used the [`@wordpress/create-block](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-create-block/) package to scaffold a new block. 🔥🔥🔥🔥
-* Talked about using how to get multiple blocks in a plugin ( code was never completed)
-* Audio issues 😞
-* Ryan not able to type while people watch ( recurring theme...)
-* Worked with `getEntityRecords`, `isResolving`, and `invalidateResolver` to display posts in the Block Editor. Inspired by [this blog post](https://ryanwelcher.com/2021/08/requesting-data-in-gutenberg-with-getentityrecords/).
-</details>
+* Topics/Highlights:
+	* We talked about creating blocks from scratch using [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
+	Demonstrated the differences between Dynamic and Static blocks
+	* Showed how to save attributes in a block.
+	* Used the [`@wordpress/create-block](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-create-block/) package to scaffold a new block. 🔥🔥🔥🔥
+	* Talked about using how to get multiple blocks in a plugin ( code was never completed)
+	* Audio issues 😞
+	* Ryan not able to type while people watch ( recurring theme...)
+	* Worked with `getEntityRecords`, `isResolving`, and `invalidateResolver` to display posts in the Block Editor. Inspired by [this blog post](https://ryanwelcher.com/2021/08/requesting-data-in-gutenberg-with-getentityrecords/).
 </details>
 
 ## Sept 17, 2021
