@@ -11,8 +11,9 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 <details>
 <summary>Sept 17, 2021</summary>
 
-### Watch: [First steam! Let's mess with some custom blocks](https://www.youtube.com/watch?v=riqDs7nBMGg)
-### Branch: [stream/sept-17-2021](https://github.com/ryanwelcher/twitch/tree/stream/sept-17-2021)
+Watch: [First steam! Let's mess with some custom blocks](https://www.youtube.com/watch?v=riqDs7nBMGg)
+
+Branch: [stream/sept-17-2021](https://github.com/ryanwelcher/twitch/tree/stream/sept-17-2021)
 
 <details>
 <summary>Click for topics/highlights</summary>
