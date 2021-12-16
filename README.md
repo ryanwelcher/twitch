@@ -9,7 +9,8 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 # 2021 #
 <details>
-<summary>Sept 17, 2021</summary>
+<summary>Sept 17, 2021: Watch: [First steam! Let's mess with some custom blocks](https://www.youtube.com/watch?v=riqDs7nBMGg)</summary>
+
 
 Watch: [First steam! Let's mess with some custom blocks](https://www.youtube.com/watch?v=riqDs7nBMGg)
 
