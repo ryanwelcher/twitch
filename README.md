@@ -179,3 +179,18 @@ Branch: [stream/dec-9-2021](https://github.com/ryanwelcher/twitch/tree/stream/de
 * Leveraged the `supports` object in block.json to introduce color and font controls.
 * Leverage the `BlockControls` component to add a custom button to the block toolbar.
 </details>
+
+## Dec 16, 2021
+
+Watch: [Expanding the Meme Generator plugin](https://www.youtube.com/watch?v=fTT_ZIpU-Fk)
+
+Branch: [stream/dec-16-2021](https://github.com/ryanwelcher/twitch/tree/stream/dec-16-2021)
+<details>
+<summary>Click for topics/highlights</summary>
+
+* Added `TabPanel` to the existing `Placeholder` component to be able to choose being images provided by the API or from the Media Library
+* Added the ability to upload and use an image from the Media Library using the `MediaUpload` and `MediaUploadCheck` components.
+* Display the images that are associated with the current post in the same way we're showing the API images.
+* Talked about some great ways to get started with contributing to WordPress
+* Happy Holidays!
+</details>
