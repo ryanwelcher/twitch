@@ -13,12 +13,15 @@ import {
 	Placeholder,
 	ToolbarGroup,
 	ToolbarButton,
+	TabPanel,
 } from '@wordpress/components';
 import { useEffect, useState, Fragment } from '@wordpress/element';
 
 /**
  * Internal dependencies
  */
+import { ApiImageSelect, CustomImageSelect } from './components';
+
 import './editor.scss';
 
 /**
@@ -74,28 +77,35 @@ export default function Edit({ attributes, setAttributes }) {
 						'twitch-steams'
 					)}
 				>
-					{storedImages.length < 1 ? (
-						<div>Loading...</div>
-					) : (
-						<div className="image-select-wrapper">
-							{storedImages.map((meme) => {
-								const { id, url, name } = meme;
+					<TabPanel
+						className="my-tab-panel"
+						activeClass="active-tab"
+						initialTabName="apiImages"
+						onSelect={(tab) => console.log(tab)}
+						tabs={[
+							{
+								name: 'apiImages',
+								title: __('API images', 'twitch-streams'),
+								className: 'api-images',
+							},
+							{
+								name: 'customImages',
+								title: __('Custom images', 'twitch-streams'),
+								className: 'custom',
+							},
+						]}
+					>
+						{({ name }) => {
+							if (name === 'apiImages') {
 								return (
-									<button
-										className="image-select"
-										key={id}
-										onClick={() =>
-											setAttributes({
-												image: meme,
-											})
-										}
-									>
-										<img src={url} width="100" alt={name} />
-									</button>
+									<ApiImageSelect
+										{...{ storedImages, setAttributes }}
+									/>
 								);
-							})}
-						</div>
-					)}
+							}
+							return <CustomImageSelect {...{ setAttributes }} />;
+						}}
+					</TabPanel>
 				</Placeholder>
 			</section>
 		);
