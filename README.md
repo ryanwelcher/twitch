@@ -9,15 +9,15 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 # 2021 #
 <details>
-<summary>Sept 17, 2021: First steam! Let's mess with some custom blocks</summary>
+<summary>First steam! Let's mess with some custom blocks</summary>
 
+* Date Sept 17, 2021
 * [Watch on YouTube](https://www.youtube.com/watch?v=riqDs7nBMGg)
-
 * [Branch](https://github.com/ryanwelcher/twitch/tree/stream/sept-17-2021)
 
 * Topics/Highlights:
 	* We talked about creating blocks from scratch using [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
-	Demonstrated the differences between Dynamic and Static blocks
+	* Demonstrated the differences between Dynamic and Static blocks
 	* Showed how to save attributes in a block.
 	* Used the [`@wordpress/create-block](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-create-block/) package to scaffold a new block. 🔥🔥🔥🔥
 	* Talked about using how to get multiple blocks in a plugin ( code was never completed)
