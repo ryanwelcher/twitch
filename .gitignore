@@ -1,6 +1,7 @@
 themes
 uploads
 plugins/index.php
+plugins/gutenberg
 node_modules
 debug.log
 .vscode
