@@ -1,4 +1,6 @@
-themes
+themes/*
+!themes/twentytwentytwo
+!themes/twitch-theme
 uploads
 plugins/index.php
 plugins/gutenberg
