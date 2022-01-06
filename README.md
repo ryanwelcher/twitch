@@ -3,23 +3,23 @@ This repo stores all of the code I create during streaming. For each stream, I'l
 
 [https://www.twitch.tv/ryanwelchercodes](https://www.twitch.tv/ryanwelchercodes)
 
-All of the streams are also available on my [YouTube channel](https://www.youtube.com/channel/UC_kRIqFHtN8ccB_mTmHyGDg)
+All of the streams are also available on my [YouTube channel](https://www.youtube.com/channel/UC_kRIqFHtN8ccB_mTmHyGDg) but are uploaded after the stream.
 
 # Latest Stream #
 
-## Dec 16, 2021
+## January 6, 2021
 
-Watch: [Expanding the Meme Generator plugin](https://www.youtube.com/watch?v=fTT_ZIpU-Fk)
+Watch: [Creating a block-based theme part 1](https://www.twitch.tv/videos/1254807465)
 
-Branch: [stream/dec-16-2021](https://github.com/ryanwelcher/twitch/tree/stream/dec-16-2021)
+Branch: [stream/jan-6-2022](https://github.com/ryanwelcher/twitch/tree/stream/jan-6-2022)
 <details>
 <summary>Click for topics/highlights</summary>
 
-* Added `TabPanel` to the existing `Placeholder` component to be able to choose being images provided by the API or from the Media Library
-* Added the ability to upload and use an image from the Media Library using the `MediaUpload` and `MediaUploadCheck` components.
-* Display the images that are associated with the current post in the same way we're showing the API images.
-* Talked about some great ways to get started with contributing to WordPress
-* Happy Holidays!
+* Joined by Daisy Olsen
+* Went through how Block Based Themes are structure by examining the TwentyTwentyTwo theme
+* Started creating a theme from scratch
+* Created a couple of templates
+* Used theme.json to define some settings and styles.
 </details>
 
 # 2021 #
