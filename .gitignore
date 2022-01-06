@@ -1,5 +1,5 @@
 themes/*
-!themes/twentytwentytwo
+themes/twentytwentytwo
 !themes/twitch-theme
 uploads
 plugins/index.php
