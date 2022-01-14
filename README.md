@@ -7,7 +7,7 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 # Latest Stream #
 
-## January 6, 2021
+## January 13, 2021
 
 Watch: [Creating a block-based theme part 2](https://www.twitch.tv/videos/1262259658)
 
