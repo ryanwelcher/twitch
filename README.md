@@ -17,7 +17,7 @@ Branch: [stream/jan-13-2022](https://github.com/ryanwelcher/twitch/tree/stream/j
 
 * Joined by Daisy Olsen
 * Created a header.html and footer.html template parts
-* Discovered and issue with the Navigation block that has [already been fixed](https://github.com/WordPress/gutenberg/pull/37718) and will be released with the next version of the Gutenberg plugin.
+* Discovered an issue with the Navigation block that has [already been fixed](https://github.com/WordPress/gutenberg/pull/37718) and will be released with the next version of the Gutenberg plugin.
 * Defined a custom gradient in theme.json
 </details>
 
