@@ -9,17 +9,32 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 ## January 6, 2021
 
-Watch: [Creating a block-based theme part 1](https://www.twitch.tv/videos/1254807465)
+Watch: [Creating a block-based theme part 2](https://www.twitch.tv/videos/1262259658)
 
-Branch: [stream/jan-6-2022](https://github.com/ryanwelcher/twitch/tree/stream/jan-6-2022)
+Branch: [stream/jan-13-2022](https://github.com/ryanwelcher/twitch/tree/stream/jan-13-2022)
 <details>
 <summary>Click for topics/highlights</summary>
 
 * Joined by Daisy Olsen
-* Went through how Block Based Themes are structure by examining the TwentyTwentyTwo theme
-* Started creating a theme from scratch
-* Created a couple of templates
-* Used theme.json to define some settings and styles.
+* Created a header.html and footer.html template parts
+* Discovered and issue with the Navigation block that has [already been fixed](https://github.com/WordPress/gutenberg/pull/37718) and will be released with the next version of the Gutenberg plugin.
+* Defined a custom gradient in theme.json
+</details>
+
+# 2022 #
+<details>
+<summary>Creating a block-based theme part 1</summary>
+
+* Date: Jan 6, 2022
+* [Watch on YouTube](https://www.youtube.com/watch?v=NX_7P2lvuwU)
+* [Branch](https://github.com/ryanwelcher/twitch/tree/stream/jan-6-2022)
+
+* Topics/Highlights:
+	* Joined by Daisy Olsen
+    * Went through how Block Based Themes are structure by examining the TwentyTwentyTwo theme
+    * Started creating a theme from scratch
+    * Created a couple of templates
+    * Used theme.json to define some settings and styles.
 </details>
 
 # 2021 #
