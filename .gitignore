@@ -4,6 +4,7 @@ themes/twentytwentytwo
 uploads
 plugins/index.php
 plugins/gutenberg
+plugins/wp-core-contributions-widget
 node_modules
 debug.log
 .vscode

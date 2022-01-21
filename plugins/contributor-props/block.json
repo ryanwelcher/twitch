@@ -1,0 +1,29 @@
+{
+	"$schema": "http://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "twitch-streams/contributor-props",
+	"version": "0.1.0",
+	"title": "Contributor Props",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Displays props for WordPress and Gutenberg",
+	"attributes": {
+		"title": {
+			"type": "string"
+		},
+		"username": {
+			"type":"string"
+		},
+		"propCount": {
+			"type": "number",
+			"default": 5
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "contributor-props",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
