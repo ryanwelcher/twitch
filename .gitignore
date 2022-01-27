@@ -6,6 +6,7 @@ plugins/index.php
 plugins/gutenberg
 plugins/wp-core-contributions-widget
 node_modules
+vendor
 debug.log
 .vscode
 .DS_Store
