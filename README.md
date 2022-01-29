@@ -27,7 +27,7 @@ Branch: [stream/jan-20-2022](https://github.com/ryanwelcher/twitch/tree/stream/j
 <summary>Creating a block-based theme part 2</summary>
 
 * Date: Jan 13, 2022
-* [Branch](https://github.com/ryanwelcher/twitch/tree/stream/jan-13-2022)
+* [Branch](https://github.com/ryanwelcher/twitch/tree/stream/jan-13-2021)
 
 * Topics/Highlights:
 	* Joined by Daisy Olsen
