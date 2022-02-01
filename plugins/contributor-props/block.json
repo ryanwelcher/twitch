@@ -16,11 +16,17 @@
 		},
 		"propCount": {
 			"type": "number",
-			"default": 5
+			"default": 3
 		}
 	},
 	"supports": {
-		"html": false
+		"html": false,
+		"color": {
+			"text": true
+		},
+		"typography": {
+			"fontSize": true
+		}
 	},
 	"textdomain": "contributor-props",
 	"editorScript": "file:./build/index.js",

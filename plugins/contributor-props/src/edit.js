@@ -32,6 +32,9 @@ import { useEffect, useState } from '@wordpress/element';
  */
 import './editor.scss';
 
+import { STORAGE_KEY, COMMIT_COUNT_MAX, COMMIT_COUNT_MIN } from './constants';
+import commits from './commits';
+
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -49,14 +52,46 @@ export default function Edit({
 	attributes: { title, username, propCount },
 	setAttributes,
 }) {
+	// Full list of commits
 	const [props, setProps] = useState();
+	const [propsToDisplay, setPropsToDisplay] = useState();
+
+	// Initial call to hydrate the commit list for a users.
 	useEffect(() => {
-		fetch(
-			`https://api.github.com/repos/WordPress/Gutenberg/commits?author=${username}&per_page=${propCount}`
-		)
-			.then((response) => response.json())
-			.then((data) => console.log(data));
-	}, [username, propCount]);
+		// A fresh block just inserted
+		if (!username) {
+			return;
+		}
+		const storedData = window.sessionStorage.getItem(
+			`${STORAGE_KEY}_${username}`
+		);
+		if (storedData) {
+			setProps(JSON.parse(storedData));
+		} else {
+			// Make the query
+			// because I hit the limit
+			// window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(commits));
+			fetch(
+				`https://api.github.com/repos/WordPress/Gutenberg/commits?author=${username}&per_page=${COMMIT_COUNT_MAX}`
+			)
+				.then((response) => response.json())
+				.then((data) => {
+					//set the data
+					setProps(data);
+					//Set the storage key
+					window.sessionStorage.setItem(
+						`${STORAGE_KEY}_${username}`,
+						JSON.stringify(data)
+					);
+				});
+		}
+	}, [username]);
+
+	useEffect(() => {
+		if (props) {
+			setPropsToDisplay(props.slice(0, propCount));
+		}
+	}, [props, propCount]);
 
 	return (
 		<section {...useBlockProps()}>
@@ -66,28 +101,15 @@ export default function Edit({
 				onChange={(newTitle) => setAttributes({ title: newTitle })}
 				allowedFormats={['core/bold', 'core/italic']}
 			/>
-			{props ? (
+			{propsToDisplay ? (
 				<ul>
-					<li>
-						<a href="#" rel="noopener noreferrer">
-							[#12345]
-						</a>
-					</li>
-					<li>
-						<a href="#" rel="noopener noreferrer">
-							[#12345]
-						</a>
-					</li>
-					<li>
-						<a href="#" rel="noopener noreferrer">
-							[#12345]
-						</a>
-					</li>
-					<li>
-						<a href="#" rel="noopener noreferrer">
-							[#12345]
-						</a>
-					</li>
+					{propsToDisplay.map(({ sha, commit: { message } }) => {
+						return (
+							<li key={sha}>
+								<a href="#">[#{message}]</a>
+							</li>
+						);
+					})}
 				</ul>
 			) : (
 				<p>Loading ...</p>
@@ -109,8 +131,8 @@ export default function Edit({
 						onChange={(newPropCount) =>
 							setAttributes({ propCount: newPropCount })
 						}
-						min={3}
-						max={12}
+						min={COMMIT_COUNT_MIN}
+						max={COMMIT_COUNT_MAX}
 					/>
 				</PanelBody>
 			</InspectorControls>
