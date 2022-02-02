@@ -7,27 +7,41 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 # Latest Stream #
 
-## January 20, 2021
+## January 27, 2021
 
-Watch: [Converting a widget to a custom block](https://www.twitch.tv/videos/12699226)
+Watch: [Converting a widget to a custom block. Part 2](https://www.twitch.tv/videos/1277699417)
 
-Branch: [stream/jan-20-2022](https://github.com/ryanwelcher/twitch/tree/stream/jan-20-2022)
+Branch: [stream/jan-27-2022](https://github.com/ryanwelcher/twitch/tree/stream/jan-27-2022)
 <details>
 <summary>Click for topics/highlights</summary>
 
-* Daisy was feeling under the weather so we switched topics
-* Explored an existing widget to convert into a blocks
-* Scaffolded the files with the `@wordpress/create-block` package
-* Started with retrieving Gutenberg props via their [API](https://docs.github.com/en/rest/reference/commits).
-* Created the attributes and controls to manage the params for the query
+* Used the `useEffect` and `useState` hooks
+* Added caching for the front end via the [Transient API](https://developer.wordpress.org/apis/handbook/transients/)
 </details>
 
 # 2022 #
 <details>
+<summary>Converting a widget to a custom block. Part 1</summary>
+
+* Date: Jan 20, 2022
+* [Watch on YouTube](https://www.youtube.com/watch?v=ls1_XTfQJmg)
+* [Branch](https://github.com/ryanwelcher/twitch/tree/stream/jan-20-2022)
+
+* Topics/Highlights:
+	* Daisy was feeling under the weather so we switched topics
+	* Explored an existing widget to convert into a blocks
+	* Scaffolded the files with the `@wordpress/create-block` package
+	* Started with retrieving Gutenberg props via their [API](https://docs.github.com/en/rest/reference/commits).
+	* Created the attributes and controls to manage the params for the query
+</details>
+
+<details>
 <summary>Creating a block-based theme part 2</summary>
 
 * Date: Jan 13, 2022
+* [Watch on YouTube](https://www.youtube.com/watch?v=NX_7P2lvuwU)
 * [Branch](https://github.com/ryanwelcher/twitch/tree/stream/jan-13-2022)
+
 
 * Topics/Highlights:
 	* Joined by Daisy Olsen
