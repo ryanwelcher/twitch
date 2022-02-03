@@ -5,6 +5,7 @@ uploads
 plugins/index.php
 plugins/gutenberg
 plugins/wp-core-contributions-widget
+plugins/gutenberg-block-level-locking
 node_modules
 vendor
 debug.log
