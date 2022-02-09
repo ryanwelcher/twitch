@@ -7,19 +7,34 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 # Latest Stream #
 
-## January 27, 2021
+## Feb 3, 2021
 
-Watch: [Converting a widget to a custom block. Part 2](https://www.twitch.tv/videos/1277699417)
+Watch: [Looking at Block locking, create-block, and script packages updates.](https://www.twitch.tv/videos/1285533518)
 
-Branch: [stream/jan-27-2022](https://github.com/ryanwelcher/twitch/tree/stream/jan-27-2022)
+Branch: [stream/feb-3-2022](https://github.com/ryanwelcher/twitch/tree/stream/feb-3-2022)
 <details>
 <summary>Click for topics/highlights</summary>
 
-* Used the `useEffect` and `useState` hooks
-* Added caching for the front end via the [Transient API](https://developer.wordpress.org/apis/handbook/transients/)
+* Demo'd block-level locking using this [repo/plugin.](https://github.com/ryanwelcher/gutenberg-block-level-locking)
+* Demo'd how `@wordpress/scripts` now supports multiple blocks by default.
+* Went through the updates to the `@wordpress/create-block` package.
+* Create a template for the `@wordpress/create-block` package for Dynamic blocks.
+* Published the template to [npm.](https://www.npmjs.com/package/@ryanwelcher/dynamic-block-template)
 </details>
 
 # 2022 #
+<details>
+<summary>Converting a widget to a custom block. Part 2</summary>
+
+* Date: Jan 27, 2022
+* [Watch on YouTube](https://www.youtube.com/watch?v=3E4pcubPkEo&t=2s)
+* [Branch](https://github.com/ryanwelcher/twitch/tree/stream/jan-27-2022)
+
+* Topics/Highlights:
+	* Used the `useEffect` and `useState` hooks
+	* Added caching for the front end via the [Transient API](https://developer.wordpress.org/apis/handbook/transients/)
+</details>
+
 <details>
 <summary>Converting a widget to a custom block. Part 1</summary>
 
