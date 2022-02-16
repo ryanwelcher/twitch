@@ -2,6 +2,7 @@
 	"$schema": "http://schemas.wp.org/trunk/theme.json",
 	"version": 2,
 	"settings": {
+		"appearanceTools": true,
 		"layout": {
 			"contentSize": "650px",
 			"wideSize": "1000px"
@@ -36,6 +37,9 @@
 					"name": "Primary"
 				}
 			]
+		},
+		"custom": {
+			"sidebar-border": "solid 1px var(--wp--preset--color--orange)"
 		}
 	},
 	"styles": {
@@ -52,6 +56,11 @@
 					"background": "var(--wp--preset--color--orange)",
 					"text": "var(--wp--preset--color--dark-gray)"
 				}
+			},
+			"link": {
+				"color": {
+					"text": "var(--wp--preset--color--orange)"
+				}
 			}
 		},
 		"blocks": {
@@ -66,6 +75,18 @@
 			}
 		}
 	},
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header",
+			"title": "Header"
+		},
+		{
+			"area": "footer",
+			"name": "footer",
+			"title": "Footer"
+		}
+	],
 	"customTemplates": [
 		{
 			"name": "page-landing",

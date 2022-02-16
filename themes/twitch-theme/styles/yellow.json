@@ -1,0 +1,20 @@
+{
+	"$schema": "http://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "orange",
+					"color": "yellow",
+					"name": "Red"
+				},
+				{
+					"slug": "dark-gray",
+					"color": "green",
+					"name": "Blue"
+				}
+			]
+		}
+	}
+}

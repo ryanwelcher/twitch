@@ -7,27 +7,70 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 # Latest Stream #
 
-## January 20, 2021
+## Feb 10, 2021
 
-Watch: [Converting a widget to a custom block](https://www.twitch.tv/videos/12699226)
+Watch: [Creating a Block Based Theme with Daisy Olsen. Part 3](https://www.youtube.com/watch?v=kmbiQ6TsYd0)
 
-Branch: [stream/jan-20-2022](https://github.com/ryanwelcher/twitch/tree/stream/jan-20-2022)
+Branch: [stream/feb-10-2022](https://github.com/ryanwelcher/twitch/tree/stream/feb-10-2022)
 <details>
 <summary>Click for topics/highlights</summary>
 
-* Daisy was feeling under the weather so we switched topics
-* Explored an existing widget to convert into a blocks
-* Scaffolded the files with the `@wordpress/create-block` package
-* Started with retrieving Gutenberg props via their [API](https://docs.github.com/en/rest/reference/commits).
-* Created the attributes and controls to manage the params for the query
+* Final stream with Daisy 😞
+* We create a single post with a sidebar
+* We create a 404 page
+* Demo the upcoming style pattern changes
 </details>
 
 # 2022 #
 <details>
+<summary>Looking at Block locking, create-block, and script packages updates.</summary>
+
+* Date: Feb 3, 2022
+* [Watch on YouTube](https://www.youtube.com/watch?v=kmbiQ6TsYd0)
+* [Branch](https://github.com/ryanwelcher/twitch/tree/stream/feb-3-2022)
+
+* Topics/Highlights:
+	* Demo'd block-level locking using this [repo/plugin.](https://github.com/ryanwelcher/gutenberg-block-level-locking)
+	* Demo'd how `@wordpress/scripts` now supports multiple blocks by default.
+	* Went through the updates to the `@wordpress/create-block` package.
+	* Create a template for the `@wordpress/create-block` package for Dynamic blocks.
+	* Published the template to [npm.](https://www.npmjs.com/package/@ryanwelcher/dynamic-block-template)
+</details>
+
+<details>
+<summary>Converting a widget to a custom block. Part 2</summary>
+
+* Date: Jan 27, 2022
+* [Watch on YouTube](https://www.youtube.com/watch?v=3E4pcubPkEo&t=2s)
+* [Branch](https://github.com/ryanwelcher/twitch/tree/stream/jan-27-2022)
+
+* Topics/Highlights:
+	* Used the `useEffect` and `useState` hooks
+	* Added caching for the front end via the [Transient API](https://developer.wordpress.org/apis/handbook/transients/)
+</details>
+
+<details>
+<summary>Converting a widget to a custom block. Part 1</summary>
+
+* Date: Jan 20, 2022
+* [Watch on YouTube](https://www.youtube.com/watch?v=ls1_XTfQJmg)
+* [Branch](https://github.com/ryanwelcher/twitch/tree/stream/jan-20-2022)
+
+* Topics/Highlights:
+	* Daisy was feeling under the weather so we switched topics
+	* Explored an existing widget to convert into a blocks
+	* Scaffolded the files with the `@wordpress/create-block` package
+	* Started with retrieving Gutenberg props via their [API](https://docs.github.com/en/rest/reference/commits).
+	* Created the attributes and controls to manage the params for the query
+</details>
+
+<details>
 <summary>Creating a block-based theme part 2</summary>
 
 * Date: Jan 13, 2022
-* [Branch](https://github.com/ryanwelcher/twitch/tree/stream/jan-13-2021)
+* [Watch on YouTube](https://www.youtube.com/watch?v=NX_7P2lvuwU)
+* [Branch](https://github.com/ryanwelcher/twitch/tree/stream/jan-13-2022)
+
 
 * Topics/Highlights:
 	* Joined by Daisy Olsen
