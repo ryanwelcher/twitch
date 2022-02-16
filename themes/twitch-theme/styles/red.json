@@ -1,0 +1,29 @@
+{
+	"$schema": "http://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "orange",
+					"color": "red",
+					"name": "Red"
+				},
+				{
+					"slug": "dark-gray",
+					"color": "blue",
+					"name": "Blue"
+				}
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"slug": "primary",
+					"fontFamily": "Papyrus",
+					"name": "Primary"
+				}
+			]
+		}
+	}
+}
