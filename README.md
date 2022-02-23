@@ -7,21 +7,33 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 # Latest Stream #
 
-## Feb 10, 2021
+## Feb 17, 2021
 
-Watch: [Creating a Block Based Theme with Daisy Olsen. Part 3](https://www.youtube.com/watch?v=kmbiQ6TsYd0)
+Watch: [Looking at block deprecation strategies.](https://www.twitch.tv/videos/1300955907)
 
-Branch: [stream/feb-10-2022](https://github.com/ryanwelcher/twitch/tree/stream/feb-10-2022)
+Branch: [stream/feb-17-2022](https://github.com/ryanwelcher/twitch/tree/stream/feb-17-2022)
 <details>
 <summary>Click for topics/highlights</summary>
 
-* Final stream with Daisy 😞
-* We create a single post with a sidebar
-* We create a 404 page
-* Demo the upcoming style pattern changes
+* We talk about using deprecations for static blocks.
+* We learn how to convert a static block to a dynamic one
 </details>
 
 # 2022 #
+<details>
+<summary>Creating a Block Based Theme with Daisy Olsen. Part 3.</summary>
+
+* Date: Feb 10, 2022
+* [Watch on YouTube](https://www.youtube.com/watch?v=kmbiQ6TsYd0)
+* [Branch](https://github.com/ryanwelcher/twitch/tree/stream/feb-10-2022)
+
+* Topics/Highlights:
+	* Final stream with Daisy 😞
+	* We create a single post with a sidebar
+	* We create a 404 page
+	* Demo the upcoming style pattern changes
+</details>
+
 <details>
 <summary>Looking at Block locking, create-block, and script packages updates.</summary>
 
