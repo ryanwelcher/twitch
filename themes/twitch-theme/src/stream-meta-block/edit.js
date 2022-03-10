@@ -26,16 +26,15 @@ import './editor.scss';
  * editor. This represents what the editor will render when the block is used.
  *
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
- *
  * @return {WPElement} Element to render.
  */
 export default function Edit() {
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Find Entry Points – hello from the editor!',
-				'find-entry-points'
-			) }
+		<p {...useBlockProps()}>
+			{__(
+				'Create Block Example – hello from the editor!',
+				'create-block-example'
+			)}
 		</p>
 	);
 }

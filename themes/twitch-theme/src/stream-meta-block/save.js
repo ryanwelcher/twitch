@@ -26,8 +26,8 @@ export default function save() {
 	return (
 		<p { ...useBlockProps.save() }>
 			{ __(
-				'Find Entry Points – hello from the saved content!',
-				'find-entry-points'
+				'Create Block Example – hello from the saved content!',
+				'create-block-example'
 			) }
 		</p>
 	);

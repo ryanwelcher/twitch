@@ -234,7 +234,7 @@ module.exports = window["wp"]["i18n"];
   \***********************************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"twitchstreams/second-block","version":"0.1.0","title":"Second Block","category":"design","icon":"smiley","description":"The second block!","supports":{"html":false},"textdomain":"multiple-blocks","editorScript":"file:../../../../build/block-two.js","editorStyle":"file:../../../../build/block-two.css","style":"file:../../../../build/style-block-two.css"}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"twitchstreams/block-two","version":"0.1.0","title":"Second Block","category":"design","icon":"smiley","description":"The second block!","supports":{"html":false},"textdomain":"multiple-blocks","editorScript":"file:../../../../build/block-two.js","editorStyle":"file:../../../../build/block-two.css","style":"file:../../../../build/style-block-two.css"}');
 
 /***/ })
 

@@ -19,13 +19,15 @@ import './style.scss';
  */
 import Edit from './edit';
 import save from './save';
+import json from './block.json';
+const { name } = json;
 
 /**
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType( 'twitchstreams/find-entry-points', {
+registerBlockType(name, {
 	/**
 	 * @see ./edit.js
 	 */
@@ -35,4 +37,4 @@ registerBlockType( 'twitchstreams/find-entry-points', {
 	 * @see ./save.js
 	 */
 	save,
-} );
+});

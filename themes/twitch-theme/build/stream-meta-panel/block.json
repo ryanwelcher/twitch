@@ -1,0 +1,4 @@
+{
+	"name": "twitch-streams/fake",
+	"editorScript": "file:./index.js"
+}

@@ -15,3 +15,10 @@ function twitch_fonts() {
 
 
 add_action( 'wp_enqueue_scripts', 'twitch_fonts' );
+
+
+// Require the CPT file.
+require get_stylesheet_directory() . '/includes/streams-post-type.php';
+// Require the enqueues file.
+require get_stylesheet_directory() . '/includes/enqueues.php';
+require get_stylesheet_directory() . '/includes/blocks.php';
