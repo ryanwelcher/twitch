@@ -1,0 +1,21 @@
+{
+	"name": "stream-post-types",
+	"version": "0.1.0",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"start": "wp-scripts start --webpack-copy-php --output-path=build/block",
+		"build": "wp-scripts build --webpack-copy-php --output-path=build/block",
+		"start:plugin": "wp-scripts start ./stream-meta-panel --output-path=build/plugin",
+		"build:plugin": "wp-scripts build ./stream-meta-panel --output-path=build/plugin",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^22.1.0"
+	}
+}

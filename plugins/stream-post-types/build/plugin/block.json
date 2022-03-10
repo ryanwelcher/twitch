@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "twitch-streams/stream-post-types",
+	"version": "0.1.0",
+	"title": "Stream Post Types",
+	"category": "widgets",
+	"textdomain": "stream-post-types",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
