@@ -1,0 +1,1 @@
+{"version":3,"file":"./style-tailwind-css-styles.css","mappings":";;;AAAA,cAAc;AACd,oBAAoB;AACpB,mBAAmB","sources":["webpack://tailwind-css-integration/./src/tailwind/style.css"],"sourcesContent":["@tailwind base;\n@tailwind components;\n@tailwind utilities;\n"],"names":[],"sourceRoot":""}
