@@ -26,6 +26,21 @@ Branch: [stream/mar-31-2022](https://github.com/ryanwelcher/twitch/tree/stream/m
 
 # 2022 #
 <details>
+<summary>Getting started contributing to Gutenberg and creating a PR for the create-block package.</summary>
+
+* Date: Mar 24, 2021
+* [Watch on YouTube](https://www.youtube.com/watch?v=2AeX-1qeA_g)
+
+* Topics/Highlights:
+	* There is no code for this stream in the repo.
+	* We talk about getting set up locally for contributing to Gutenberg.
+	* We walked through creating a new issue for our feature - [#39722](https://github.com/WordPress/gutenberg/issues/39722)
+	* We added the `npmDevDependencies` template variable to the `@wordpress/create-block` package
+	* We walked through creating a pull request for our changes - [#39723](https://github.com/WordPress/gutenberg/pull/39723)
+	* We got it merged! Huge props to @dgwyer for the suggestion and getting co-contributor credit on the changes!
+</details>
+
+<details></details>
 <summary>Looking at block deprecation strategies.</summary>
 
 * Date: Feb 17, 2021
