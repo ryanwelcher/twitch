@@ -40,7 +40,7 @@ Branch: [stream/mar-31-2022](https://github.com/ryanwelcher/twitch/tree/stream/m
 	* We got it merged! Huge props to @dgwyer for the suggestion and getting co-contributor credit on the changes!
 </details>
 
-<details></details>
+<details>
 <summary>Looking at block deprecation strategies.</summary>
 
 * Date: Feb 17, 2021
@@ -52,9 +52,9 @@ Branch: [stream/mar-31-2022](https://github.com/ryanwelcher/twitch/tree/stream/m
 	* We learn how to convert a static block to a dynamic one
 </details>
 
-<details>
-<summary>Creating a Block Based Theme with Daisy Olsen. Part 3.</summary>
 
+<summary>Creating a Block Based Theme with Daisy Olsen. Part 3.</summary>
+<details>
 * Date: Feb 10, 2022
 * [Watch on YouTube](https://www.youtube.com/watch?v=kmbiQ6TsYd0)
 * [Branch](https://github.com/ryanwelcher/twitch/tree/stream/feb-10-2022)
