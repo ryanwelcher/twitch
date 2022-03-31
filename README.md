@@ -53,8 +53,8 @@ Branch: [stream/mar-31-2022](https://github.com/ryanwelcher/twitch/tree/stream/m
 </details>
 
 
-<summary>Creating a Block Based Theme with Daisy Olsen. Part 3.</summary>
 <details>
+<summary>Creating a Block Based Theme with Daisy Olsen. Part 3.</summary>
 * Date: Feb 10, 2022
 * [Watch on YouTube](https://www.youtube.com/watch?v=kmbiQ6TsYd0)
 * [Branch](https://github.com/ryanwelcher/twitch/tree/stream/feb-10-2022)
