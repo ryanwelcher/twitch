@@ -7,19 +7,36 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 # Latest Stream #
 
-## Feb 17, 2021
+## Mar 31, 2022
 
-Watch: [Looking at block deprecation strategies.](https://www.twitch.tv/videos/1300955907)
+Watch: [Creating a custom admin screen using Gutenberg packages and components. Part 1](https://www.twitch.tv/videos/1442143491)
 
-Branch: [stream/feb-17-2022](https://github.com/ryanwelcher/twitch/tree/stream/feb-17-2022)
+Branch: [stream/mar-31-2022](https://github.com/ryanwelcher/twitch/tree/stream/mar-31-2022)
 <details>
 <summary>Click for topics/highlights</summary>
 
-* We talk about using deprecations for static blocks.
-* We learn how to convert a static block to a dynamic one
+* Registered a new admin page for the plugin settings page.
+* Used `render` from the `@wordpress/element` package to render our basic settings page.
+* Messed around with the `<TabPanel />` component to manage the different sections of the page.
+* Learned a great trick to enqueue the matching CSS for any package we reference.
+* Set up a new option to save our data.
+* Used `getEntityProp` hook to access our setting.
+* Learned that although we can set the value of the option using the hook in state, we have to also used `saveEditedEntityRecord` to persist the change in the database.
 </details>
 
 # 2022 #
+<details>
+<summary>Looking at block deprecation strategies.</summary>
+
+* Date: Feb 17, 2021
+* [Watch on YouTube](https://www.youtube.com/watch?v=BWXcQEbVSx8)
+* [Branch](https://github.com/ryanwelcher/twitch/tree/stream/feb-17-2022)
+
+* Topics/Highlights:
+	* We talk about using deprecations for static blocks.
+	* We learn how to convert a static block to a dynamic one
+</details>
+
 <details>
 <summary>Creating a Block Based Theme with Daisy Olsen. Part 3.</summary>
 
