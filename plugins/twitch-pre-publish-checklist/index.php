@@ -2,6 +2,7 @@
 /**
  * Plugin Name: PrePublish Checklist
  * Description: A pre-publish checklist for content that includes a customizable settings page.
+ * Textdomain: pre-publish-checklist
  *
  * @package PrePublishChecklist
  */
@@ -64,6 +65,9 @@ add_action(
 add_action( 'admin_init', __NAMESPACE__ . '\register_my_setting' );
 add_action( 'rest_api_init', __NAMESPACE__ . '\register_my_setting' );
 
+/**
+ * Register some settings.
+ */
 function register_my_setting() {
 	register_setting(
 		'pre-publish-checklist',
@@ -78,7 +82,7 @@ function register_my_setting() {
 				'schema' => array(
 					'type'       => 'object',
 					'properties' => array(
-						'wordcount' => array(
+						'wordcount'             => array(
 							'type' => 'integer',
 						),
 						'requiredFeaturedImage' => array(

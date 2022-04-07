@@ -1,57 +1,69 @@
-import { TabPanel, Button } from '@wordpress/components';
-import { useState } from '@wordpress/element';
+/**
+ * WordPress dependencies
+ */
+import { __ } from '@wordpress/i18n';
+import { Button, Panel, PanelBody, PanelRow } from '@wordpress/components';
 import { useEntityProp } from '@wordpress/core-data';
-import { useDispatch } from '@wordpress/data';
+import { useDispatch, useSelect } from '@wordpress/data';
+import { useEffect } from '@wordpress/element';
+
+/**
+ * Internal dependencies
+ */
+import './datastore';
+import WordCount from './wordcount';
+import FeaturedImage from './featured-image';
+import { STORE_NAME } from './datastore';
 
 const SettingsScreen = () => {
-	const [demoSetting, setDemoSetting] = useEntityProp(
+	// Retrieve the settings object.
+	const [settings, setSettings] = useEntityProp(
 		'root',
 		'site',
 		'pre-publish-checklist_data'
 	);
+
+	// Dispatch actions.
+	const { initSettings } = useDispatch(STORE_NAME);
 	const { saveEditedEntityRecord } = useDispatch('core');
-	console.log(demoSetting);
-	const [activeTab, setActiveTab] = useState('wordcount');
 
-	const onSelect = (tabName) => {
-		setActiveTab(tabName);
-	};
+	// Gets all settings from the store.
+	const settingsFromState = useSelect((select) =>
+		select(STORE_NAME).getSettings()
+	);
 
+	// Hydrate the state from the database once. IS this wrong?
+	useEffect(() => {
+		if (settings) {
+			initSettings(settings);
+		}
+	}, [settings]);
+
+	// This is bad, we need a better loading process.
+	if (!settings) {
+		return 'LOADING';
+	}
 	return (
 		<div className="wrap">
-			<h1>Twitch Pre-Publish Checklist Settings</h1>
-			<TabPanel
-				className="my-tab-panel"
-				activeClass="active-tab"
-				onSelect={onSelect}
-				tabs={[
-					{
-						name: 'wordcount',
-						title: 'Word Count',
-						className: 'wordcount-tab',
-					},
-					{
-						name: 'tab2',
-						title: 'Tab 2',
-						className: 'tab-two',
-					},
-				]}
-			>
-				{(tab) => <p>{tab.title}</p>}
-			</TabPanel>
-			<Button
-				variant="primary"
-				onClick={() => {
-					setDemoSetting({
-						wordcount: 800,
-						requiredFeaturedImage: true,
-					});
-					// This actually saves...
-					saveEditedEntityRecord('root', 'site');
-				}}
-			>
-				SAVE
-			</Button>
+			<Panel header="Twitch Pre-Publish Checklist Settings">
+				<WordCount />
+				<FeaturedImage />
+				<PanelBody>
+					<PanelRow>
+						<Button
+							variant="primary"
+							onClick={() => {
+								// This tells GB that option has been changed.
+								setSettings(settingsFromState);
+								// This actually saves to the database
+								saveEditedEntityRecord('root', 'site');
+							}}
+						>
+							{__('SAVE', 'pre-publish-checklist')}
+						</Button>
+					</PanelRow>
+				</PanelBody>
+			</Panel>
 		</div>
 	);
 };

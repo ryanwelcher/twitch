@@ -1,15 +1,29 @@
 /**
  * WordPress dependencies
  */
-import { TextControl } from '@wordpress/components';
+import { TextControl, PanelBody, PanelRow } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+import { useDispatch, useSelect } from '@wordpress/data';
+
+import { STORE_NAME } from './datastore';
 
 const WordCount = () => {
+	// Get the count from the state.
+	const wordcount = useSelect((select) => select(STORE_NAME).getWordCount());
+
+	// Update the state.
+	const { setWordCount } = useDispatch(STORE_NAME);
+
 	return (
-		<TextControl
-			label="Additional CSS Class"
-			value={className}
-			onChange={(value) => setClassName(value)}
-		/>
+		<PanelBody title="Word Count Options" initialOpen={true}>
+			<PanelRow>
+				<TextControl
+					label={__('Minimum Word Count', 'pre-publish-checklist')}
+					value={wordcount}
+					onChange={(value) => setWordCount(value)}
+				/>
+			</PanelRow>
+		</PanelBody>
 	);
 };
 export default WordCount;
