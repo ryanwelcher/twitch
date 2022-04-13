@@ -7,24 +7,36 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 # Latest Stream #
 
-## Mar 31, 2022
+## April 7, 2022
 
-Watch: [Creating a custom admin screen using Gutenberg packages and components. Part 1](https://www.twitch.tv/videos/1442143491)
+Watch: [Creating a custom admin screen using Gutenberg packages and components. Part 2](https://www.youtube.com/watch?v=NcLCZxbuwY0)
 
-Branch: [stream/mar-31-2022](https://github.com/ryanwelcher/twitch/tree/stream/mar-31-2022)
+Branch: [stream/apr-7-2022](https://github.com/ryanwelcher/twitch/tree/stream/apr-7-2022)
 <details>
 <summary>Click for topics/highlights</summary>
 
-* Registered a new admin page for the plugin settings page.
-* Used `render` from the `@wordpress/element` package to render our basic settings page.
-* Messed around with the `<TabPanel />` component to manage the different sections of the page.
-* Learned a great trick to enqueue the matching CSS for any package we reference.
-* Set up a new option to save our data.
-* Used `getEntityProp` hook to access our setting.
-* Learned that although we can set the value of the option using the hook in state, we have to also used `saveEditedEntityRecord` to persist the change in the database.
+* Remove the tabs for a better UI
+* Create a custom datastore for our settings
+* Continued to work on the `<WordCount/>` and `<FeaturedImage/>`
 </details>
 
 # 2022 #
+<details>
+<summary>Creating a custom admin screen using Gutenberg packages and components. Part 1</summary>
+
+* Date: Mar 31, 2021
+* [Watch on YouTube](https://www.youtube.com/watch?v=HjLZ4LkRcKo)
+
+* Topics/Highlights:
+	* Registered a new admin page for the plugin settings page.
+	* Used `render` from the `@wordpress/element` package to render our basic settings page.
+	* Messed around with the `<TabPanel />` component to manage the different sections of the page.
+	* Learned a great trick to enqueue the matching CSS for any package we reference.
+	* Set up a new option to save our data.
+	* Used `getEntityProp` hook to access our setting.
+	* Learned that although we can set the value of the option using the hook in state, we have to also used `saveEditedEntityRecord` to persist the change in the database.
+</details>
+
 <details>
 <summary>Getting started contributing to Gutenberg and creating a PR for the create-block package.</summary>
 
