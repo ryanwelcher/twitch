@@ -51,6 +51,29 @@ Branch: [stream/apr-14-2022](https://github.com/ryanwelcher/twitch/tree/stream/a
 </details>
 
 <details>
+<summary>Integrating a custom post type into Gutenberg and Full Site Editing</summary>
+
+* Date: Mar 3, 2021
+* [Watch on YouTube](https://www.youtube.com/watch?v=vr3wgD9IZRA)
+
+* Topics/Highlights:
+	* Scaffolding the plugin using the @wordpress/create-block
+	* Registering the custom post type.
+	* Registering some post meta ( custom fields )
+	* Creating a custom document settings panel to manage the post meta.
+	* Creating a separate build process for our panel.
+	* Manually enqueueing the assets for our panel.
+	* Restricting the JavaScript to only load for the custom post type.
+	* Registering the plugin for our panel.
+	* Accessing the post meta with the useEntityProp hook.
+	* Adding the DatePicker and TextControl controls to our panel.
+	* Registering the block to display our post meta.
+	* Adding a block template to our custom post type
+	* Adding templates to a block theme for our custom post type
+	* Updating the archive template in the Site Editor
+</details>
+
+<details>
 <summary>Getting started contributing to Gutenberg and creating a PR for the create-block package.</summary>
 
 * Date: Mar 24, 2021
