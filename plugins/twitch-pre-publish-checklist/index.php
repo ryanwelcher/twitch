@@ -77,6 +77,7 @@ function register_my_setting() {
 			'default'      => array(
 				'wordcount'             => 500,
 				'requiredFeaturedImage' => false,
+				'requiredCategory'      => true,
 			),
 			'show_in_rest' => array(
 				'schema' => array(
@@ -86,6 +87,9 @@ function register_my_setting() {
 							'type' => 'integer',
 						),
 						'requiredFeaturedImage' => array(
+							'type' => 'boolean',
+						),
+						'requiredCategory'      => array(
 							'type' => 'boolean',
 						),
 					),

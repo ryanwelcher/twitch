@@ -5,44 +5,46 @@ import { ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { useDispatch, useSelect } from '@wordpress/data';
 
+/**
+ * Internal dependencies
+ */
 import { STORE_NAME } from './datastore';
 import SettingsSection from './settings-section';
 
-const FeaturedImage = () => {
+const Category = () => {
 	// Get the count from the state.
-	const imageRequired = useSelect((select) =>
-		select(STORE_NAME).getFeatureImageIsRequired()
+	const requiredCategory = useSelect((select) =>
+		select(STORE_NAME).getCategoryIsRequired()
 	);
 	const userPreferences = useSelect((select) =>
 		select(STORE_NAME).getUserPreferences()
 	);
 
 	// Update the state.
-	const { setFeaturedImageIsRequired, setUserPreferences } =
-		useDispatch(STORE_NAME);
+	const { setCategoryRequired, setUserPreferences } = useDispatch(STORE_NAME);
 
-	const { showFeaturedImage } = userPreferences || {
-		showFeaturedImage: false,
+	const { showCategory } = userPreferences || {
+		showCategory: false,
 	};
 	return (
 		<SettingsSection
-			title="Featured Image Options"
-			initialOpen={showFeaturedImage}
+			title="Category Options"
+			initialOpen={showCategory}
 			onToggle={() => {
 				setUserPreferences({
 					...userPreferences,
-					showFeaturedImage: !showFeaturedImage,
+					showCategory: !showCategory,
 				});
 			}}
 		>
 			<ToggleControl
-				label={__('Require Featured Image', 'pre-publish-checklist')}
-				checked={imageRequired}
+				label={__('Require Category', 'pre-publish-checklist')}
+				checked={requiredCategory}
 				onChange={() => {
-					setFeaturedImageIsRequired(!imageRequired);
+					setCategoryRequired(!requiredCategory);
 				}}
 			/>
 		</SettingsSection>
 	);
 };
-export default FeaturedImage;
+export default Category;

@@ -13,6 +13,7 @@ import { useEffect } from '@wordpress/element';
 import './datastore';
 import WordCount from './wordcount';
 import FeaturedImage from './featured-image';
+import Category from './category';
 import { STORE_NAME } from './datastore';
 
 const SettingsScreen = () => {
@@ -22,7 +23,6 @@ const SettingsScreen = () => {
 		'site',
 		'pre-publish-checklist_data'
 	);
-
 	// Dispatch actions.
 	const { initSettings } = useDispatch(STORE_NAME);
 	const { saveEditedEntityRecord } = useDispatch('core');
@@ -43,11 +43,13 @@ const SettingsScreen = () => {
 	if (!settings) {
 		return 'LOADING';
 	}
+
 	return (
 		<div className="wrap">
 			<Panel header="Twitch Pre-Publish Checklist Settings">
 				<WordCount />
 				<FeaturedImage />
+				<Category />
 				<PanelBody>
 					<PanelRow>
 						<Button

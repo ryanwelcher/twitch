@@ -2,6 +2,73 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/category.js":
+/*!*************************!*\
+  !*** ./src/category.js ***!
+  \*************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _datastore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./datastore */ "./src/datastore.js");
+/* harmony import */ var _settings_section__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./settings-section */ "./src/settings-section.js");
+
+
+/**
+ *  WordPress dependencies
+ */
+
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+const Category = () => {
+  // Get the count from the state.
+  const requiredCategory = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => select(_datastore__WEBPACK_IMPORTED_MODULE_4__.STORE_NAME).getCategoryIsRequired());
+  const userPreferences = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => select(_datastore__WEBPACK_IMPORTED_MODULE_4__.STORE_NAME).getUserPreferences()); // Update the state.
+
+  const {
+    setCategoryRequired,
+    setUserPreferences
+  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useDispatch)(_datastore__WEBPACK_IMPORTED_MODULE_4__.STORE_NAME);
+  const {
+    showCategory
+  } = userPreferences || {
+    showCategory: false
+  };
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_settings_section__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Category Options",
+    initialOpen: showCategory,
+    onToggle: () => {
+      setUserPreferences({ ...userPreferences,
+        showCategory: !showCategory
+      });
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Require Category', 'pre-publish-checklist'),
+    checked: requiredCategory,
+    onChange: () => {
+      setCategoryRequired(!requiredCategory);
+    }
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Category);
+
+/***/ }),
+
 /***/ "./src/datastore.js":
 /*!**************************!*\
   !*** ./src/datastore.js ***!
@@ -23,12 +90,20 @@ const STORE_NAME = 'pre-publish-checklist'; // Default state
 
 const DEFAULT_STATE = {
   wordcount: 250,
-  requiredFeaturedImage: true
+  requiredFeaturedImage: true,
+  requiredCategory: true,
+  userPreferences: {
+    showWordCount: false,
+    showFeaturedImage: true
+  }
 }; // Constants
 
 const SET_WORDCOUNT = 'SET_WORDCOUNT';
 const SET_FEATURE_IMAGE = 'SET_FEATURE_IMAGE';
-const STATE_FROM_DATABASE = 'STATE_FROM_DATABASE'; // Define our actions
+const SET_CATEGORY = 'SET_CATEGORY';
+const STATE_FROM_DATABASE = 'STATE_FROM_DATABASE';
+const FETCH_SETTINGS = 'FETCH_SETTINGS';
+const SET_USER_PREFERENCES = 'SET_USER_PREFERENCES'; // Define our actions
 
 const actions = {
   initSettings(settings) {
@@ -36,6 +111,13 @@ const actions = {
       type: STATE_FROM_DATABASE,
       payload: { ...settings
       }
+    };
+  },
+
+  fetchSettings() {
+    return {
+      type: FETCH_SETTINGS,
+      payload: {}
     };
   },
 
@@ -55,6 +137,24 @@ const actions = {
         requiredFeaturedImage
       }
     };
+  },
+
+  setCategoryRequired(requiredCategory) {
+    return {
+      type: SET_CATEGORY,
+      payload: {
+        requiredCategory
+      }
+    };
+  },
+
+  setUserPreferences(userPreferences) {
+    return {
+      type: SET_USER_PREFERENCES,
+      payload: {
+        userPreferences
+      }
+    };
   }
 
 }; // Define the reducer
@@ -68,7 +168,8 @@ function reducer() {
 
   switch (type) {
     case STATE_FROM_DATABASE:
-      return { ...payload
+      return { ...state,
+        ...payload
       };
 
     case SET_WORDCOUNT:
@@ -86,6 +187,27 @@ function reducer() {
       return { ...state,
         requiredFeaturedImage
       };
+
+    case SET_CATEGORY:
+      const {
+        requiredCategory
+      } = payload;
+      return { ...state,
+        requiredCategory
+      };
+
+    case SET_USER_PREFERENCES:
+      const {
+        userPreferences
+      } = payload;
+
+      if (userPreferences) {
+        window.localStorage.setItem('pre-publish-checklist-user-preferences', JSON.stringify(userPreferences));
+      }
+
+      return { ...state,
+        userPreferences
+      };
   }
 
   return state;
@@ -101,8 +223,23 @@ const selectors = {
     return state.requiredFeaturedImage;
   },
 
+  getCategoryIsRequired(state) {
+    return state.requiredCategory;
+  },
+
   getSettings(state) {
     return state;
+  },
+
+  getUserPreferences(state) {
+    return state.userPreferences;
+  }
+
+};
+const resolvers = {
+  *getUserPreferences() {
+    const userPreferences = window.localStorage.getItem('pre-publish-checklist-user-preferences') || DEFAULT_STATE.userPreferences;
+    return actions.setUserPreferences(JSON.parse(userPreferences));
   }
 
 }; // Define and register the store.
@@ -110,7 +247,8 @@ const selectors = {
 const store = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.createReduxStore)(STORE_NAME, {
   reducer,
   actions,
-  selectors
+  selectors,
+  resolvers
 });
 (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.register)(store);
 
@@ -132,6 +270,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _datastore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./datastore */ "./src/datastore.js");
+/* harmony import */ var _settings_section__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./settings-section */ "./src/settings-section.js");
 
 
 /**
@@ -142,24 +281,36 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const FeaturedImage = () => {
   // Get the count from the state.
-  const imageRequired = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => select(_datastore__WEBPACK_IMPORTED_MODULE_4__.STORE_NAME).getFeatureImageIsRequired()); // Update the state.
+  const imageRequired = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => select(_datastore__WEBPACK_IMPORTED_MODULE_4__.STORE_NAME).getFeatureImageIsRequired());
+  const userPreferences = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => select(_datastore__WEBPACK_IMPORTED_MODULE_4__.STORE_NAME).getUserPreferences()); // Update the state.
 
   const {
-    setFeaturedImageIsRequired
+    setFeaturedImageIsRequired,
+    setUserPreferences
   } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useDispatch)(_datastore__WEBPACK_IMPORTED_MODULE_4__.STORE_NAME);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+  const {
+    showFeaturedImage
+  } = userPreferences || {
+    showFeaturedImage: false
+  };
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_settings_section__WEBPACK_IMPORTED_MODULE_5__["default"], {
     title: "Featured Image Options",
-    initialOpen: true,
-    onToggle: status => console.log(status)
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    initialOpen: showFeaturedImage,
+    onToggle: () => {
+      setUserPreferences({ ...userPreferences,
+        showFeaturedImage: !showFeaturedImage
+      });
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Require Featured Image', 'pre-publish-checklist'),
     checked: imageRequired,
     onChange: () => {
       setFeaturedImageIsRequired(!imageRequired);
     }
-  })));
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (FeaturedImage);
@@ -186,6 +337,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _datastore__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./datastore */ "./src/datastore.js");
 /* harmony import */ var _wordcount__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./wordcount */ "./src/wordcount.js");
 /* harmony import */ var _featured_image__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./featured-image */ "./src/featured-image.js");
+/* harmony import */ var _category__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./category */ "./src/category.js");
 
 
 /**
@@ -199,6 +351,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -232,7 +385,7 @@ const SettingsScreen = () => {
     className: "wrap"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Panel, {
     header: "Twitch Pre-Publish Checklist Settings"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordcount__WEBPACK_IMPORTED_MODULE_6__["default"], null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_featured_image__WEBPACK_IMPORTED_MODULE_7__["default"], null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordcount__WEBPACK_IMPORTED_MODULE_6__["default"], null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_featured_image__WEBPACK_IMPORTED_MODULE_7__["default"], null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_category__WEBPACK_IMPORTED_MODULE_8__["default"], null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
     variant: "primary",
     onClick: () => {
       // This tells GB that option has been changed.
@@ -244,6 +397,36 @@ const SettingsScreen = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SettingsScreen);
+
+/***/ }),
+
+/***/ "./src/settings-section.js":
+/*!*********************************!*\
+  !*** ./src/settings-section.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+
+
+/**
+ *  WordPress dependencies
+ */
+
+
+const SettingsSection = _ref => {
+  let {
+    children,
+    ...props
+  } = _ref;
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, props, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, null, children));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SettingsSection);
 
 /***/ }),
 
@@ -263,6 +446,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _datastore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./datastore */ "./src/datastore.js");
+/* harmony import */ var _settings_section__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./settings-section */ "./src/settings-section.js");
 
 
 /**
@@ -273,21 +457,34 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const WordCount = () => {
   // Get the count from the state.
-  const wordcount = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => select(_datastore__WEBPACK_IMPORTED_MODULE_4__.STORE_NAME).getWordCount()); // Update the state.
+  const wordcount = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => select(_datastore__WEBPACK_IMPORTED_MODULE_4__.STORE_NAME).getWordCount());
+  const userPreferences = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => select(_datastore__WEBPACK_IMPORTED_MODULE_4__.STORE_NAME).getUserPreferences()); // Update the state.
 
   const {
-    setWordCount
+    setWordCount,
+    setUserPreferences
   } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useDispatch)(_datastore__WEBPACK_IMPORTED_MODULE_4__.STORE_NAME);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+  const {
+    showWordCount
+  } = userPreferences || {
+    showWordCount: false
+  };
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_settings_section__WEBPACK_IMPORTED_MODULE_5__["default"], {
     title: "Word Count Options",
-    initialOpen: true
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    initialOpen: showWordCount,
+    onToggle: () => {
+      setUserPreferences({ ...userPreferences,
+        showWordCount: !showWordCount
+      });
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Minimum Word Count', 'pre-publish-checklist'),
     value: wordcount,
     onChange: value => setWordCount(value)
-  })));
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (WordCount);
