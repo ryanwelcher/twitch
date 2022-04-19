@@ -7,22 +7,79 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 # Latest Stream #
 
-## Feb 17, 2021
+## April 14, 2022
 
-Watch: [Looking at block deprecation strategies.](https://www.twitch.tv/videos/1300955907)
+Watch: [Creating a custom admin screen using Gutenberg packages and components. Part 4](https://www.twitch.tv/videos/1455719593)
 
-Branch: [stream/feb-17-2022](https://github.com/ryanwelcher/twitch/tree/stream/feb-17-2022)
+Branch: [stream/apr-14-2022](https://github.com/ryanwelcher/twitch/tree/stream/apr-14-2022)
 <details>
 <summary>Click for topics/highlights</summary>
 
-* We talk about using deprecations for static blocks.
-* We learn how to convert a static block to a dynamic one
+* Fought with state any my datastore. REALLY need to figure out how controls work.🤦‍♂️
+* Added user preferences for the panel toggle state
+* Abstracted out a new component for creating settings sections.
 </details>
 
 # 2022 #
 <details>
-<summary>Creating a Block Based Theme with Daisy Olsen. Part 3.</summary>
+<summary>Creating a custom admin screen using Gutenberg packages and components. Part 2</summary>
 
+* Date: Apr 7, 2021
+* [Watch on YouTube](https://www.youtube.com/watch?v=NcLCZxbuwY0)
+
+* Topics/Highlights:
+	* Remove the tabs for a better UI
+	* Create a custom datastore for our settings
+	* Continued to work on the `<WordCount/>` and `<FeaturedImage/>`
+</details>
+
+
+<details>
+<summary>Creating a custom admin screen using Gutenberg packages and components. Part 1</summary>
+
+* Date: Mar 31, 2021
+* [Watch on YouTube](https://www.youtube.com/watch?v=HjLZ4LkRcKo)
+
+* Topics/Highlights:
+	* Registered a new admin page for the plugin settings page.
+	* Used `render` from the `@wordpress/element` package to render our basic settings page.
+	* Messed around with the `<TabPanel />` component to manage the different sections of the page.
+	* Learned a great trick to enqueue the matching CSS for any package we reference.
+	* Set up a new option to save our data.
+	* Used `getEntityProp` hook to access our setting.
+	* Learned that although we can set the value of the option using the hook in state, we have to also used `saveEditedEntityRecord` to persist the change in the database.
+</details>
+
+<details>
+<summary>Getting started contributing to Gutenberg and creating a PR for the create-block package.</summary>
+
+* Date: Mar 24, 2021
+* [Watch on YouTube](https://www.youtube.com/watch?v=2AeX-1qeA_g)
+
+* Topics/Highlights:
+	* There is no code for this stream in the repo.
+	* We talk about getting set up locally for contributing to Gutenberg.
+	* We walked through creating a new issue for our feature - [#39722](https://github.com/WordPress/gutenberg/issues/39722)
+	* We added the `npmDevDependencies` template variable to the `@wordpress/create-block` package
+	* We walked through creating a pull request for our changes - [#39723](https://github.com/WordPress/gutenberg/pull/39723)
+	* We got it merged! Huge props to @dgwyer for the suggestion and getting co-contributor credit on the changes!
+</details>
+
+<details>
+<summary>Looking at block deprecation strategies.</summary>
+
+* Date: Feb 17, 2021
+* [Watch on YouTube](https://www.youtube.com/watch?v=BWXcQEbVSx8)
+* [Branch](https://github.com/ryanwelcher/twitch/tree/stream/feb-17-2022)
+
+* Topics/Highlights:
+	* We talk about using deprecations for static blocks.
+	* We learn how to convert a static block to a dynamic one
+</details>
+
+
+<details>
+<summary>Creating a Block Based Theme with Daisy Olsen. Part 3.</summary>
 * Date: Feb 10, 2022
 * [Watch on YouTube](https://www.youtube.com/watch?v=kmbiQ6TsYd0)
 * [Branch](https://github.com/ryanwelcher/twitch/tree/stream/feb-10-2022)
