@@ -7,20 +7,33 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 # Latest Stream #
 
-## April 7, 2022
+## April 14, 2022
 
-Watch: [Creating a custom admin screen using Gutenberg packages and components. Part 2](https://www.youtube.com/watch?v=NcLCZxbuwY0)
+Watch: [Creating a custom admin screen using Gutenberg packages and components. Part 4](https://www.twitch.tv/videos/1455719593)
 
-Branch: [stream/apr-7-2022](https://github.com/ryanwelcher/twitch/tree/stream/apr-7-2022)
+Branch: [stream/apr-14-2022](https://github.com/ryanwelcher/twitch/tree/stream/apr-14-2022)
 <details>
 <summary>Click for topics/highlights</summary>
 
-* Remove the tabs for a better UI
-* Create a custom datastore for our settings
-* Continued to work on the `<WordCount/>` and `<FeaturedImage/>`
+* Fought with state any my datastore. REALLY need to figure out how controls work.🤦‍♂️
+* Added user preferences for the panel toggle state
+* Abstracted out a new component for creating settings sections.
 </details>
 
 # 2022 #
+<details>
+<summary>Creating a custom admin screen using Gutenberg packages and components. Part 2</summary>
+
+* Date: Apr 7, 2021
+* [Watch on YouTube](https://www.youtube.com/watch?v=NcLCZxbuwY0)
+
+* Topics/Highlights:
+	* Remove the tabs for a better UI
+	* Create a custom datastore for our settings
+	* Continued to work on the `<WordCount/>` and `<FeaturedImage/>`
+</details>
+
+
 <details>
 <summary>Creating a custom admin screen using Gutenberg packages and components. Part 1</summary>
 
