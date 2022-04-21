@@ -1,7 +1,4 @@
-
 const Categories = () => {
-	return (
-
-	)
+	return <div>HI</div>;
 };
 export default Categories;

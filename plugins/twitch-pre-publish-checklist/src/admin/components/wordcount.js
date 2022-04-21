@@ -5,7 +5,7 @@ import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { useDispatch, useSelect } from '@wordpress/data';
 
-import { STORE_NAME } from './datastore';
+import { STORE_NAME } from '../datastore/constants';
 import SettingsSection from './settings-section';
 
 const WordCount = () => {

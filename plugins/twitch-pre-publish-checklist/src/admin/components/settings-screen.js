@@ -3,44 +3,27 @@
  */
 import { __ } from '@wordpress/i18n';
 import { Button, Panel, PanelBody, PanelRow } from '@wordpress/components';
-import { useEntityProp } from '@wordpress/core-data';
 import { useDispatch, useSelect } from '@wordpress/data';
-import { useEffect } from '@wordpress/element';
-
+import { useEntityProp } from '@wordpress/core-data'; // do I need this?
 /**
  * Internal dependencies
  */
-import './datastore';
+import '../datastore/index';
 import WordCount from './wordcount';
 import FeaturedImage from './featured-image';
 import Category from './category';
-import { STORE_NAME } from './datastore';
+import { STORE_NAME } from '../datastore/constants';
 
 const SettingsScreen = () => {
-	// Retrieve the settings object.
-	const [settings, setSettings] = useEntityProp(
-		'root',
-		'site',
-		'pre-publish-checklist_data'
-	);
-	// Dispatch actions.
-	const { initSettings } = useDispatch(STORE_NAME);
-	const { saveEditedEntityRecord } = useDispatch('core');
+	const { saveEntityRecord } = useDispatch('core');
 
 	// Gets all settings from the store.
 	const settingsFromState = useSelect((select) =>
 		select(STORE_NAME).getSettings()
 	);
 
-	// Hydrate the state from the database once. IS this wrong?
-	useEffect(() => {
-		if (settings) {
-			initSettings(settings);
-		}
-	}, [settings]);
-
 	// This is bad, we need a better loading process.
-	if (!settings) {
+	if (!settingsFromState) {
 		return 'LOADING';
 	}
 
@@ -55,10 +38,11 @@ const SettingsScreen = () => {
 						<Button
 							variant="primary"
 							onClick={() => {
-								// This tells GB that option has been changed.
-								setSettings(settingsFromState);
 								// This actually saves to the database
-								saveEditedEntityRecord('root', 'site');
+								saveEntityRecord('root', 'site', {
+									'pre-publish-checklist_data':
+										settingsFromState,
+								});
 							}}
 						>
 							{__('SAVE', 'pre-publish-checklist')}

@@ -6,7 +6,7 @@ import { render } from '@wordpress/element';
 /**
  * Internal dependencies
  */
-import SettingsScreen from './settings-screen';
+import SettingsScreen from './components/settings-screen';
 
 // Render the app to the screen.
 render(

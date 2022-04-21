@@ -1,29 +1,19 @@
 /**
  * WordPress dependencies
  */
-
+import apiFetch from '@wordpress/api-fetch';
 import { createReduxStore, register } from '@wordpress/data';
 
-export const STORE_NAME = 'pre-publish-checklist';
-
-// Default state
-export const DEFAULT_STATE = {
-	wordcount: 250,
-	requiredFeaturedImage: true,
-	requiredCategory: true,
-	userPreferences: {
-		showWordCount: false,
-		showFeaturedImage: true,
-	},
-};
-
-// Constants
-const SET_WORDCOUNT = 'SET_WORDCOUNT';
-const SET_FEATURE_IMAGE = 'SET_FEATURE_IMAGE';
-const SET_CATEGORY = 'SET_CATEGORY';
-const STATE_FROM_DATABASE = 'STATE_FROM_DATABASE';
-const FETCH_SETTINGS = 'FETCH_SETTINGS';
-const SET_USER_PREFERENCES = 'SET_USER_PREFERENCES';
+import {
+	DEFAULT_STATE,
+	STATE_FROM_DATABASE,
+	SET_WORDCOUNT,
+	FETCH_SETTINGS,
+	SET_FEATURED_IMAGE,
+	SET_CATEGORY,
+	SET_USER_PREFERENCES,
+	STORE_NAME,
+} from './constants';
 
 // Define our actions
 const actions = {
@@ -51,7 +41,7 @@ const actions = {
 	},
 	setFeaturedImageIsRequired(requiredFeaturedImage) {
 		return {
-			type: SET_FEATURE_IMAGE,
+			type: SET_FEATURED_IMAGE,
 			payload: {
 				requiredFeaturedImage,
 			},
@@ -87,7 +77,7 @@ function reducer(state = DEFAULT_STATE, { type, payload }) {
 				...state,
 				wordcount,
 			};
-		case SET_FEATURE_IMAGE:
+		case SET_FEATURED_IMAGE:
 			const { requiredFeaturedImage } = payload;
 			return {
 				...state,
@@ -127,7 +117,8 @@ const selectors = {
 		return state.requiredCategory;
 	},
 	getSettings(state) {
-		return state;
+		const { userPreferences, ...settings } = state;
+		return settings;
 	},
 	getUserPreferences(state) {
 		return state.userPreferences;
@@ -135,6 +126,10 @@ const selectors = {
 };
 
 const resolvers = {
+	*getSettings() {
+		const settings = yield actions.fetchSettings();
+		return actions.initSettings(settings['pre-publish-checklist_data']);
+	},
 	*getUserPreferences() {
 		const userPreferences =
 			window.localStorage.getItem(
@@ -144,10 +139,17 @@ const resolvers = {
 	},
 };
 
+const controls = {
+	FETCH_SETTINGS() {
+		return apiFetch({ path: '/wp/v2/settings' });
+	},
+};
+
 // Define and register the store.
 const store = createReduxStore(STORE_NAME, {
 	reducer,
 	actions,
+	controls,
 	selectors,
 	resolvers,
 });

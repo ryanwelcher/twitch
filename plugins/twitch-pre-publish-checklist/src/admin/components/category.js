@@ -8,7 +8,7 @@ import { useDispatch, useSelect } from '@wordpress/data';
 /**
  * Internal dependencies
  */
-import { STORE_NAME } from './datastore';
+import { STORE_NAME } from '../datastore/constants';
 import SettingsSection from './settings-section';
 
 const Category = () => {
