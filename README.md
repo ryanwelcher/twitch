@@ -9,18 +9,31 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 ## April 14, 2022
 
-Watch: [Creating a custom admin screen using Gutenberg packages and components. Part 4](https://www.twitch.tv/videos/1455719593)
+Watch: [Creating a custom admin screen using Gutenberg packages and components. Part 4](https://www.twitch.tv/videos/1462692195)
 
-Branch: [stream/apr-14-2022](https://github.com/ryanwelcher/twitch/tree/stream/apr-14-2022)
+Branch: [stream/apr-21-2022](https://github.com/ryanwelcher/twitch/tree/stream/apr-21-2022)
 <details>
 <summary>Click for topics/highlights</summary>
 
-* Fought with state any my datastore. REALLY need to figure out how controls work.🤦‍♂️
-* Added user preferences for the panel toggle state
-* Abstracted out a new component for creating settings sections.
-</details>
+* Briefly discussed [Thunks in Wordpress](https://developer.wordpress.org/block-editor/how-to-guides/thunks/)
+* Completed the datastore.
+* Created the plugin to be loaded into the post editor
+* Integrated the datastore with our plugin
+* Used `<PluginDocumentSettingPanel/>` to provide the user with feedback.
 
 # 2022 #
+<details>
+<summary>Creating a custom admin screen using Gutenberg packages and components. Part 3</summary>
+
+* Date: Apr 14, 2021
+* [Watch on Twitch](https://www.twitch.tv/videos/1455719593)
+
+* Topics/Highlights:
+	* Fought with state any my datastore. REALLY need to figure out how controls work.🤦‍♂️
+	* Added user preferences for the panel toggle state
+	* Abstracted out a new component for creating settings sections.
+</details>
+
 <details>
 <summary>Creating a custom admin screen using Gutenberg packages and components. Part 2</summary>
 
