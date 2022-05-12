@@ -7,21 +7,35 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 # Latest Stream #
 
-## April 14, 2022
+## May 12, 2022
 
-Watch: [Creating a custom admin screen using Gutenberg packages and components. Part 4](https://www.twitch.tv/videos/1462692195)
+Watch: [Reviewing changes to the @wordpress/scripts package and trying out Thunks for the first time!](https://www.twitch.tv/videos/1481878164)
 
-Branch: [stream/apr-21-2022](https://github.com/ryanwelcher/twitch/tree/stream/apr-21-2022)
+Branch: [stream/may-12-2022](https://github.com/ryanwelcher/twitch/tree/stream/may-12-2022)
 <details>
 <summary>Click for topics/highlights</summary>
 
-* Briefly discussed [Thunks in Wordpress](https://developer.wordpress.org/block-editor/how-to-guides/thunks/)
-* Completed the datastore.
-* Created the plugin to be loaded into the post editor
-* Integrated the datastore with our plugin
-* Used `<PluginDocumentSettingPanel/>` to provide the user with feedback.
+* Demonstrated how the `@wordpress/scripts` package handles multiple blocks natively
+* Talked about use the `--webpack-src-dir` flag to set a custom directory name for your blocks
+* Used the `--webpack-copy-php` flag to copy `.php` to the build directory.
+* Converted the data store for our prepublish checklist to use thunks.
 
 # 2022 #
+<details>
+<summary>Creating a custom admin screen using Gutenberg packages and components. Part 4</summary>
+
+* Date: Apr 21, 2021
+* [Watch on Twitch](https://www.twitch.tv/videos/1462692195)
+
+* Topics/Highlights:
+	* Briefly discussed [Thunks in Wordpress](https://developer.wordpress.org/block-editor/how-to-guides/thunks/)
+	* Completed the datastore.
+	* Created the plugin to be loaded into the post editor
+	* Integrated the datastore with our plugin
+	* Used `<PluginDocumentSettingPanel/>` to provide the user with feedback.
+</details>
+
+
 <details>
 <summary>Creating a custom admin screen using Gutenberg packages and components. Part 3</summary>
 
