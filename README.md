@@ -19,6 +19,7 @@ Branch: [stream/may-12-2022](https://github.com/ryanwelcher/twitch/tree/stream/m
 * Talked about use the `--webpack-src-dir` flag to set a custom directory name for your blocks
 * Used the `--webpack-copy-php` flag to copy `.php` to the build directory.
 * Converted the data store for our prepublish checklist to use thunks. **Note: We has to use the `__experimentalUseThunks: true` option but it looks like thunks will [be enabled by default in WordPress 6.0](https://github.com/WordPress/gutenberg/pull/38853)**
+</details>
 
 # 2022 #
 <details>
