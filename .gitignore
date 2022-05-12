@@ -6,6 +6,7 @@ plugins/index.php
 plugins/gutenberg
 plugins/wp-core-contributions-widget
 plugins/gutenberg-block-level-locking
+plugins/user-switching
 node_modules
 vendor
 debug.log

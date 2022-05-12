@@ -11,6 +11,7 @@ import {
 	FETCH_SETTINGS,
 	SET_FEATURED_IMAGE,
 	SET_CATEGORY,
+	SET_SETTING,
 	SET_USER_PREFERENCES,
 	STORE_NAME,
 } from './constants';
@@ -31,6 +32,7 @@ const actions = {
 			payload: {},
 		};
 	},
+
 	setWordCount(wordcount) {
 		return {
 			type: SET_WORDCOUNT,
@@ -61,6 +63,25 @@ const actions = {
 			},
 		};
 	},
+	setSetting(setting, value) {
+		return {
+			type: SET_SETTING,
+			payload: {
+				setting,
+				value,
+			},
+		};
+	},
+	setToggleState(section) {
+		return function ({ select, dispatch }) {
+			const currentValues = select.getUserPreferences();
+			const sectionValue = currentValues[section];
+			dispatch.setUserPreferences({
+				...currentValues,
+				[section]: !sectionValue,
+			});
+		};
+	},
 };
 
 // Define the reducer
@@ -70,6 +91,12 @@ function reducer(state = DEFAULT_STATE, { type, payload }) {
 			return {
 				...state,
 				...payload,
+			};
+		case SET_SETTING:
+			const { setting, value } = payload;
+			return {
+				...state,
+				[setting]: value,
 			};
 		case SET_WORDCOUNT:
 			const { wordcount } = payload;
@@ -126,22 +153,20 @@ const selectors = {
 };
 
 const resolvers = {
-	*getSettings() {
-		const settings = yield actions.fetchSettings();
-		return actions.initSettings(settings['pre-publish-checklist_data']);
+	getSettings() {
+		return async ({ dispatch }) => {
+			const settings = await apiFetch({ path: '/wp/v2/settings' });
+			dispatch.initSettings(settings['pre-publish-checklist_data']);
+		};
 	},
-	*getUserPreferences() {
-		const userPreferences =
-			window.localStorage.getItem(
-				'pre-publish-checklist-user-preferences'
-			) || DEFAULT_STATE.userPreferences;
-		return actions.setUserPreferences(JSON.parse(userPreferences));
-	},
-};
-
-const controls = {
-	FETCH_SETTINGS() {
-		return apiFetch({ path: '/wp/v2/settings' });
+	getUserPreferences() {
+		return ({ dispatch }) => {
+			const userPreferences =
+				window.localStorage.getItem(
+					'pre-publish-checklist-user-preferences'
+				) || DEFAULT_STATE.userPreferences;
+			dispatch.setUserPreferences(JSON.parse(userPreferences));
+		};
 	},
 };
 
@@ -149,9 +174,9 @@ const controls = {
 const store = createReduxStore(STORE_NAME, {
 	reducer,
 	actions,
-	controls,
 	selectors,
 	resolvers,
+	// __experimentalUseThunks: true,
 });
 
 register(store);

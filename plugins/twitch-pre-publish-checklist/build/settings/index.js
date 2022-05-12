@@ -269,7 +269,8 @@ const WordCount = () => {
 
   const {
     setWordCount,
-    setUserPreferences
+    setToggleState,
+    setSetting
   } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useDispatch)(_datastore_constants__WEBPACK_IMPORTED_MODULE_4__.STORE_NAME);
   const {
     showWordCount
@@ -280,14 +281,13 @@ const WordCount = () => {
     title: "Word Count Options",
     initialOpen: showWordCount,
     onToggle: () => {
-      setUserPreferences({ ...userPreferences,
-        showWordCount: !showWordCount
-      });
+      setToggleState('showWordCount', !showWordCount);
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Minimum Word Count', 'pre-publish-checklist'),
-    value: wordcount,
-    onChange: value => setWordCount(value)
+    value: wordcount // onChange={(value) => setWordCount(value)}
+    ,
+    onChange: value => setSetting('wordcount', value)
   }));
 };
 
@@ -307,6 +307,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "FETCH_SETTINGS": function() { return /* binding */ FETCH_SETTINGS; },
 /* harmony export */   "SET_CATEGORY": function() { return /* binding */ SET_CATEGORY; },
 /* harmony export */   "SET_FEATURED_IMAGE": function() { return /* binding */ SET_FEATURED_IMAGE; },
+/* harmony export */   "SET_SETTING": function() { return /* binding */ SET_SETTING; },
 /* harmony export */   "SET_USER_PREFERENCES": function() { return /* binding */ SET_USER_PREFERENCES; },
 /* harmony export */   "SET_WORDCOUNT": function() { return /* binding */ SET_WORDCOUNT; },
 /* harmony export */   "STATE_FROM_DATABASE": function() { return /* binding */ STATE_FROM_DATABASE; },
@@ -321,6 +322,7 @@ const SET_CATEGORY = 'SET_CATEGORY';
 const STATE_FROM_DATABASE = 'STATE_FROM_DATABASE';
 const FETCH_SETTINGS = 'FETCH_SETTINGS';
 const SET_USER_PREFERENCES = 'SET_USER_PREFERENCES';
+const SET_SETTING = 'SET_SETTING';
 
 /***/ }),
 
@@ -393,6 +395,30 @@ const actions = {
         userPreferences
       }
     };
+  },
+
+  setSetting(setting, value) {
+    return {
+      type: _constants__WEBPACK_IMPORTED_MODULE_2__.SET_SETTING,
+      payload: {
+        setting,
+        value
+      }
+    };
+  },
+
+  setToggleState(section) {
+    return function (_ref) {
+      let {
+        select,
+        dispatch
+      } = _ref;
+      const currentValues = select.getUserPreferences();
+      const sectionValue = currentValues[section];
+      dispatch.setUserPreferences({ ...currentValues,
+        [section]: !sectionValue
+      });
+    };
   }
 
 }; // Define the reducer
@@ -408,6 +434,15 @@ function reducer() {
     case _constants__WEBPACK_IMPORTED_MODULE_2__.STATE_FROM_DATABASE:
       return { ...state,
         ...payload
+      };
+
+    case _constants__WEBPACK_IMPORTED_MODULE_2__.SET_SETTING:
+      const {
+        setting,
+        value
+      } = payload;
+      return { ...state,
+        [setting]: value
       };
 
     case _constants__WEBPACK_IMPORTED_MODULE_2__.SET_WORDCOUNT:
@@ -479,22 +514,26 @@ const selectors = {
 
 };
 const resolvers = {
-  *getSettings() {
-    const settings = yield actions.fetchSettings();
-    return actions.initSettings(settings['pre-publish-checklist_data']);
+  getSettings() {
+    return async _ref2 => {
+      let {
+        dispatch
+      } = _ref2;
+      const settings = await _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default()({
+        path: '/wp/v2/settings'
+      });
+      dispatch.initSettings(settings['pre-publish-checklist_data']);
+    };
   },
 
-  *getUserPreferences() {
-    const userPreferences = window.localStorage.getItem('pre-publish-checklist-user-preferences') || _constants__WEBPACK_IMPORTED_MODULE_2__.DEFAULT_STATE.userPreferences;
-    return actions.setUserPreferences(JSON.parse(userPreferences));
-  }
-
-};
-const controls = {
-  FETCH_SETTINGS() {
-    return _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default()({
-      path: '/wp/v2/settings'
-    });
+  getUserPreferences() {
+    return _ref3 => {
+      let {
+        dispatch
+      } = _ref3;
+      const userPreferences = window.localStorage.getItem('pre-publish-checklist-user-preferences') || _constants__WEBPACK_IMPORTED_MODULE_2__.DEFAULT_STATE.userPreferences;
+      dispatch.setUserPreferences(JSON.parse(userPreferences));
+    };
   }
 
 }; // Define and register the store.
@@ -502,9 +541,9 @@ const controls = {
 const store = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.createReduxStore)(_constants__WEBPACK_IMPORTED_MODULE_2__.STORE_NAME, {
   reducer,
   actions,
-  controls,
   selectors,
-  resolvers
+  resolvers // __experimentalUseThunks: true,
+
 });
 (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.register)(store);
 
