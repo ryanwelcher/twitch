@@ -2,6 +2,7 @@
  * WordPress dependencies
  */
 import { registerBlockType, createBlock } from '@wordpress/blocks';
+import { attrs } from '@wordpress/shortcode';
 
 /**
  * Internal dependencies
@@ -39,21 +40,11 @@ registerBlockType(name, {
 				type: 'block',
 				blocks: ['core/shortcode'],
 				isMatch: ({ text }) => {
-					return text.startsWith('[twitch_example');
+					return text && text.startsWith('[twitch_example');
 				},
 				transform: ({ text }) => {
-					const attributes = text
-						.replace(/\[twitch_example|]|/g, '') //remove the shortcode tags
-						.replace(/"\s/g, '|')
-						.replace(/"/g, '')
-						.split('|'); //split the attributes
-
-					const atts = {};
-					attributes.map((item) => {
-						const split = item.trim().split('=');
-						atts[[split[0]]] = split[1];
-					});
-					return createBlock(name, atts);
+					const shortcode = attrs( text );
+					return createBlock(name, shortcode.named);
 				},
 			},
 		],
