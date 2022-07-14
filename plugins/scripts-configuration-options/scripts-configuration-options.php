@@ -34,3 +34,17 @@ function render_the_block() {
 
 	return '<div>OUTPUT!</div>';
 }
+
+add_action(
+	'enqueue_block_editor_assets',
+	function() {
+		$assets = include plugin_dir_path( __FILE__ ) . '/dist/plugins.assets.php';
+		wp_enqueue_script(
+			'test',
+			plugin_dir_url( __FILE__ ) . 'dist/plugins.js',
+			$assets['dependencies'],
+			$assets['version'],
+			true
+		);
+	}
+);
