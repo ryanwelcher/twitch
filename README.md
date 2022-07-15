@@ -8,20 +8,18 @@ All of the streams are also available on my [YouTube channel](https://www.youtub
 
 # Latest Stream
 
-## May 12, 2022
+## July 14, 2022
 
-Watch: [Reviewing changes to the @wordpress/scripts package and trying out Thunks for the first time!](https://www.twitch.tv/videos/1481878164)
+Watch: [Loading block data only when the block is being viewed on the front-end and probably some more examples for the docs.](https://www.twitch.tv/videos/1531582616)
 
-Branch: [stream/may-12-2022](https://github.com/ryanwelcher/twitch/tree/stream/may-12-2022)
+Branch: [stream/july-14-2022](https://github.com/ryanwelcher/twitch/tree/stream/july-14-2022)
 
 <details>
 <summary>Click for topics/highlights</summary>
 
-- Demonstrated how the `@wordpress/scripts` package handles multiple blocks natively
-- Talked about use the `--webpack-src-dir` flag to set a custom directory name for your blocks
-- Used the `--webpack-copy-php` flag to copy `.php` to the build directory.
-- Converted the data store for our prepublish checklist to use thunks. **Note: We has to use the `__experimentalUseThunks: true` option but it looks like thunks will [be enabled by default in WordPress 6.0](https://github.com/WordPress/gutenberg/pull/38853)**
-</details>
+- Set up a dynamic block to use `viewScript` in order to load a JavaScript file on the FE.
+- Worked with IntersectionObserver to do some fun things
+- Learned a lot about useEffect.
 
 # 2022
 
