@@ -1,99 +1,58 @@
 {
-	"$schema": "http://schemas.wp.org/trunk/theme.json",
 	"version": 2,
 	"settings": {
 		"appearanceTools": true,
 		"layout": {
-			"contentSize": "650px",
-			"wideSize": "1000px"
-		},
-		"color": {
-			"defaultPalette": false,
-			"palette": [
-				{
-					"slug": "orange",
-					"color": "#e76f51",
-					"name": "Orange"
-				},
-				{
-					"slug": "dark-gray",
-					"color": "#264653",
-					"name": "Dark Gray"
-				}
-			],
-			"gradients": [
-				{
-					"slug": "orange-to-dark-gray",
-					"gradient": "linear-gradient(180deg,var(--wp--preset--color--orange) 33%,var(--wp--preset--color--dark-gray) 33%)",
-					"name": "Orange to Dark Gray"
-				}
-			]
+			"contentSize": "840px",
+			"wideSize": "1100px"
 		},
 		"typography": {
-			"fontFamilies": [
+			"fluid": true,
+			"fontSizes": [
 				{
-					"slug": "primary",
-					"fontFamily": "'Montserrat', sans-serif",
-					"name": "Primary"
-				}
-			]
-		},
-		"custom": {
-			"sidebar-border": "solid 1px var(--wp--preset--color--orange)"
-		}
-	},
-	"styles": {
-		"color": {
-			"background": "var(--wp--preset--color--dark-gray)",
-			"text": "var(--wp--preset--color--white)"
-		},
-		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--primary)"
-		},
-		"elements": {
-			"h1": {
-				"color": {
-					"background": "var(--wp--preset--color--orange)",
-					"text": "var(--wp--preset--color--dark-gray)"
-				}
-			},
-			"link": {
-				"color": {
-					"text": "var(--wp--preset--color--orange)"
-				}
-			}
-		},
-		"blocks": {
-			"core/navigation": {
-				"color": {
-					"text": "var(--wp--preset--color--white)"
+					"size": ".9rem",
+					"fluid": {
+						"min": "0.9rem",
+						"max": "1.1"
+					},
+					"slug": "small",
+					"name": "Small"
 				},
-				"typography": {
-					"fontSize": "1.2rem",
-					"fontWeight": "bold"
+				{
+					"size": "1rem",
+					"fluid": {
+						"min": "1rem",
+						"max": "1.3rem"
+					},
+					"slug": "medium",
+					"name": "Medium"
+				},
+				{
+					"size": "1.75rem",
+					"slug": "large",
+					"name": "Large"
+				},
+				{
+					"size": "2.25rem",
+					"slug": "x-large",
+					"name": "Extra large"
+				},
+				{
+					"size": "3.5rem",
+					"slug": "huge",
+					"name": "Huge"
+				},
+				{
+					"size": "4.25rem",
+					"slug": "gigantic",
+					"name": "Gigantic"
+				},
+				{
+					"size": "5.75rem",
+					"slug": "colossal",
+					"name": "Colossal"
 				}
-			}
-		}
-	},
-	"templateParts": [
-		{
-			"area": "header",
-			"name": "header",
-			"title": "Header"
-		},
-		{
-			"area": "footer",
-			"name": "footer",
-			"title": "Footer"
-		}
-	],
-	"customTemplates": [
-		{
-			"name": "page-landing",
-			"title": "Page (Landing)",
-			"postTypes": [
-				"page"
 			]
 		}
-	]
+	}
 }
