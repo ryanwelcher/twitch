@@ -36,3 +36,13 @@ function book_setup_post_type() {
     register_post_type( 'book', $args );
 }
 add_action( 'init', 'book_setup_post_type' );
+
+
+
+add_action(
+	'get_block_file_template',
+	function( $template ) {
+		die(var_dump( $template ) );
+		return $template;
+	}
+);

@@ -1,0 +1,58 @@
+{
+	"version": 2,
+	"settings": {
+		"appearanceTools": true,
+		"layout": {
+			"contentSize": "840px",
+			"wideSize": "1100px"
+		},
+		"typography": {
+			"fluid": true,
+			"fontSizes": [
+				{
+					"size": ".9rem",
+					"fluid": {
+						"min": "0.9rem",
+						"max": "1.1"
+					},
+					"slug": "small",
+					"name": "Small"
+				},
+				{
+					"size": "1rem",
+					"fluid": {
+						"min": "1rem",
+						"max": "1.3rem"
+					},
+					"slug": "medium",
+					"name": "Medium"
+				},
+				{
+					"size": "1.75rem",
+					"slug": "large",
+					"name": "Large"
+				},
+				{
+					"size": "2.25rem",
+					"slug": "x-large",
+					"name": "Extra large"
+				},
+				{
+					"size": "3.5rem",
+					"slug": "huge",
+					"name": "Huge"
+				},
+				{
+					"size": "4.25rem",
+					"slug": "gigantic",
+					"name": "Gigantic"
+				},
+				{
+					"size": "5.75rem",
+					"slug": "colossal",
+					"name": "Colossal"
+				}
+			]
+		}
+	}
+}
