@@ -24,11 +24,8 @@ import { useBlockProps } from '@wordpress/block-editor';
  */
 export default function save() {
 	return (
-		<p { ...useBlockProps.save() }>
-			{ __(
-				'Needy Block – hello from the saved content!',
-				'needy-block'
-			) }
+		<p {...useBlockProps.save()}>
+			{__('Needy Block – hello from the saved content!', 'needy-block')}
 		</p>
 	);
 }

@@ -30,11 +30,11 @@ import './editor.scss';
  */
 export default function Edit() {
 	return (
-		<p {...useBlockProps()}>
-			{__(
+		<p { ...useBlockProps() }>
+			{ __(
 				'Create Block Example – hello from the editor!',
 				'create-block-example'
-			)}
+			) }
 		</p>
 	);
 }

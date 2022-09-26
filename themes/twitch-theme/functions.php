@@ -27,22 +27,59 @@ require get_stylesheet_directory() . '/includes/blocks.php';
 
 
 function book_setup_post_type() {
-    $args = array(
-        'public'    => true,
-        'label'     => __( 'Books', 'textdomain' ),
-        'menu_icon' => 'dashicons-book',
-		"show_in_rest" => true,
-    );
-    register_post_type( 'book', $args );
+	$args = array(
+		'public'       => true,
+		'label'        => __( 'Books', 'textdomain' ),
+		'menu_icon'    => 'dashicons-book',
+		'show_in_rest' => true,
+	);
+	register_post_type( 'book', $args );
 }
 add_action( 'init', 'book_setup_post_type' );
 
 
 
 add_action(
-	'get_block_file_template',
-	function( $template ) {
-		die(var_dump( $template ) );
-		return $template;
+	'init',
+	function() {
+
+		$content_type = 'post';
+
+		register_block_pattern(
+			'demo/my-example',
+			array(
+				'title'         => __( 'Demo pattern', 'textdomain' ),
+				'description'   => _x( 'This is my first block pattern', 'Block pattern description', 'textdomain' ),
+				'content'       => '
+					<!-- wp:query {"query":{"perPage":4,"pages":0,"offset":0,"postType":"' . $content_type . '","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"namespace":"twitch-streams-variation","backgroundColor":"black","textColor":"luminous-vivid-amber"} -->
+			<div class="wp-block-query has-luminous-vivid-amber-color has-black-background-color has-text-color has-background"><!-- wp:post-template -->
+			<!-- wp:post-title /-->
+
+			<!-- wp:paragraph -->
+			<p>My Query Loop variation pattern!!!!</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:post-date /-->
+			<!-- /wp:post-template -->
+
+			<!-- wp:query-pagination -->
+			<!-- wp:query-pagination-previous /-->
+
+			<!-- wp:query-pagination-numbers /-->
+
+			<!-- wp:query-pagination-next /-->
+			<!-- /wp:query-pagination -->
+
+			<!-- wp:query-no-results -->
+			<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when a query returns no results."} -->
+			<p></p>
+			<!-- /wp:paragraph -->
+			<!-- /wp:query-no-results --></div>
+			<!-- /wp:query -->',
+				'categories'    => array( 'text', 'query' ),
+				'viewportWidth' => 800,
+				'blockTypes'    => array( 'core/query' ),
+			)
+		);
 	}
 );

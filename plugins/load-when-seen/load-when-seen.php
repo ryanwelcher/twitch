@@ -14,17 +14,12 @@
 
 function create_block_load_when_seen_block_init() {
 
-	register_block_type(
-		plugin_dir_path( __FILE__ ) . 'build',
-		array(
-			'render_callback' => 'create_block_load_when_seen_render_callback',
-		)
-	);
+	register_block_type( plugin_dir_path( __FILE__ ) . 'build' );
 }
 add_action( 'init', 'create_block_load_when_seen_block_init' );
 
 
-function create_block_load_when_seen_render_callback( $atts, $content, $block) {
+function create_block_load_when_seen_render_callback( $atts, $content, $block ) {
 	// Naming convention: '{namespace}-{blockname}-view-script
 	wp_enqueue_script( 'create-block-load-when-seen-view-script' );
 

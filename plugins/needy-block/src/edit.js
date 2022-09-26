@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
-import { __ } from "@wordpress/i18n";
+import { __ } from '@wordpress/i18n';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -15,12 +15,12 @@ import {
 	InspectorControls,
 	store as blockStore,
 	useBlockProps,
-} from "@wordpress/block-editor";
-import { PanelBody, SelectControl } from "@wordpress/components";
-import { useSelect } from "@wordpress/data";
-import { useState } from "@wordpress/element";
+} from '@wordpress/block-editor';
+import { PanelBody, SelectControl } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
+import { useState } from '@wordpress/element';
 
-import "./editor.scss";
+import './editor.scss';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -38,39 +38,40 @@ import "./editor.scss";
  * @return {WPElement} Element to render.
  */
 export default function Edit() {
-	const [selectedBlock, setSelectedBlock] = useState();
+	const [ selectedBlock, setSelectedBlock ] = useState();
 
 	const { blocks, attributes } = useSelect(
-		(select) => {
-			const blocks = select(blockStore)
+		( select ) => {
+			const blocks = select( blockStore )
 				.getBlocks()
-				.filter((block) => {
-					console.log(block);
-					return block.name === "core/embed";
-				});
+				.filter( ( block ) => {
+					console.log( block );
+					return block.name === 'core/embed';
+				} );
 			return {
 				blocks,
 				attributes:
-					blocks && select(blockStore).getBlockAttributes(selectedBlock),
+					blocks &&
+					select( blockStore ).getBlockAttributes( selectedBlock ),
 			};
 		},
-		[selectedBlock]
+		[ selectedBlock ]
 	);
 
 	return (
 		<>
-			<div {...useBlockProps()}>
-				{attributes && (
+			<div { ...useBlockProps() }>
+				{ attributes && (
 					<ul>
-						{Object.entries(attributes).map(
-							([attributeName, attributeValue]) => (
+						{ Object.entries( attributes ).map(
+							( [ attributeName, attributeValue ] ) => (
 								<li
-									key={attributeName}
-								>{`${attributeName} : ${attributeValue}`}</li>
+									key={ attributeName }
+								>{ `${ attributeName } : ${ attributeValue }` }</li>
 							)
-						)}
+						) }
 					</ul>
-				)}
+				) }
 			</div>
 			<InspectorControls>
 				<PanelBody
@@ -81,14 +82,14 @@ export default function Edit() {
 					initialOpen
 				>
 					<SelectControl
-						label={__("Select some users:")}
-						value={selectedBlock}
-						onChange={(clientId) => {
-							setSelectedBlock(clientId);
-						}}
-						options={blocks.map((block) => {
+						label={ __( 'Select some users:' ) }
+						value={ selectedBlock }
+						onChange={ ( clientId ) => {
+							setSelectedBlock( clientId );
+						} }
+						options={ blocks.map( ( block ) => {
 							return { value: block.clientId, label: block.name };
-						})}
+						} ) }
 						__nextHasNoMarginBottom
 					/>
 				</PanelBody>

@@ -91,7 +91,7 @@
 		{
 			"name": "page-landing",
 			"title": "Page (Landing)",
-			"postTypes": ["page"]
+			"postTypes": [ "page" ]
 		}
 	]
 }

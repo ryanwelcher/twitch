@@ -1,16 +1,21 @@
 {
-  "name": "twitch-theme",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "wp-scripts start",
-    "build": "wp-scripts build"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@wordpress/scripts": "^22.1.0"
-  }
+	"name": "twitch-theme",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "wp-scripts start",
+		"build": "wp-scripts build",
+		"update": "wp-scripts packages-update",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"prettier": "@wordpress/prettier-config",
+	"devDependencies": {
+		"@wordpress/scripts": "^24.1.0"
+	}
 }

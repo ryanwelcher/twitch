@@ -9,11 +9,11 @@ add_action(
 		if ( file_exists( $assets_file ) ) {
 			// $assets = include $assets_file;
 			// wp_enqueue_script(
-			// 	'twitch-stream-meta',
-			// 	get_stylesheet_directory_uri() . '/build/stream-meta-panel/index.js',
-			// 	$assets['dependencies'],
-			// 	$assets['version'],
-			// 	true
+			// 'twitch-stream-meta',
+			// get_stylesheet_directory_uri() . '/build/stream-meta-panel/index.js',
+			// $assets['dependencies'],
+			// $assets['version'],
+			// true
 			// );
 		}
 
@@ -29,5 +29,20 @@ add_action(
 				true
 			);
 		}
+
+		// Variations.
+		$variations_assets_file = get_stylesheet_directory() . '/build/variations.asset.php';
+
+		if ( file_exists( $variations_assets_file ) ) {
+			$assets = include $variations_assets_file;
+			wp_enqueue_script(
+				'twitch-stream-variations',
+				get_stylesheet_directory_uri() . '/build/variations.js',
+				$assets['dependencies'],
+				$assets['version'],
+				true
+			);
+		}
+
 	}
 );

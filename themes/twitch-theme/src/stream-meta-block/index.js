@@ -24,7 +24,7 @@ import save from './save';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType('create-block-example/create-block-example', {
+registerBlockType( 'create-block-example/create-block-example', {
 	/**
 	 * @see ./edit.js
 	 */
@@ -34,4 +34,4 @@ registerBlockType('create-block-example/create-block-example', {
 	 * @see ./save.js
 	 */
 	save,
-});
+} );

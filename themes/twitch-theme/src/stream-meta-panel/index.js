@@ -1,29 +1,29 @@
 /**
  * WordPress dependencies
  */
-import { DatePicker, TextControl } from "@wordpress/components";
-import { useEntityProp } from "@wordpress/core-data";
-import { useSelect } from "@wordpress/data";
-import { PluginDocumentSettingPanel } from "@wordpress/edit-post";
-import { registerPlugin } from "@wordpress/plugins";
+import { DatePicker, TextControl } from '@wordpress/components';
+import { useEntityProp } from '@wordpress/core-data';
+import { useSelect } from '@wordpress/data';
+import { PluginDocumentSettingPanel } from '@wordpress/edit-post';
+import { registerPlugin } from '@wordpress/plugins';
 
 const StreamMeta = () => {
 	// Get post type.
 	const postType = useSelect(
-		(select) => select("core/editor").getCurrentPostType(),
+		( select ) => select( 'core/editor' ).getCurrentPostType(),
 		[]
 	);
 
 	// Get the value of meta and a function for updating meta from useEntityProp.
-	const [meta, setMeta] = useEntityProp("postType", postType, "meta");
+	const [ meta, setMeta ] = useEntityProp( 'postType', postType, 'meta' );
 
-	if (postType !== "twitch-stream") {
+	if ( postType !== 'twitch-stream' ) {
 		return null;
 	}
 
 	const {
-		"stream-date": streamDate = new Date(),
-		"stream-duration": streamDuration,
+		'stream-date': streamDate = new Date(),
+		'stream-duration': streamDuration,
 	} = meta;
 	// console.log(meta);
 
@@ -34,29 +34,29 @@ const StreamMeta = () => {
 			className="stream-meta"
 		>
 			<DatePicker
-				currentDate={streamDate}
-				onChange={(newDate) => {
-					setMeta({
+				currentDate={ streamDate }
+				onChange={ ( newDate ) => {
+					setMeta( {
 						...meta,
-						"stream-date": newDate,
-					});
-				}}
+						'stream-date': newDate,
+					} );
+				} }
 			/>
 			<TextControl
 				label=" Stream Duration"
-				value={streamDuration}
-				onChange={(newText) => {
-					setMeta({
+				value={ streamDuration }
+				onChange={ ( newText ) => {
+					setMeta( {
 						...meta,
-						"stream-duration": newText,
-					});
-				}}
+						'stream-duration': newText,
+					} );
+				} }
 			/>
 		</PluginDocumentSettingPanel>
 	);
 };
 
-registerPlugin("twitch-stream-stream-meta", {
+registerPlugin( 'twitch-stream-stream-meta', {
 	render: StreamMeta,
-	icon: "format-video",
-});
+	icon: 'format-video',
+} );

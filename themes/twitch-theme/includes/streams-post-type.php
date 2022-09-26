@@ -49,7 +49,7 @@ function register_stream_post_type() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => 20,
-		'supports'           => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+		'supports'           => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'author' ),
 		'taxonomies'         => array( 'category', 'post_tag' ),
 		'show_in_rest'       => true,
 		'menu_icon'          => 'dashicons-format-video',

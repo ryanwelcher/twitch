@@ -19,5 +19,6 @@
 	"bugs": {
 		"url": "https://github.com/ryanwelcher/twitch/issues"
 	},
-	"homepage": "https://github.com/ryanwelcher/twitch#readme"
+	"homepage": "https://github.com/ryanwelcher/twitch#readme",
+	"prettier": "@wordpress/prettier-config"
 }

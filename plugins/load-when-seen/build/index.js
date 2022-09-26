@@ -183,7 +183,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/load-when-seen","version":"0.1.0","title":"Load When Seen","category":"widgets","supports":{"multiple":false},"textdomain":"load-when-seen","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/load-when-seen","version":"0.1.0","title":"Load When Seen","category":"widgets","supports":{"multiple":false},"textdomain":"load-when-seen","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./template.php"}');
 
 /***/ })
 

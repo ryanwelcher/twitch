@@ -1,0 +1,54 @@
+{
+    "name": "afragen/wordpress-beta-tester",
+    "description": "Allows you to easily upgrade to Beta releases.",
+    "type": "wordpress-plugin",
+    "keywords": [
+        "wordpress",
+        "beta",
+        "test"
+    ],
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Andy Fragen",
+            "email": "andy@thefragens.com",
+            "homepage": "https://thefragens.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Peter Westwood",
+            "homepage": "https://blog.ftwr.co.uk/",
+            "role": "Developer"
+        },
+        {
+            "name": "Maura Teal",
+            "homepage": "https://github.com/mlteal",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/afragen/wordpress-beta-tester"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/afragen/wordpress-beta-tester/issues",
+        "source": "https://github.com/afragen/wordpress-beta-tester"
+    },
+    "prefer-stable": true,
+    "require": {
+        "php": ">=5.6",
+        "wp-cli/wp-config-transformer": "^1.3"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "wp i18n make-pot . languages/wordpress-beta-tester.pot"
+        ]
+    }
+}
