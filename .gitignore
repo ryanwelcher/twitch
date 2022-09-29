@@ -4,9 +4,11 @@ themes/twentytwentytwo
 uploads
 plugins/index.php
 plugins/gutenberg
+plugins/askismet
 plugins/wp-core-contributions-widget
 plugins/gutenberg-block-level-locking
 plugins/user-switching
+plugins/advanced-custom-fields-pro
 node_modules
 vendor
 debug.log
