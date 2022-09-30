@@ -78,6 +78,5 @@ function register_stream_post_type() {
 		)
 	);
 
-
 }
 add_action( 'init', 'register_stream_post_type' );
