@@ -1,12 +1,33 @@
 /**
+ * External dependencies
+ */
+// eslint-disable-next-line import/no-extraneous-dependencies
+import isEqual from 'lodash/isEqual';
+
+/**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { SelectControl, PanelBody, TextControl } from '@wordpress/components';
-import { useSelect } from '@wordpress/data';
-import { store as editorStore } from '@wordpress/editor';
+import {
+	useBlockProps,
+	InspectorControls,
+	RichText,
+} from '@wordpress/block-editor';
+import {
+	SelectControl,
+	PanelBody,
+	TextControl,
+	Button,
+} from '@wordpress/components';
 import { useEntityProp } from '@wordpress/core-data';
+import { useDispatch, useSelect } from '@wordpress/data';
+import apiFetch from '@wordpress/api-fetch';
+import { useState, useRef, useEffect } from '@wordpress/element';
+
+/**
+ * Internal dependencies
+ */
+import { MetaInterfaceType } from './components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -17,12 +38,7 @@ import { useEntityProp } from '@wordpress/core-data';
 import './editor.scss';
 
 /**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
+ * Edit
  */
 export default function Edit({
 	attributes: { metaType, metaKey },
@@ -35,7 +51,48 @@ export default function Edit({
 		'meta',
 		postId
 	);
-	const [acfMeta] = useEntityProp('postType', postType, 'acf', postId);
+
+	const [acfMeta, setACFMeta] = useEntityProp(
+		'postType',
+		postType,
+		'acf',
+		postId
+	);
+
+	const { isSaving, edited, saved } = useSelect((select) => {
+		return {
+			isSaving: select('core/editor').isSavingPost(),
+			edited: select('core/editor').getEditedPostAttribute('acf'),
+			saved: select('core/editor').getCurrentPostAttribute('acf'),
+		};
+	});
+
+	const [acfTypes, setAcfTypes] = useState();
+
+	useEffect(() => {
+		apiFetch({
+			path: `/wp/v2/twitch-stream/${postId}`,
+			method: 'OPTIONS',
+		}).then((options) => {
+			setAcfTypes(options?.schema?.properties?.acf?.properties);
+		});
+	}, []);
+
+	// Save the ACF meta when the post is saved
+	useEffect(() => {
+		if (isSaving && !isEqual(edited, saved)) {
+			return () =>
+				apiFetch({
+					path: `/wp/v2/twitch-stream/${postId}`,
+					method: 'POST',
+					data: {
+						acf: {
+							...acfMeta,
+						},
+					},
+				});
+		}
+	}, [isSaving]);
 
 	const mapMetaToSelect = (metaObject) => {
 		if (!metaObject) {
@@ -51,12 +108,26 @@ export default function Edit({
 
 	return (
 		<div {...useBlockProps()}>
-			<p>
-				Meta value:{' '}
-				{metaType && metaType === 'native'
-					? nativeMeta[metaKey]
-					: acfMeta[metaKey]}
-			</p>
+			<MetaInterfaceType
+				metaKey={metaKey}
+				metaType={metaType}
+				nativeMeta={nativeMeta}
+				acfMeta={acfMeta}
+				acfTypes={acfTypes}
+				onChange={(value) => {
+					if (metaType && metaType === 'native') {
+						setNativeMeta({
+							...nativeMeta,
+							[metaKey]: value,
+						});
+					} else {
+						setACFMeta({
+							...acfMeta,
+							[metaKey]: value,
+						});
+					}
+				}}
+			/>
 			<InspectorControls>
 				<PanelBody title={__('Meta Fields Settings', 'display-meta')}>
 					<SelectControl
@@ -89,13 +160,24 @@ export default function Edit({
 							setAttributes({ metaKey: newKey });
 						}}
 					/>
-					{metaType === 'native' && (
+					{metaType === 'native' ? (
 						<TextControl
 							label={__('Native Meta Value', 'display-meta')}
 							value={nativeMeta[metaKey]}
 							onChange={(value) => {
 								setNativeMeta({
 									...nativeMeta,
+									[metaKey]: value,
+								});
+							}}
+						/>
+					) : (
+						<TextControl
+							label={__('ACF Meta Value', 'display-meta')}
+							value={acfMeta[metaKey]}
+							onChange={(value) => {
+								setACFMeta({
+									...acfMeta,
 									[metaKey]: value,
 								});
 							}}
