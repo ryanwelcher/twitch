@@ -27,7 +27,7 @@ import { useState, useRef, useEffect } from '@wordpress/element';
 /**
  * Internal dependencies
  */
-import { MetaInterfaceType } from './components';
+import { MetaInterfaceType, MyDraggable } from './components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -105,7 +105,6 @@ export default function Edit({
 			};
 		});
 	};
-
 	return (
 		<div {...useBlockProps()}>
 			<MetaInterfaceType

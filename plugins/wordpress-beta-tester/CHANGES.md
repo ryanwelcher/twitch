@@ -1,5 +1,8 @@
 [unreleased]
 
+#### 3.2.3 / 2022-09-29
+* update for PHP 8.1 compatibility
+
 #### 3.2.2 / 2022-06-23
 * correctly use `sanitize_url()` and `esc_url()`
 * fix `WP_Config_Transformer` to get anchor if wp-config.php has been modified
