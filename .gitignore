@@ -11,6 +11,7 @@ plugins/user-switching
 plugins/advanced-custom-fields-pro
 plugins/create-block-theme
 plugins/**/build
+plugins/wordpress-beta/tester
 node_modules
 vendor
 debug.log

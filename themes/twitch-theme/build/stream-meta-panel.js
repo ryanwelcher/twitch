@@ -52,16 +52,6 @@ module.exports = window["wp"]["element"];
 
 /***/ }),
 
-/***/ "@wordpress/hooks":
-/*!*******************************!*\
-  !*** external ["wp","hooks"] ***!
-  \*******************************/
-/***/ (function(module) {
-
-module.exports = window["wp"]["hooks"];
-
-/***/ }),
-
 /***/ "@wordpress/plugins":
 /*!*********************************!*\
   !*** external ["wp","plugins"] ***!
@@ -143,9 +133,9 @@ module.exports = window["wp"]["plugins"];
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/*!****************************************!*\
-  !*** ./src/stream-meta-panel/index.js ***!
-  \****************************************/
+/*!************************************!*\
+  !*** ./stream-meta-panel/index.js ***!
+  \************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
@@ -159,14 +149,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_edit_post__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_edit_post__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/plugins */ "@wordpress/plugins");
 /* harmony import */ var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_plugins__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/hooks */ "@wordpress/hooks");
-/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_6__);
 
 
 /**
  * WordPress dependencies
  */
-
 
 
 
@@ -217,4 +204,4 @@ const StreamMeta = () => {
 }();
 /******/ })()
 ;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=stream-meta-panel.js.map

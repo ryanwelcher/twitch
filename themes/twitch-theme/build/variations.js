@@ -112,8 +112,12 @@ const MY_VARIATION_NAME = 'twitch-streams-variation';
     },
     namespace: MY_VARIATION_NAME
   },
-  allowControls: ['inherit', 'postType', // 'order',
-  'sticky', 'taxQuery', 'search', 'author'],
+  allowedControls: [// 'inherit',
+  // 'postType',
+  'order', 'sticky' // 'taxQuery',
+  // 'search',
+  // 'author',
+  ],
   innerBlocks: [['core/post-template', {}, [['core/post-title'], ['core/post-excerpt']]], ['core/query-pagination'], ['core/query-no-results']]
 });
 }();

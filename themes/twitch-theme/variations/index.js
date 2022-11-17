@@ -23,14 +23,14 @@ registerBlockVariation( 'core/query', {
 		},
 		namespace: MY_VARIATION_NAME,
 	},
-	allowControls: [
-		'inherit',
-		'postType',
-		// 'order',
+	allowedControls: [
+		// 'inherit',
+		// 'postType',
+		'order',
 		'sticky',
-		'taxQuery',
-		'search',
-		'author',
+		// 'taxQuery',
+		// 'search',
+		// 'author',
 	],
 	innerBlocks: [
 		[

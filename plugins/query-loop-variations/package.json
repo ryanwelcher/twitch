@@ -1,0 +1,15 @@
+{
+	"name": "query-loop-variations",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "wp-scripts start ./src/index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@wordpress/scripts": "^24.6.0"
+	}
+}

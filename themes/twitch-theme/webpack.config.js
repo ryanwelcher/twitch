@@ -10,5 +10,6 @@ module.exports = {
 	entry: {
 		...getWebpackEntryPoints(),
 		variations: './variations/index.js',
+		'stream-meta-panel': './stream-meta-panel/index.js',
 	},
 };
