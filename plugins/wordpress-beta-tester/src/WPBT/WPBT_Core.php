@@ -396,7 +396,7 @@ class WPBT_Core {
 			}
 			$next_release        = implode( '.', $next_release );
 			$exploded_version[0] = $next_release;
-			$exploded_version[1] = null;
+			$exploded_version[1] = '';
 		}
 
 		// Set base version for development channel if necessary.

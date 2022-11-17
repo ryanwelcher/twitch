@@ -41,6 +41,19 @@ add_action( 'init', 'create_block_display_meta_block_init' );
  */
 function create_block_display_meta_render_callback( $attributes, $content, $block ) {
 	ob_start();
-	require plugin_dir_path( __FILE__ ) . 'build/template.php';
+	require apply_filters(
+		'meta_block_render_callback',
+		plugin_dir_path( __FILE__ ) . 'build/template.php',
+		$content,
+		$attributes,
+		$block
+	);
 	return ob_get_clean();
 }
+
+add_action(
+	'edit_form_after_title',
+	function() {
+		echo '<input type="text" class="widefat" placeholder="Add secondary title" />';
+	}
+);

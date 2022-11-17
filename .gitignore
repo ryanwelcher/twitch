@@ -9,6 +9,8 @@ plugins/wp-core-contributions-widget
 plugins/gutenberg-block-level-locking
 plugins/user-switching
 plugins/advanced-custom-fields-pro
+plugins/create-block-theme
+plugins/**/build
 node_modules
 vendor
 debug.log

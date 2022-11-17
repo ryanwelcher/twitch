@@ -45,6 +45,9 @@ add_action(
 	function( $suffix ) {
 		$asset_file_page = plugin_dir_path( __FILE__ ) . 'build/settings/index.asset.php';
 		if ( file_exists( $asset_file_page ) && 'toplevel_page_pre-publish-checklist' === $suffix ) {
+
+			wp_enqueue_script( 'wp-core-data' );
+
 			$assets = require_once $asset_file_page;
 			wp_enqueue_script(
 				'pre-publish-settings-script',
@@ -112,7 +115,7 @@ function register_my_setting() {
 						),
 					),
 				),
-		),
+			),
 		)
 	);
 }

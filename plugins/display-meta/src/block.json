@@ -17,6 +17,9 @@
 		},
 		"metaKey": {
 			"type": "string"
+		},
+		"migratedMeta": {
+			"type": "object"
 		}
 	},
 	"usesContext": ["queryId", "postId", "postType"],
