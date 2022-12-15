@@ -24,21 +24,6 @@ require get_stylesheet_directory() . '/includes/enqueues.php';
 require get_stylesheet_directory() . '/includes/blocks.php';
 
 
-
-
-function book_setup_post_type() {
-	$args = array(
-		'public'       => true,
-		'label'        => __( 'Books', 'textdomain' ),
-		'menu_icon'    => 'dashicons-book',
-		'show_in_rest' => true,
-	);
-	register_post_type( 'book', $args );
-}
-add_action( 'init', 'book_setup_post_type' );
-
-
-
 add_action(
 	'init',
 	function() {
