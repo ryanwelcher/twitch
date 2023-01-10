@@ -7,7 +7,7 @@ add_action(
 	'init',
 	function() {
 		// Register the blocks.
-		register_block_type( dirname( __DIR__ ) . '/build/stream-meta-block/' );
+		// register_block_type( dirname( __DIR__ ) . '/build/stream-meta-block/' );
 		// register_block_type( dirname( __DIR__ ) . '/build/some-new-block/' );
 	}
 );
