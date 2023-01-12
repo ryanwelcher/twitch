@@ -11,7 +11,8 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { TextareaControl, PanelBody } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -31,11 +32,39 @@ import './editor.scss';
  */
 export default function Edit() {
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Gb 14 9 Review – hello from the editor!',
-				'gb-14-9-review'
-			) }
-		</p>
+		<div { ...useBlockProps() }>
+			<TextareaControl
+				value="With prop"
+				label="With prop"
+				onChange={ ( val ) => console.log( val ) }
+				help="The description will be displayed in the menu if the current theme supports it."
+			/>
+			<TextareaControl
+				__nextHasNoMarginBottom
+				value="Without prop"
+				label="Without  prop"
+				onChange={ ( val ) => console.log( val ) }
+				help="The description will be displayed in the menu if the current theme supports it."
+			/>
+			<InspectorControls>
+				<PanelBody>
+					<TextareaControl
+						__nextHasNoMarginBottom
+						value="With prop"
+						label="With prop"
+						onChange={ ( val ) => console.log( val ) }
+						help="The description will be displayed in the menu if the current theme supports it."
+					/>
+					<h3>This is athing</h3>
+					<TextareaControl
+						__nextHasNoMarginBottom
+						value="Without prop"
+						label="Without  prop"
+						onChange={ ( val ) => console.log( val ) }
+						help="The description will be displayed in the menu if the current theme supports it."
+					/>
+				</PanelBody>
+			</InspectorControls>
+		</div>
 	);
 }
