@@ -12,6 +12,7 @@ plugins/advanced-custom-fields-pro
 plugins/create-block-theme
 plugins/**/build
 plugins/wordpress-beta/tester
+plugins/advanced-query-loop
 node_modules
 vendor
 debug.log
