@@ -13,6 +13,7 @@ plugins/create-block-theme
 plugins/**/build
 plugins/wordpress-beta/tester
 plugins/advanced-query-loop
+plugins/kodex-posts-likes
 node_modules
 vendor
 debug.log
