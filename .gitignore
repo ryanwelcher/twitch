@@ -14,6 +14,7 @@ plugins/**/build
 plugins/wordpress-beta/tester
 plugins/advanced-query-loop
 plugins/kodex-posts-likes
+plugins/term-selector
 node_modules
 vendor
 debug.log
