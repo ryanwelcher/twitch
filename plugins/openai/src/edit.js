@@ -3,15 +3,21 @@
  */
 import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
-import { Button, Placeholder, TextControl } from '@wordpress/components';
-import { uploadMedia } from '@wordpress/media-utils';
+import {
+	Button,
+	Placeholder,
+	TextControl,
+	Spinner,
+} from '@wordpress/components';
+
 import { useState } from '@wordpress/element';
 
 /**
  * Internal dependencies
  */
 import './editor.scss';
-import { convertImageToBlob, makeRequest } from './helpers';
+import { makeRequest } from './helpers';
+import { ImagePreviews } from './components';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -23,61 +29,55 @@ import { convertImageToBlob, makeRequest } from './helpers';
  */
 export default function Edit() {
 	const [ imageSrcs, setImageSrcs ] = useState( [] );
-	const [ prompt, setPrompt ] = useState();
+	const [ prompt, setPrompt ] = useState( '' );
+	const [ isLoading, setIsLoading ] = useState( false );
+	const [ firstRun, setFirstRun ] = useState( true );
+
+	const placeHolderText = isLoading
+		? __( 'Generating images...' )
+		: __( 'Generate images' );
+
+	const buttonText = firstRun
+		? __( 'Generate images' )
+		: __( 'Generate more images' );
 
 	return (
 		<div { ...useBlockProps() }>
-			{ imageSrcs.map( ( imageSrc ) => (
-				<img
-					src={ `data:image/png;base64,${ imageSrc[ 'b64_json' ] }` }
-					width="100"
-				/>
-			) ) }
-			<Placeholder label={ __( 'Generate an image' ) }>
-				<TextControl
-					value={ prompt }
-					onChange={ ( newPrompt ) => setPrompt( newPrompt ) }
-				/>
-				<Button
-					variant="secondary"
-					b
-					onClick={ async () => {
-						if ( prompt ) {
-							const imageRequest = await makeRequest( prompt );
-							setImageSrcs( imageRequest );
-							console.log( imageRequest );
-							// setImageSrc(
-							// 	`data:image/png;base64,${ imageRequest[ 0 ][ 'b64_json' ] }`
-							// );
-						}
-						return;
-
-						// const image = await importImage( imageRequest, {
-						// 	filename: 'fish.png',
-						// 	alt: 'I am fish with a hat',
-						// 	caption: 'I am fish with a hat',
-						// } );
-						// setImageSrc( image.source_url );
-
-						const testBlob = await convertImageToBlob(
-							imageRequest
-						);
-
-						uploadMedia( {
-							filesList: [
-								new File(
-									[ testBlob ],
-									'yet-another-fish.png'
-								),
-							],
-							onFileChange: ( [ fileObj ] ) =>
-								alert( fileObj.url ),
-							onError: console.error,
-						} );
-					} }
-				>
-					{ __( 'Generate images' ) }
-				</Button>
+			<ImagePreviews imageSrcs={ imageSrcs } />
+			<Placeholder label={ placeHolderText } className="test">
+				<div className="controls">
+					{ isLoading ? (
+						<Spinner />
+					) : (
+						<>
+							<TextControl
+								value={ prompt }
+								onChange={ ( newPrompt ) =>
+									setPrompt( newPrompt )
+								}
+							/>
+							<Button
+								variant="secondary"
+								onClick={ async () => {
+									if ( prompt ) {
+										setIsLoading( true );
+										const imageRequest = await makeRequest(
+											{
+												prompt,
+												size: '1024x1024',
+											}
+										);
+										setImageSrcs( imageRequest );
+										setIsLoading( false );
+										setFirstRun( false );
+									}
+								} }
+							>
+								{ buttonText }
+							</Button>
+						</>
+					) }
+				</div>
 			</Placeholder>
 		</div>
 	);

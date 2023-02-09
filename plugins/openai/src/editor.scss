@@ -5,5 +5,14 @@
  */
 
 .wp-block-twitch-openai {
-	border: 1px dotted #f00;
+	.image-previews {
+		display: flex;
+		justify-content: center;
+		margin: 1.3rem 0;
+		gap: 2em;
+		.image-preview {
+			border: solid 1px var(--wp--preset--color--black);
+			padding: 0;
+		}
+	}
 }

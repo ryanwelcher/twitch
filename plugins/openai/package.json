@@ -12,7 +12,8 @@
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start --webpack-copy-php"
+		"start": "wp-scripts start --webpack-copy-php",
+		"start:hot": "wp-scripts start --hot --webpack-copy-php"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^25.2.0"

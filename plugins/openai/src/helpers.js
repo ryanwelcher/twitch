@@ -60,12 +60,12 @@ const loadImage = ( img ) => {
 	return new Promise( ( resolve ) => ( img.onload = resolve ) );
 };
 
-export async function makeRequest(
-	prompt,
+export async function makeRequest( {
+	prompt = '',
 	numberOfImages = 4,
 	size = '256x256',
-	format = 'b64_json'
-) {
+	format = 'b64_json',
+} ) {
 	const request = await fetch(
 		'https://api.openai.com/v1/images/generations',
 		{
