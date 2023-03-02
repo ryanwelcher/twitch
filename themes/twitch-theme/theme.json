@@ -8,24 +8,9 @@
 		"shadow": {
 			"palette": [
 				{
-					"name": "Natural",
-					"slug": "theme-natural",
-					"shadow": "5px 5px 0px -2px #FFFFFF, 5px 5px #000000"
-				},
-				{
-					"name": "Crisp",
-					"slug": "theme-crisp",
-					"shadow": "5px 5px #000000"
-				},
-				{
-					"name": "Sharp",
-					"slug": "theme-sharp",
-					"shadow": "5px 5px 0 0 #999999"
-				},
-				{
-					"name": "Soft",
-					"slug": "theme-soft",
-					"shadow": "5px 5px 10px 0 #999999"
+					"name": "Twitch",
+					"slug": "twitch",
+					"shadow": "5px 5px 0px -2px red, 5px 5px red"
 				}
 			]
 		},
@@ -88,9 +73,6 @@
 				"color": {
 					"text": "var(--wp--preset--color--orange)"
 				}
-			},
-			"button": {
-				"shadow": "var(--wp--preset--shadow--natural)"
 			}
 		},
 		"blocks": {
