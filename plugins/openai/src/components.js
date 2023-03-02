@@ -6,9 +6,9 @@ import { useState } from '@wordpress/element';
 /**
  * Internal dependencies
  */
-import { convertImageToBlob } from './helpers';
+import { uploadImageToMediaLibrary } from './helpers';
 
-export const ImagePreviews = ( { imageSrcs } ) => {
+export const ImagePreviews = ( { imageSrcs, prompt } ) => {
 	const [ isOpen, setOpen ] = useState( false );
 	const [ activeImage, setActiveImage ] = useState( 0 );
 	const openModal = () => setOpen( true );
@@ -20,13 +20,35 @@ export const ImagePreviews = ( { imageSrcs } ) => {
 	return (
 		<div className="image-previews">
 			{ isOpen && (
-				<Modal title="This is my modal" onRequestClose={ closeModal }>
-					<img
-						src={ `data:image/png;base64,${ activeImage }` }
-						width="height: 100%;"
-					/>
-					<div style={ { position: 'absolute', bottom: '0px' } }>
-						THIS IS AT THE BOTTOM
+				<Modal
+					title="This is my modal"
+					onRequestClose={ closeModal }
+					className="image-modal"
+				>
+					{
+						<img
+							src={ `data:image/png;base64,${ activeImage }` }
+							width="height: 100%;"
+						/>
+					}
+					{ /* <img
+						src="http://twitchstreams.local/wp-content/uploads/2023/02/four-people-holding-hands-in-the-park.jpg"
+						width="100%"
+					/> */ }
+					<div className="components-modal__footer">
+						<div className="components-modal__footer-container">
+							<Button
+								variant="primary"
+								onClick={ () =>
+									uploadImageToMediaLibrary(
+										activeImage,
+										prompt
+									)
+								}
+							>
+								Upload image
+							</Button>
+						</div>
 					</div>
 				</Modal>
 			) }
@@ -61,6 +83,12 @@ export const ImagePreviews = ( { imageSrcs } ) => {
 					</Button>
 				);
 			} ) }
+			{ /* <Button onClick={ () => openModal() }>
+				<img
+					src="http://twitchstreams.local/wp-content/uploads/2023/02/four-people-holding-hands-in-the-park.jpg"
+					width="100"
+				/>
+			</Button> */ }
 		</div>
 	);
 };

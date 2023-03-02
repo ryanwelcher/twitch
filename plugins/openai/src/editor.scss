@@ -10,9 +10,24 @@
 		justify-content: center;
 		margin: 1.3rem 0;
 		gap: 2em;
+
 		.image-preview {
 			border: solid 1px var(--wp--preset--color--black);
 			padding: 0;
+		}
+	}
+}
+
+.image-modal {
+	.components-modal__footer {
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+	}
+	.components-modal__footer-container {
+		background-color: var(--wp--preset--color--white);
+		.components-button {
+			margin: 1rem 0;
 		}
 	}
 }

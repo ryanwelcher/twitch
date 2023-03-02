@@ -43,7 +43,7 @@ export default function Edit() {
 
 	return (
 		<div { ...useBlockProps() }>
-			<ImagePreviews imageSrcs={ imageSrcs } />
+			<ImagePreviews imageSrcs={ imageSrcs } prompt={ prompt } />
 			<Placeholder label={ placeHolderText } className="test">
 				<div className="controls">
 					{ isLoading ? (

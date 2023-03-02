@@ -1,4 +1,6 @@
 import apiFetch from '@wordpress/api-fetch';
+import { uploadMedia } from '@wordpress/media-utils';
+import { cleanForSlug } from '@wordpress/url';
 import { API_KEY } from './constants';
 
 export const convertImageToBlob = async ( base64Image ) => {
@@ -85,3 +87,14 @@ export async function makeRequest( {
 	const json = await request.json();
 	return json.data;
 }
+
+export const uploadImageToMediaLibrary = async ( imageSrc, prompt ) => {
+	const blob = await convertImageToBlob( imageSrc );
+	const status = await uploadMedia( {
+		filesList: [ new File( [ blob ], `${ cleanForSlug( prompt ) }.png` ) ],
+		onFileChange: ( [ fileObj ] ) => console.log( fileObj.url ),
+		onError: console.error,
+	} );
+	console.log( status );
+	return status;
+};
