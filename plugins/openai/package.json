@@ -12,7 +12,7 @@
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start --webpack-copy-php",
+		"start": "wp-scripts start plugin/index.js --webpack-copy-php",
 		"start:hot": "wp-scripts start --hot --webpack-copy-php"
 	},
 	"devDependencies": {
@@ -20,6 +20,7 @@
 	},
 	"prettier": "@wordpress/prettier-config",
 	"dependencies": {
+		"@wordpress/icons": "^9.19.0",
 		"dotenv": "^16.0.3"
 	}
 }

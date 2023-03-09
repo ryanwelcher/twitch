@@ -3,6 +3,9 @@
  */
 import { Button, Modal } from '@wordpress/components';
 import { useState } from '@wordpress/element';
+import { createBlock } from '@wordpress/blocks';
+import { useDispatch } from '@wordpress/data';
+import { store as blockEditorStore } from '@wordpress/block-editor';
 /**
  * Internal dependencies
  */
@@ -11,6 +14,7 @@ import { uploadImageToMediaLibrary } from './helpers';
 export const ImagePreviews = ( { imageSrcs, prompt } ) => {
 	const [ isOpen, setOpen ] = useState( false );
 	const [ activeImage, setActiveImage ] = useState( 0 );
+	const { insertBlocks } = useDispatch( blockEditorStore );
 	const openModal = () => setOpen( true );
 	const closeModal = () => setOpen( false );
 
@@ -29,6 +33,7 @@ export const ImagePreviews = ( { imageSrcs, prompt } ) => {
 						<img
 							src={ `data:image/png;base64,${ activeImage }` }
 							width="height: 100%;"
+							alt="Generated from openai"
 						/>
 					}
 					{ /* <img
@@ -42,7 +47,20 @@ export const ImagePreviews = ( { imageSrcs, prompt } ) => {
 								onClick={ () =>
 									uploadImageToMediaLibrary(
 										activeImage,
-										prompt
+										prompt,
+										( { id, url } ) => {
+											if ( id ) {
+												const newBlock = createBlock(
+													'core/image',
+													{
+														id,
+														url,
+													}
+												);
+												insertBlocks( newBlock );
+												closeModal();
+											}
+										}
 									)
 								}
 							>
@@ -52,13 +70,14 @@ export const ImagePreviews = ( { imageSrcs, prompt } ) => {
 					</div>
 				</Modal>
 			) }
-			{ imageSrcs.map( ( imageSrc ) => {
+			{ imageSrcs.map( ( { b64_json: b64JSON } ) => {
 				return (
 					<Button
+						key={ b64JSON }
 						variant="link"
 						className="image-preview"
 						onClick={ () => {
-							setActiveImage( imageSrc[ 'b64_json' ] );
+							setActiveImage( b64JSON );
 							openModal();
 							// const blob = await convertImageToBlob(
 							// 	imageSrc[ 'b64_json' ]
@@ -77,8 +96,9 @@ export const ImagePreviews = ( { imageSrcs, prompt } ) => {
 						} }
 					>
 						<img
-							src={ `data:image/png;base64,${ imageSrc[ 'b64_json' ] }` }
+							src={ `data:image/png;base64,${ b64JSON }` }
 							width="100"
+							alt="Generated from openai"
 						/>
 					</Button>
 				);

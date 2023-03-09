@@ -88,13 +88,16 @@ export async function makeRequest( {
 	return json.data;
 }
 
-export const uploadImageToMediaLibrary = async ( imageSrc, prompt ) => {
+export const uploadImageToMediaLibrary = async (
+	imageSrc,
+	prompt,
+	uploadCallback
+) => {
 	const blob = await convertImageToBlob( imageSrc );
 	const status = await uploadMedia( {
 		filesList: [ new File( [ blob ], `${ cleanForSlug( prompt ) }.png` ) ],
-		onFileChange: ( [ fileObj ] ) => console.log( fileObj.url ),
+		onFileChange: ( [ fileObj ] ) => uploadCallback( fileObj ),
 		onError: console.error,
 	} );
-	console.log( status );
 	return status;
 };

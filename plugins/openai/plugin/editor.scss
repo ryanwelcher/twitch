@@ -4,16 +4,18 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-twitch-openai {
+.openai-image-generator {
 	.image-previews {
 		display: flex;
-		justify-content: center;
-		margin: 1.3rem 0;
+		flex-direction: column;
+		align-items: center;
 		gap: 2em;
+		margin-top: 2rem;
 
 		.image-preview {
 			border: solid 1px var(--wp--preset--color--black);
 			padding: 0;
+			width: 100px;
 		}
 	}
 }
