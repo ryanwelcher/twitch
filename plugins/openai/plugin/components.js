@@ -36,10 +36,6 @@ export const ImagePreviews = ( { imageSrcs, prompt } ) => {
 							alt="Generated from openai"
 						/>
 					}
-					{ /* <img
-						src="http://twitchstreams.local/wp-content/uploads/2023/02/four-people-holding-hands-in-the-park.jpg"
-						width="100%"
-					/> */ }
 					<div className="components-modal__footer">
 						<div className="components-modal__footer-container">
 							<Button
@@ -79,20 +75,6 @@ export const ImagePreviews = ( { imageSrcs, prompt } ) => {
 						onClick={ () => {
 							setActiveImage( b64JSON );
 							openModal();
-							// const blob = await convertImageToBlob(
-							// 	imageSrc[ 'b64_json' ]
-							// );
-							// uploadMedia( {
-							// 	filesList: [
-							// 		new File(
-							// 			[ blob ],
-							// 			`${ cleanForSlug( prompt ) }.png`
-							// 		),
-							// 	],
-							// 	onFileChange: ( [ fileObj ] ) =>
-							// 		console.log( fileObj.url ),
-							// 	onError: console.error,
-							// } );
 						} }
 					>
 						<img
@@ -103,12 +85,6 @@ export const ImagePreviews = ( { imageSrcs, prompt } ) => {
 					</Button>
 				);
 			} ) }
-			{ /* <Button onClick={ () => openModal() }>
-				<img
-					src="http://twitchstreams.local/wp-content/uploads/2023/02/four-people-holding-hands-in-the-park.jpg"
-					width="100"
-				/>
-			</Button> */ }
 		</div>
 	);
 };
