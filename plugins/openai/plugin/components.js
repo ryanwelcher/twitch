@@ -6,10 +6,12 @@ import { useState } from '@wordpress/element';
 import { createBlock } from '@wordpress/blocks';
 import { useDispatch } from '@wordpress/data';
 import { store as blockEditorStore } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
 /**
  * Internal dependencies
  */
 import { uploadImageToMediaLibrary } from './helpers';
+import { testData } from './test';
 
 export const ImagePreviews = ( { imageSrcs, prompt } ) => {
 	const [ isOpen, setOpen ] = useState( false );
@@ -18,11 +20,46 @@ export const ImagePreviews = ( { imageSrcs, prompt } ) => {
 	const openModal = () => setOpen( true );
 	const closeModal = () => setOpen( false );
 
+	const createGallery = async ( images ) => {
+		// Upload all of the images and get their urls.
+		const urls = [];
+		const imageBlocks = [];
+		await images.forEach( async ( { b64_json: b64JSON } ) => {
+			await uploadImageToMediaLibrary( b64JSON, 'test', ( { url } ) => {
+				urls.push( url );
+			} );
+		} );
+		imageBlocks.forEach( ( url ) => {
+			// if ( ! url.match( /blob:/ ) ) {
+			imageBlocks.push( createBlock( 'core/image', { url } ) );
+			// }
+		} );
+		console.log( '1', imageBlocks );
+		const newGallery = createBlock( 'core/gallery', {}, imageBlocks );
+		insertBlocks( newGallery );
+		console.log( '2', newGallery );
+
+		// const newGallery = createBlock( 'core/gallery', {}, [
+		// 	createBlock( 'core/image', {
+		// 		url: images[ 0 ].b64_json,
+		// 	} ),
+		// ] );
+		// insertBlocks( newGallery );
+	};
+
 	if ( ! imageSrcs ) {
 		return null;
 	}
 	return (
 		<div className="image-previews">
+			<Button
+				variant="secondary"
+				onClick={ () => {
+					createGallery( imageSrcs );
+				} }
+			>
+				{ __( 'Create gallery', 'openai' ) }
+			</Button>
 			{ isOpen && (
 				<Modal
 					title="This is my modal"
