@@ -118,7 +118,7 @@ const MY_VARIATION_NAME = 'twitch-streams-variation';
   // 'search',
   // 'author',
   ],
-  innerBlocks: [['core/post-template', {}, [['core/post-title'], ['core/post-excerpt']]], ['core/query-pagination'], ['core/query-no-results']]
+  innerBlocks: [['core/post-template', {}, [['core/post-title'], ['core/post-excerpt'], ['twitch/edit-post-block']]], ['core/query-pagination'], ['core/query-no-results']]
 });
 }();
 /******/ })()

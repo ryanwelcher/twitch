@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "twitch/post-picker",
+	"version": "0.1.0",
+	"title": "Post Picker",
+	"category": "text",
+	"icon": "smiley",
+	"description": "Curated content to display.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "post-picker",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

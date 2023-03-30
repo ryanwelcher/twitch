@@ -36,7 +36,11 @@ registerBlockVariation( 'core/query', {
 		[
 			'core/post-template',
 			{},
-			[ [ 'core/post-title' ], [ 'core/post-excerpt' ] ],
+			[
+				[ 'core/post-title' ],
+				[ 'core/post-excerpt' ],
+				[ 'twitch/edit-post-block' ],
+			],
 		],
 		[ 'core/query-pagination' ],
 		[ 'core/query-no-results' ],

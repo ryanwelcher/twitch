@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "twitch/post-placeholder",
+	"version": "0.1.0",
+	"title": "Post Placeholder",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Represents content in the the block editor",
+	"attributes": {
+		"id": {
+			"type": "number"
+		},
+		"postType": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"parent": [ "twitch/post-picker" ],
+	"textdomain": "post-placeholder",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

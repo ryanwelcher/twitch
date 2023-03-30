@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "twitch/edit-post-block",
+	"version": "0.1.0",
+	"title": "Edit Post Block",
+	"category": "widgets",
+	"icon": "edit",
+	"description": "A block that allows logged-in users to edit a piece of content.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "bring-me-your-issues-mar-23-2023",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}
