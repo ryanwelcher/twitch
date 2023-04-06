@@ -1,0 +1,13 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/swr",
+	"version": "1.2.3",
+	"title": "Swr",
+	"category": "widgets",
+	"icon": "twitter",
+	"textdomain": "swr",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

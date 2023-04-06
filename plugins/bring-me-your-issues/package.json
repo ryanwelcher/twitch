@@ -17,5 +17,8 @@
 	"devDependencies": {
 		"@wordpress/scripts": "^26.0.0"
 	},
-	"prettier": "@wordpress/prettier-config"
+	"prettier": "@wordpress/prettier-config",
+	"dependencies": {
+		"swr": "^2.1.2"
+	}
 }
