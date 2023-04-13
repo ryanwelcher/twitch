@@ -73,6 +73,18 @@
 				"color": {
 					"text": "var(--wp--preset--color--orange)"
 				}
+			},
+			"caption": {
+				"color": {
+					"background": "red",
+					"text": "yellow"
+				},
+				"typography": {
+					"fontWeight": "bold",
+					"fontStyle": "italic",
+					"lineHeight": "2",
+					"fontSize": "30px"
+				}
 			}
 		},
 		"blocks": {
