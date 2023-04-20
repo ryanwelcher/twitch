@@ -27,5 +27,7 @@ function twitch_bring_me_your_issues_mar_23_2023_block_init() {
 	register_block_type( __DIR__ . '/build/use-effect' );
 	register_block_type( __DIR__ . '/build/swr' );
 	register_block_type( __DIR__ . '/build/live-facets' );
+	register_block_type( __DIR__ . '/build/mega-menu' );
+	register_block_type( __DIR__ . '/build/mega-menu-section' );
 }
 add_action( 'init', 'twitch_bring_me_your_issues_mar_23_2023_block_init' );
