@@ -1,0 +1,13 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-twitch-featured-image {
+	.wp-block-cover__image-background {
+		border: solid 2px red;
+		max-width: 100%;
+	}
+}
