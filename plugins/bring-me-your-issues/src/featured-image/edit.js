@@ -11,7 +11,12 @@ import { store as editorStore } from '@wordpress/editor';
 import { useDispatch, useSelect } from '@wordpress/data';
 import { Placeholder, Button } from '@wordpress/components';
 import { createBlock } from '@wordpress/blocks';
-import { useEntityProp, store as coreStore } from '@wordpress/core-data';
+import {
+	useEntityProp,
+	store as coreStore,
+	useEntityRecords,
+} from '@wordpress/core-data';
+
 /**
  * Internal dependencies
  */
@@ -23,6 +28,15 @@ export default function Edit( {
 	attributes: { useFeaturedImage },
 	context: { postId, postType },
 } ) {
+	const { records, isResolving } = useEntityRecords( 'twitch', 'memes' );
+	const { invalidateResolution } = useDispatch( coreStore );
+
+	console.log( records );
+
+	const reloadMemes = () => {
+		invalidateResolution( 'getEntityRecords', [ 'twitch', 'memes', {} ] );
+	};
+
 	const { insertBlocks } = useDispatch( blockEditorStore );
 
 	const [ featuredImage ] = useEntityProp(
@@ -44,6 +58,16 @@ export default function Edit( {
 				context: 'view',
 			} ),
 		[ featuredImageID ]
+	);
+
+	if ( isResolving ) {
+		return <p>Loading the dankest memes...</p>;
+	}
+	return (
+		<div>
+			MEMES ARE READY
+			<Button onClick={ reloadMemes }>Refresh</Button>
+		</div>
 	);
 
 	return (

@@ -4,6 +4,8 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 import { registerBlockType } from '@wordpress/blocks';
+import { dispatch } from '@wordpress/data';
+import { store as coreDataStore } from '@wordpress/core-data';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -32,3 +34,14 @@ registerBlockType( metadata.name, {
 	edit: Edit,
 	save: () => null,
 } );
+
+// Random place.
+dispatch( coreDataStore ).addEntities( [
+	{
+		baseURL: '/twitch/v1/memes',
+		kind: 'twitch', //'postType',
+		name: 'memes', // 'post'
+		label: 'Dankest Memes',
+		// name: 'post',
+	},
+] );

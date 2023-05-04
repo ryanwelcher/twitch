@@ -32,3 +32,41 @@ function twitch_bring_me_your_issues_mar_23_2023_block_init() {
 	register_block_type( __DIR__ . '/build/featured-image' );
 }
 add_action( 'init', 'twitch_bring_me_your_issues_mar_23_2023_block_init' );
+
+
+add_action(
+	'rest_api_init',
+	function() {
+		register_rest_route(
+			'twitch/v1',
+			'memes',
+			array(
+				'methods'              => \WP_REST_Server::READABLE,
+				'permissions_callback' => '__return_true',
+				'callback'             => function() {
+
+					// wp_cache_add(); // uses object cache if available otherwise does nothing (like the googles).
+					// set_transient(); // uses options if no caching layer exists on the server.
+
+					if( $data = get_transient( 'twitch_memes' ) ) {
+						return $data;
+					} else {
+						$options  = array();
+						$response = wp_remote_get( 'https://api.imgflip.com/get_memes', $options );
+						if ( ! is_wp_error( $response ) ) {
+							$api_response = json_decode( wp_remote_retrieve_body( $response ), true );
+							if ( isset( $api_response['success'] ) && $api_response['success'] ) {
+								set_transient( 'twitch_memes', $api_response['data']['memes'], 60 * 60 * 24 );
+								return $api_response['data']['memes'];
+							} else {
+								return new \WP_Error( 'Memes', 'Could not retrieve memes' );
+							}
+						} else {
+							return $response;
+						}
+					}
+				},
+			)
+		);
+	}
+);
