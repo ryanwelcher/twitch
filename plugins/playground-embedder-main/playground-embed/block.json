@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "tdrayson/playground-embed",
+	"version": "0.1.0",
+	"title": "Playground Embed",
+	"category": "widgets",
+	"icon": "art",
+	"description": "Embeds the WordPress playground through a block.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "playground-embed",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"attributes":{
+		"width": {
+			"type": "string",
+			"default": "1200"
+		},
+		"height": {
+			"type": "string",
+			"default": "600"
+		},
+		"startButton": {
+			"type": "integer",
+			"default": 1
+		},
+		"blueprint": {
+			"type": "string",
+			"default": "{\n    \"landingPage\": \"/wp-admin/\",\n    \"preferredVersions\": {\n        \"php\": \"8.0\",\n        \"wp\": \"latest\"\n    },\n    \"steps\": [\n        {\n            \"step\": \"login\",\n            \"username\": \"admin\",\n            \"password\": \"password\"\n        },\n        {\n            \"step\": \"installPlugin\",\n            \"pluginZipFile\": {\n                \"resource\": \"wordpress.org/plugins\",\n                \"slug\": \"wordpress-seo\"\n            },\n            \"options\": {\n                \"activate\": true\n            }\n        }\n    ]\n}"
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+    "name": "playground-embed",
+    "version": "1.0.0",
+    "description": "Block implementation of playground embed",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "wp-scripts start --webpack-src-dir=playground-embed",
+      "build": "wp-scripts build --webpack-src-dir=playground-embed"
+    },
+    "dependencies": {
+      "@wordpress/scripts": "^25.1.0"
+    },
+    "prettier": "@wordpress/prettier-config"
+  }

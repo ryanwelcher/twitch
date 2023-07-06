@@ -2,102 +2,19 @@
 	"$schema": "http://schemas.wp.org/trunk/theme.json",
 	"version": 2,
 	"settings": {
-		"border": {
-			"color": true
-		},
-		"shadow": {
-			"palette": [
-				{
-					"name": "Twitch",
-					"slug": "twitch",
-					"shadow": "5px 5px 0px -2px red, 5px 5px red"
-				}
-			]
-		},
+		"border": {},
+		"shadow": {},
 		"appearanceTools": true,
-		"layout": {
-			"contentSize": "650px",
-			"wideSize": "1000px"
-		},
-		"color": {
-			"defaultPalette": false,
-			"palette": [
-				{
-					"slug": "orange",
-					"color": "#e76f51",
-					"name": "Orange"
-				},
-				{
-					"slug": "dark-gray",
-					"color": "#264653",
-					"name": "Dark Gray"
-				}
-			],
-			"gradients": [
-				{
-					"slug": "orange-to-dark-gray",
-					"gradient": "linear-gradient(180deg,var(--wp--preset--color--orange) 33%,var(--wp--preset--color--dark-gray) 33%)",
-					"name": "Orange to Dark Gray"
-				}
-			]
-		},
-		"typography": {
-			"fontFamilies": [
-				{
-					"slug": "primary",
-					"fontFamily": "'Montserrat', sans-serif",
-					"name": "Primary"
-				}
-			]
-		},
-		"custom": {
-			"sidebar-border": "solid 1px var(--wp--preset--color--orange)"
-		}
+		"layout": {},
+		"color": {},
+		"typography": {},
+		"custom": {}
 	},
 	"styles": {
-		"color": {
-			"background": "var(--wp--preset--color--dark-gray)",
-			"text": "var(--wp--preset--color--white)"
-		},
-		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--primary)"
-		},
-		"elements": {
-			"h1": {
-				"color": {
-					"background": "var(--wp--preset--color--orange)",
-					"text": "var(--wp--preset--color--dark-gray)"
-				}
-			},
-			"link": {
-				"color": {
-					"text": "var(--wp--preset--color--orange)"
-				}
-			},
-			"caption": {
-				"color": {
-					"background": "red",
-					"text": "yellow"
-				},
-				"typography": {
-					"fontWeight": "bold",
-					"fontStyle": "italic",
-					"lineHeight": "2",
-					"fontSize": "30px"
-				}
-			}
-		},
-		"blocks": {
-			"core/navigation": {
-				"color": {
-					"text": "var(--wp--preset--color--white)"
-				},
-				"typography": {
-					"fontSize": "1.2rem",
-					"fontWeight": "bold"
-				}
-			}
-		}
+		"color": {},
+		"typography": {},
+		"elements": {},
+		"blocks": {}
 	},
 	"templateParts": [
 		{
@@ -111,11 +28,5 @@
 			"title": "Footer"
 		}
 	],
-	"customTemplates": [
-		{
-			"name": "page-landing",
-			"title": "Page (Landing)",
-			"postTypes": [ "page" ]
-		}
-	]
+	"customTemplates": []
 }

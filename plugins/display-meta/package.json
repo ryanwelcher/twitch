@@ -19,5 +19,6 @@
 	},
 	"dependencies": {
 		"@wordpress/icons": "^9.10.0"
-	}
+	},
+	"prettier": "@wordpress/prettier-config"
 }

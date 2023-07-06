@@ -1,0 +1,15 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ .wordress-playground {
+	background: #f0f0f1;
+	border-radius: 8px;
+	overflow: hidden;
+
+	iframe{
+		max-width: var(--content-width);
+	}
+}

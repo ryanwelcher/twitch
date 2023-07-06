@@ -11,6 +11,7 @@ import { Button } from '@wordpress/components';
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
+
 import './editor.scss';
 
 /**
@@ -23,9 +24,9 @@ import './editor.scss';
  */
 export default function Edit() {
 	return (
-		<p {...useBlockProps()}>
+		<p { ...useBlockProps() }>
 			<Button variant="link">
-				{__('Edit Post', 'bring-me-your-issues-mar-23-2023')}
+				{ __( 'Edit Post', 'bring-me-your-issues-mar-23-2023' ) }
 			</Button>
 		</p>
 	);

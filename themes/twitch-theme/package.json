@@ -9,13 +9,15 @@
 		"update": "wp-scripts packages-update",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
-		"lint:js": "wp-scripts lint-js"
+		"lint:js": "wp-scripts lint-js",
+		"theme-json": "theme-json --scaffold"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"prettier": "@wordpress/prettier-config",
 	"devDependencies": {
+		"@ryanwelcher/theme-json-builder": "^1.0.0",
 		"@wordpress/scripts": "^24.1.0"
 	}
 }
