@@ -3,7 +3,8 @@
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
 		"squizlabs/php_codesniffer": "^3.6",
-		"wp-coding-standards/wpcs": "^2.3"
+		"wp-coding-standards/wpcs": "^2.3",
+        "phpunit/phpunit": "^9.6"
 	},
 	"scripts": {
 		"lint": "./vendor/bin/phpcs --standard=phpcs.xml"

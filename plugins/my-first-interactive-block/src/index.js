@@ -32,11 +32,7 @@ registerBlockType( metadata.name, {
 	/**
 	 * Used to construct a preview for the block to be shown in the block inserter.
 	 */
-	example: {
-		attributes: {
-			message: 'My First Interactive Block',
-		},
-	},
+	example: {},
 	/**
 	 * @see ./edit.js
 	 */
