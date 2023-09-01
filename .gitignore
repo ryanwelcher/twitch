@@ -20,3 +20,4 @@ vendor
 debug.log
 .vscode
 .DS_Store
+languages/*
