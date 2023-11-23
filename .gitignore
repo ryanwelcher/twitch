@@ -15,6 +15,7 @@ plugins/advanced-query-loop
 plugins/kodex-posts-likes
 plugins/term-selector
 plugins/code-block-pro
+plugins/command-palette-tools
 node_modules
 vendor
 debug.log

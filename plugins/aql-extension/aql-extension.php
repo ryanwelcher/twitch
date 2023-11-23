@@ -40,20 +40,22 @@
 );
 
 
+/**
+ * Add a filter to update the query args passed to WP_Query
+ *
+ * @param array   $query_args  Arguments to be passed to WP_Query.
+ * @param array   $block_query The query attribute retrieved from the block.
+ * @param boolean $inherited   Whether the query is being inherited.
+ */
+function aql_extension_show_current_author_only( $query_args, $block_query, $inherited ) {
+	if (
+		isset( $block_query['authorContent'] ) &&
+		true === filter_var( $block_query['authorContent'], FILTER_VALIDATE_BOOLEAN )
+	) {
+		$query_args['author'] = get_current_user_id();
+	}
+	return $query_args;
+}
 
-\add_filter(
-	'aql_query_vars',
-	// 'aql_query_vars_inherited',
-	function( $query_vars, $custom_query ) {
-		if (
-			isset( $custom_query['authorContent'] ) &&
-			true === filter_var( $custom_query['authorContent'], FILTER_VALIDATE_BOOLEAN )
-		) {
-			$query_vars['author'] = get_current_user_id();
-		}
-		return $query_vars;
-	},
-	10,
-	3
-);
+\add_filter( 'aql_query_vars', 'aql_extension_show_current_author_only', 10, 3 );
 

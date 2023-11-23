@@ -57,26 +57,52 @@ function register_stream_post_type() {
 
 	register_post_type( 'twitch-stream', $args );
 
-	// Register some post meta.
-	register_post_meta(
-		'twitch-stream',
-		'stream-duration',
-		array(
-			'show_in_rest' => true,
-			'single'       => true,
-			'type'         => 'string',
-		)
-	);
+		// Register some post meta.
+		register_post_meta(
+			'twitch-stream',
+			'stream-duration',
+			array(
+				'show_in_rest' => true,
+				'single'       => true,
+				'type'         => 'string',
+			)
+		);
 
-	register_post_meta(
-		'twitch-stream',
-		'stream-date',
-		array(
-			'show_in_rest' => true,
-			'single'       => true,
-			'type'         => 'string',
-		)
-	);
+		register_post_meta(
+			'twitch-stream',
+			'stream-date',
+			array(
+				'show_in_rest' => true,
+				'single'       => true,
+				'type'         => 'string',
+			)
+		);
+
+		$labels = array(
+			'name'              => _x( 'Genres', 'taxonomy general name', 'textdomain' ),
+			'singular_name'     => _x( 'Genre', 'taxonomy singular name', 'textdomain' ),
+			'search_items'      => __( 'Search Genres', 'textdomain' ),
+			'all_items'         => __( 'All Genres', 'textdomain' ),
+			'parent_item'       => __( 'Parent Genre', 'textdomain' ),
+			'parent_item_colon' => __( 'Parent Genre:', 'textdomain' ),
+			'edit_item'         => __( 'Edit Genre', 'textdomain' ),
+			'update_item'       => __( 'Update Genre', 'textdomain' ),
+			'add_new_item'      => __( 'Add New Genre', 'textdomain' ),
+			'new_item_name'     => __( 'New Genre Name', 'textdomain' ),
+			'menu_name'         => __( 'Genre', 'textdomain' ),
+		);
+
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'show_in_rest'      => true,
+			'rewrite'           => array( 'slug' => 'genre' ),
+		);
+
+		register_taxonomy( 'genre', array( 'twitch-stream' ), $args );
 
 }
 add_action( 'init', 'register_stream_post_type' );

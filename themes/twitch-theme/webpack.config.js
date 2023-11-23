@@ -26,23 +26,4 @@ module.exports = {
 		variations: './variations/index.js',
 		'stream-meta-panel': './stream-meta-panel/index.js',
 	},
-	plugins: [
-		...defaultConfig.plugins,
-		new CopyPlugin( {
-			patterns: [
-				{
-					from: './json/index.js',
-					transform: ( content, path ) => {
-						console.log( 'content', content.toString() );
-						// return ( buildManifest = JSON.parse(
-						// 	content.toString()
-						// ) );
-						return JSON.stringify( content.toString(), null, 2 );
-						// return JSON.parse( content.toString() );
-					},
-					to: '../theme-json.json',
-				},
-			],
-		} ),
-	],
 };
