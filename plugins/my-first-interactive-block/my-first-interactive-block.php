@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       My First Interactive Block
+ * Plugin Name:       My First Interactive Block 222
  * Description:       An interactive block with the Interactivity API
  * Version:           0.1.0
  * Requires at least: 6.1

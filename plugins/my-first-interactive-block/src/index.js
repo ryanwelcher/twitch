@@ -38,25 +38,5 @@ registerBlockType( metadata.name, {
 	 */
 	edit: Edit,
 
-	save: () => {
-		return (
-			<div
-				{ ...useBlockProps.save() }
-				data-wp-interactive
-				data-wp-context='{ "create-block": { "isOpen": false } }'
-				data-wp-effect="effects.create-block.logIsOpen"
-			>
-				<button
-					data-wp-on--click="actions.create-block.toggle"
-					data-wp-bind--aria-expanded="context.create-block.isOpen"
-				>
-					Toggle
-				</button>
-
-				<p data-wp-bind--hidden="!context.create-block.isOpen">
-					My First Interactive Block STATIC
-				</p>
-			</div>
-		);
-	},
+	save: () => null,
 } );

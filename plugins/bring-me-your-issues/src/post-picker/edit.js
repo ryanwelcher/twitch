@@ -13,7 +13,6 @@ import {
 	Button,
 	SelectControl,
 	TextControl,
-	ComboboxControl,
 } from '@wordpress/components';
 import { createBlock } from '@wordpress/blocks';
 import { useDispatch, useSelect } from '@wordpress/data';
@@ -44,12 +43,7 @@ export default function Edit( { clientId } ) {
 
 	// Get the available post types
 	const postTypes = useSelect( ( select ) =>
-		select( coreStore ) //'core'
-			.getPostTypes()
-			?.filter( ( { viewable } ) => viewable )
-			.map( ( { slug } ) => {
-				return { label: slug, value: slug };
-			} )
+		select( 'core' ).getPostTypes()
 	);
 
 	// Query the posts
@@ -57,6 +51,9 @@ export default function Edit( { clientId } ) {
 		per_page: 30,
 		search: searchTerm,
 	} );
+
+	console.log( records );
+
 	return (
 		<div { ...useBlockProps() }>
 			<InnerBlocks

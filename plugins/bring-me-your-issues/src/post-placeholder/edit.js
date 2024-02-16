@@ -14,7 +14,6 @@ import { useEntityRecord } from '@wordpress/core-data';
 import './editor.scss';
 
 export default function Edit( { attributes: { id, postType } } ) {
-	console.log( id, postType );
 	const { record, isResolving } = useEntityRecord( 'postType', postType, id );
 
 	return (

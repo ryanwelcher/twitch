@@ -5,12 +5,4 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-twitch-post-picker {
-	display: flex;
-	.card {
-		border: solid 1px black;
-		width: 200px;
-		height: 300px;
-		background-color: var(--wp--preset--color--orange);
-	}
-}
+.wp-block-twitch-post-picker {}

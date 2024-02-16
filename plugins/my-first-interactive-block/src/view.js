@@ -18,6 +18,10 @@ store( {
 				// Log the value of `isOpen` each time it changes.
 				console.log( `Is open: ${ context[ 'create-block' ].isOpen }` );
 			},
+			logInit: ( { context } ) => {
+				// Log the value of `isOpen` each time it changes.
+				console.log( `Init!` );
+			},
 		},
 	},
 } );

@@ -17,14 +17,18 @@ $unique_id = uniqid( 'p-' );
 	<?php echo wp_kses_data( get_block_wrapper_attributes() ); ?>
 	data-wp-interactive
 	data-wp-context='{ "create-block": { "isOpen": false } }'
+	data-wp-init="effects.create-block.logInit"
 	data-wp-effect="effects.create-block.logIsOpen"
 >
 	<button
 		data-wp-on--click="actions.create-block.toggle"
 		data-wp-bind--aria-expanded="context.create-block.isOpen"
 		aria-controls="p-<?php echo esc_attr( $unique_id ); ?>"
+		data-wp-class--class-one="context.create-block.isOpen"
+		data-wp-class--class-two="context.create-block.isOpen"
+
 	>
-		<?php esc_html_e( 'Toggle', 'my-first-interactive-block' ); ?>
+		<?php esc_html_e( 'Toggle22', 'my-first-interactive-block' ); ?>
 	</button>
 
 	<p
