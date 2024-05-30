@@ -30,7 +30,7 @@ registerBlockType('twitch-streams/htm-no-build', {
 	attributes: {
 		message: {
 			type: 'string',
-			default: 'No build needed!',
+			default: 'I use htm instead of JSX! Try updating this message.',
 		},
 	},
 	edit: Edit,
