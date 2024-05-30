@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/migrate-post-title",
+	"version": "0.1.0",
+	"title": "Migrate Post Title",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example block scaffolded with Create Block tool.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"blockCustomTitle": {
+			"type": "string"
+		},
+		"pageHeaderTitle": {
+			"type": "string"
+		}
+	},
+	"textdomain": "migrate-post-title",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

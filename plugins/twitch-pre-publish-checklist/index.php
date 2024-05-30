@@ -49,6 +49,7 @@ add_action(
 			wp_enqueue_script( 'wp-core-data' );
 
 			$assets = require_once $asset_file_page;
+
 			wp_enqueue_script(
 				'pre-publish-settings-script',
 				plugin_dir_url( __FILE__ ) . 'build/settings/index.js',
@@ -58,9 +59,9 @@ add_action(
 			);
 		}
 
-		foreach ( $assets['dependencies'] as $style ) {
-			wp_enqueue_style( $style );
-		}
+		// foreach ( $assets['dependencies'] as $style ) {
+		// 	wp_enqueue_style( $style );
+		// }
 	}
 );
 

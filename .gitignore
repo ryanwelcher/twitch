@@ -16,9 +16,13 @@ plugins/kodex-posts-likes
 plugins/term-selector
 plugins/code-block-pro
 plugins/command-palette-tools
+plugins/query-monitor
+plugins/wordpress-es-modules-plugin
 node_modules
 vendor
 debug.log
 .vscode
 .DS_Store
 languages/*
+mu-plugins/*
+db.php
