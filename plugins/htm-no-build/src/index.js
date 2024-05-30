@@ -1,28 +1,26 @@
 /**
- * External dependencies
- */
-import htm from 'https://unpkg.com/htm?module';
-const html = htm.bind(React.createElement);
-
-/**
  * WordPress dependencies
  */
 const { registerBlockType } = wp.blocks;
-const { useBlockProps, RichText } = wp.blockEditor;
 const { __ } = wp.i18n;
+
+// eslint-disable-next-line import/no-unresolved This is added to an import map.
+import Edit from 'edit';
+
 /**
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 registerBlockType('twitch-streams/htm-no-build', {
+	apiVersion: 3,
 	title: __('HTM No Build', 'htm-no-build'),
 	icon: 'smiley',
 	version: '0.1.0',
 	category: 'widgets',
 	icon: 'smiley',
 	description: __(
-		'Example block scaffolded with Create Block tool.',
+		'A block that uses the HTM package instead of JSX.',
 		'htm-no-build'
 	),
 	example: {},
@@ -32,25 +30,9 @@ registerBlockType('twitch-streams/htm-no-build', {
 	attributes: {
 		message: {
 			type: 'string',
-			default: 'NO BUILD!',
+			default: 'No build needed!',
 		},
 	},
-	/**
-	 * @see ./edit.js
-	 */
-	edit: ({ attributes: { message = 'Default value' }, setAttributes }) => {
-		return html`
-			<${RichText}
-				...${useBlockProps()}
-				value="${message}"
-				tagName="p"
-				onChange="${(message) => setAttributes({ message })}"
-			/>
-		`;
-	},
-
-	/**
-	 * @see ./save.js
-	 */
+	edit: Edit,
 	save: () => null,
 });
