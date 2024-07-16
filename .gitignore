@@ -19,6 +19,7 @@ plugins/code-block-pro
 plugins/command-palette-tools
 plugins/query-monitor
 plugins/wordpress-es-modules-plugin
+plugins/interactive-code-block
 node_modules
 vendor
 debug.log
