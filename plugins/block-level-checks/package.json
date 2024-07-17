@@ -1,0 +1,20 @@
+{
+	"name": "block-level-checks",
+	"version": "0.1.0",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build ./src/hooks.js",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start ./src/hooks.js"
+	},
+	"prettier": "@wordpress/prettier-config",
+	"dependencies": {
+		"@wordpress/scripts": "^28.3.0"
+	}
+}

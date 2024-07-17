@@ -1,0 +1,13 @@
+.wp-block.has-notes::before {
+	content: '❗';
+	position: absolute;
+	z-index: 999;
+	top: -0.8rem;
+	left: -2rem;
+	height: 2rem;
+	font-size: 2rem;
+}
+
+.wp-block.has-notes {
+	border: 0.3rem dashed #ff0000;
+}

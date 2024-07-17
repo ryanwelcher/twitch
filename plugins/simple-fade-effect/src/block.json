@@ -1,0 +1,13 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "block-developers-cookbook/simple-fade-effect",
+	"version": "2.0.2",
+	"title": "Simple Fade Effect",
+	"category": "block-developer-cookbook",
+	"example": {},
+	"textdomain": "simple-fade-effect",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

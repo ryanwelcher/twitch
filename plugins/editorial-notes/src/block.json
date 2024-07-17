@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "block-developers-cookbook/editorial-notes",
+	"version": "1.0.2",
+	"title": "Editorial Notes",
+	"category": "block-developer-cookbook",
+	"textdomain": "editorial-notes",
+	"editorScript": "file:./notes-field.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

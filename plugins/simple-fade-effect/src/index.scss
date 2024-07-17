@@ -1,0 +1,11 @@
+.fader {
+	opacity: 0;
+	transform: translateY(45px);
+	transition: transform 0.6s, opacity 0.9s;
+
+	&.loaded {
+		opacity: 1;
+		transform: translateY(0);
+		transition-delay: 0s;
+	}
+}
