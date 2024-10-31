@@ -2,26 +2,48 @@
  * WordPress dependencies
  */
 import { addFilter } from '@wordpress/hooks';
-import { InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, SelectControl } from '@wordpress/components';
+import {
+	InspectorControls,
+	useBlockBindingsUtils,
+} from '@wordpress/block-editor';
+import { PanelBody, SelectControl, Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import { useEntityProp, useEntityRecord } from '@wordpress/core-data';
+import { useEntityRecord } from '@wordpress/core-data';
 import { useState } from '@wordpress/element';
-import { useSelect, dispatch } from '@wordpress/data';
-import { store as blocksStore } from '@wordpress/blocks';
+import {
+	getBlockBindingsSources,
+	registerBlockBindingsSource,
+} from '@wordpress/blocks';
 
 /**
  * Internal dependencies
  */
-import { unlock } from './unlock-lock';
-import podsBinding from './pods-binding';
-import acfBinding from './acf-binding';
-
-const { registerBlockBindingsSource } = unlock( dispatch( blocksStore ) );
+import excerpt from './excerpt';
 
 // Register the bindings sources.
-// registerBlockBindingsSource( podsBinding );
-// registerBlockBindingsSource( acfBinding );
+
+// registerBlockBindingsSource( excerpt );
+
+registerBlockBindingsSource( {
+	label: __( 'Excerpt' ),
+	name: 'twitch/excerpt',
+	getValues( { select, context, bindings } ) {
+		return {
+			content:
+				select( 'core/editor' ).getEditedPostAttribute( 'excerpt' ),
+		};
+	},
+
+	setValues( { select, dispatch, context, bindings } ) {
+		dispatch( 'core/editor' ).editPost( {
+			excerpt: bindings?.content?.newValue,
+		} );
+	},
+
+	canUserEditValue( { select, context } ) {
+		return true;
+	},
+} );
 
 /**
  *
@@ -33,17 +55,17 @@ const withBlockBindingsSelector = ( BlockEdit ) => ( props ) => {
 		context: { postId, postType },
 		attributes,
 		setAttributes,
+		clientId,
 	} = props;
+
+	const { updateBlockBindings, removeAllBlockBindings } =
+		useBlockBindingsUtils( clientId );
 
 	const [ selectedFramework, setSelectedFramework ] = useState(
 		attributes?.metadata?.bindings?.content?.source
 	);
 
-	const sources = useSelect( ( select ) =>
-		unlock( select( blocksStore ) ).getAllBlockBindingsSources()
-	);
-
-	console.log( sources );
+	const sources = getBlockBindingsSources();
 
 	const { record, isResolving } = useEntityRecord(
 		'postType',
@@ -52,20 +74,20 @@ const withBlockBindingsSelector = ( BlockEdit ) => ( props ) => {
 	);
 
 	// PODS fields.
-	const podsFields = window.PodsDFV.getFields( postType, postId );
+	// const podsFields = window.PodsDFV.getFields( postType, postId );
 
-	// ACF fields.
-	const [ acfMeta ] = useEntityProp( 'postType', postType, 'acf', postId );
+	// // ACF fields.
+	// const [ acfMeta ] = useEntityProp( 'postType', postType, 'acf', postId );
 
-	// Native meta
-	const [ nativeMeta ] = useEntityProp(
-		'postType',
-		postType,
-		'meta',
-		postId
-	);
+	// // Native meta
+	// const [ nativeMeta ] = useEntityProp(
+	// 	'postType',
+	// 	postType,
+	// 	'meta',
+	// 	postId
+	// );
 
-	if ( props.name !== 'core/paragraph' ) {
+	if ( props.name !== 'core/image' ) {
 		return <BlockEdit { ...props } />;
 	}
 
@@ -73,6 +95,22 @@ const withBlockBindingsSelector = ( BlockEdit ) => ( props ) => {
 		<>
 			<InspectorControls>
 				<PanelBody title={ __( 'Binding selector', 'twitch-streams' ) }>
+					<Button
+						variant="primary"
+						onClick={ () => removeAllBlockBindings() }
+					>
+						Remove bindings
+					</Button>
+					<Button
+						variant="primary"
+						onClick={ () =>
+							updateBlockBindings( {
+								alt: undefined,
+							} )
+						}
+					>
+						Add native binding
+					</Button>
 					<SelectControl
 						label={ __( 'Binding source', 'twitch-streams' ) }
 						value={ selectedFramework }

@@ -6,12 +6,12 @@
 wp_interactivity_state(
 	'data-wp-text',
 	array(
-		'message' => __( 'Default message from state', 'directives' ),
+		'message' => __( 'Hello, world!', 'directives' ),
 	)
 );
 
 ?>
-<div <?php echo wp_kses_data( get_block_wrapper_attributes() ); ?> data-wp-interactive='{ "namespace": "data-wp-text" }'>
-	<p data-wp-text="state.message"></p>
-	<button data-wp-on--click="actions.toggleMessage"><?php esc_html_e( 'Change the message', 'directives' ); ?></button>
+<div <?php echo wp_kses_data( get_block_wrapper_attributes() ); ?> data-wp-interactive="data-wp-text">
+	<h2 data-wp-text="state.message"></h2>
+	<button data-wp-on--click="actions.toggleMessage">Click to change the message</button>
 </div>

@@ -20,10 +20,10 @@ plugins/command-palette-tools
 plugins/query-monitor
 plugins/wordpress-es-modules-plugin
 plugins/interactive-code-block
+plugins/advanced-custom-fields
 node_modules
 vendor
 debug.log
-.vscode
 .DS_Store
 languages/*
 mu-plugins/*

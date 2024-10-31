@@ -4,7 +4,7 @@ const { state } = store( 'data-wp-text', {
 	state: {},
 	actions: {
 		toggleMessage: () => {
-			state.message = 'Button was clicked!';
+			state.message = 'When state.message changes, the text updates.';
 		},
 	},
 	callbacks: {},

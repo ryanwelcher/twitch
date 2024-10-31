@@ -30,25 +30,21 @@ function twitch_register_block_bindings() {
 		)
 	);
 
-
-	// Block binding for Pods
 	register_block_bindings_source(
-		'twitch/pods',
+		'twitch/excerpt',
 		array(
-			'label'              => __( 'PODS', 'custom-bindings' ),
-			'get_value_callback' => 'twitch_user_data_bindings',
-			'uses_context'       => [ 'postId', 'postType' ],
+			'label'              => __( 'Excerpt', 'custom-bindings' ),
+			'get_value_callback' => 'twitch_excerpt_bindings',
+			'uses_context'       => array( 'postId', 'postType' ),
 		)
 	);
+}
 
-	register_block_bindings_source(
-		'twitch/acf',
-		array(
-			'label'              => __( 'Advanced Custom Fields', 'custom-bindings' ),
-			'get_value_callback' => 'twitch_acf_data_bindings',
-			'uses_context'       => [ 'postId', 'postType' ],
-		)
-	);
+function twitch_excerpt_bindings( $source_args, $block_instance ) {
+	$post_id      = $block_instance->context['postId'];
+	$post_type    = $block_instance->context['postType'];
+	$current_post = get_post( $post_id );
+	return $current_post->post_excerpt;
 }
 
 
@@ -98,13 +94,12 @@ add_action(
 	'enqueue_block_editor_assets',
 	function() {
 		$assets_file = plugin_dir_path( __FILE__ ) . '/build/index.asset.php';
-
 		if ( file_exists( $assets_file ) ) {
 			$assets = include $assets_file;
 			wp_enqueue_script(
 				'script-handle',
 				plugin_dir_url( __FILE__ ) . '/build/index.js',
-				$assets['dependencies'],
+				array_merge( $assets['dependencies'], array( 'wp-edit-site', 'wp-edit-post' ) ),
 				$assets['version'],
 				true
 			);

@@ -45,11 +45,17 @@ export default function Edit( {
 	setAttributes,
 	context: { postType, postId, queryId },
 } ) {
-	const [ nativeMeta, setNativeMeta ] = useEntityProp(
+	const { currentPostType, currentPostId } = useSelect( ( select ) => {
+		return {
+			currentPostType: select( 'core/editor' ).getCurrentPostType(),
+			currentPostId: select( 'core/editor' ).getCurrentPostId(),
+		};
+	}, [] );
+	const [ meta, setMeta ] = useEntityProp(
 		'postType',
-		postType,
+		currentPostType,
 		'meta',
-		postId
+		currentPostId
 	);
 
 	const [ acfMeta, setACFMeta ] = useEntityProp(
