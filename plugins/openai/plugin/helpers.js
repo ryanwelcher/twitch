@@ -3,7 +3,26 @@ import { uploadMedia } from '@wordpress/media-utils';
 import { cleanForSlug } from '@wordpress/url';
 import { API_KEY } from './constants';
 
-export const convertImageToBlob = async ( base64Image ) => {
+// Faster way to convert a base64 image to a Blob (up to 5x faster than convertImageToBlobOld).
+export const convertImageToBlob = ( base64Image ) => {
+	// Your base64 encoded image string
+	const base64ImageSrc = `data:image/png;base64,${ base64Image }`;
+
+	// Convert the base64 string to binary data
+	const binaryData = atob( base64ImageSrc.split( ',' )[ 1 ] );
+
+	// Create a Uint8Array from the binary data
+	const uint8Array = new Uint8Array( binaryData.length );
+	for ( let i = 0; i < binaryData.length; i++ ) {
+		uint8Array[ i ] = binaryData.charCodeAt( i );
+	}
+
+	// Create and return a image Blob
+	return new Blob( [ uint8Array ], { type: 'image/png' } );
+};
+
+// This has been replaced by convertImageToBlob() as it is significantly faster.
+export const convertImageToBlobOld = async ( base64Image ) => {
 	const image = new Image();
 	image.src = `data:image/png;base64,${ base64Image }`;
 	image.crossOrigin = 'anonymous';
@@ -25,6 +44,7 @@ export const convertImageToBlob = async ( base64Image ) => {
 	return blob;
 };
 
+// Not currently used, as the core uploadMedia function is used instead of the REST API to add images to the media library.
 export const importImage = async ( base64Image, metadata ) => {
 	const image = new Image();
 	image.src = `data:image/png;base64,${ base64Image }`;
